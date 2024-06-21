@@ -347,16 +347,16 @@
         ['10','Sora Video  SORA视频化','Vivian 庄结惠','','','','']
       ],
       'internet':[
-      ['1', 'Tingkat pemeriksaan server服务器巡检率', 'Reza, Fian', '', '', '', ''],
-      ['2', 'Cadangan keamanan data数据安全备份', 'Reza, Fian', '', '', '', ''],
-      ['3', 'Tingkat pengoperasian normal ruang server di setiap kebun各区机房正常运转率', 'Rizki, Lukman, Hu Jun', '', '', '', ''],
-      ['4', 'Kualitas keamanan internet 网络安全质量状况', 'Hu Jun 胡军', '', '', '', ''],
-      ['5', 'Area cakupan internet kebun 园区网络覆盖面积', 'Eko, Ozae, Hu Jun', '', '', '', ''],
-      ['6', 'SAP berjalan normal SAP系统稳定运行 ', 'Riswanto张汉雄', '', '', '', ''],
-      ['7', 'OA berjalan normal OA正常运行 ', 'Nelson', '', '', '', ''],
-      ['8', 'Aplikasi Smart Agri智慧农业app ', 'Fian', '', '', '', ''],
-      ['9', 'Migrasi data  数据中心迁移 ', ' Hu Jun, Riswanto, Fian 胡军、张汉雄、比安', '', '', '', ''],
-      ['10', 'Rapat Internal IT IT内部会议 ', 'Hu Jun胡军', '', '', '', '']
+        ['1', 'Tingkat pemeriksaan server服务器巡检率', 'Reza, Fian', '', '', '', ''],
+        ['2', 'Cadangan keamanan data数据安全备份', 'Reza, Fian', '', '', '', ''],
+        ['3', 'Tingkat pengoperasian normal ruang server di setiap kebun各区机房正常运转率', 'Rizki, Lukman, Hu Jun', '', '', '', ''],
+        ['4', 'Kualitas keamanan internet 网络安全质量状况', 'Hu Jun 胡军', '', '', '', ''],
+        ['5', 'Area cakupan internet kebun 园区网络覆盖面积', 'Eko, Ozae, Hu Jun', '', '', '', ''],
+        ['6', 'SAP berjalan normal SAP系统稳定运行 ', 'Riswanto张汉雄', '', '', '', ''],
+        ['7', 'OA berjalan normal OA正常运行 ', 'Nelson', '', '', '', ''],
+        ['8', 'Aplikasi Smart Agri智慧农业app ', 'Fian', '', '', '', ''],
+        ['9', 'Migrasi data  数据中心迁移 ', ' Hu Jun, Riswanto, Fian 胡军、张汉雄、比安', '', '', '', ''],
+        ['10', 'Rapat Internal IT IT内部会议 ', 'Hu Jun胡军', '', '', '', '']
       ],
       'ai':[
         ['1','Tingkat integritas alat dan tingkat kehadiran 机械完好率与出勤率','','','','',''],
@@ -405,11 +405,14 @@
       }
     }
 
-    input_data('human_resource', data['human_resource'])
-    input_data('finance', data['finance'])
+    for(index in stand_list){
+      input_data(stand_list[index],data[stand_list[index]])
+    }
+    // input_data('human_resource', data['human_resource'])
+    // input_data('finance', data['finance'])
 
-    input_data('material', data['material'])
-    input_data('agriculture', data['agriculture'])
+    // input_data('material', data['material'])
+    // input_data('agriculture', data['agriculture'])
 
 
   </script>
