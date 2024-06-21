@@ -103,21 +103,21 @@
     }
 
     input_data = function(section, data_list){
-      var data = ['', '', '', '', '', '', '']
-      var add_tr = `<tr>
-        <th>${data[0]}</th>
-        <th>${data[1]}</th>
-        <th>${data[2]}</th>
-        <th>${data[3]}</th>
-        <th>${data[4]}</th>
-        <th>${data[5]}</th>
-        <th>${data[6]}</th>
-      </tr>`
+      
 
       var tbody = $('tbody#'+section)
       for(var index in data_list){
-        data = data_list[index]
-
+        var data = data_list[index]
+        var add_tr = 
+        `<tr>
+          <th>${data[0]}</th>
+          <th>${data[1]}</th>
+          <th>${data[2]}</th>
+          <th>${data[3]}</th>
+          <th>${data[4]}</th>
+          <th>${data[5]}</th>
+          <th>${data[6]}</th>
+        </tr>`
         console.log(add_tr)
         tbody.prepend(add_tr)
       }
