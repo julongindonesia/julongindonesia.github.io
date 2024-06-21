@@ -104,6 +104,7 @@
     input_data = function(sectoin, data_list){
       var tbody = $('tbody#'+section)
       for(data in data_list){
+        console.log(data)
         const new_row = table.insertRow(-1)
         data.forEach((cellData, index) => {
           const cell = newRow.insertCell(index);
