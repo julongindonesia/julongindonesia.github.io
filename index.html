@@ -103,11 +103,12 @@
 
     input_data = function(section, data_list){
       var tbody = $('tbody#'+section)
+      console.log(data_list)
       for(data in data_list){
         console.log(data)
-        const new_row = table.insertRow(-1)
+        const new_row = tbody.insertRow(-1)
         data.forEach((cellData, index) => {
-          const cell = newRow.insertCell(index);
+          const cell = new_row.insertCell(index);
           cell.textContent = cellData;
         });
       }
