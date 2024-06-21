@@ -94,6 +94,7 @@
 
     data = {
       'human_resource': [
+        ['1', 'Jumlah karyawan 全职人数', '', '', '', '', '1'],
         ['1', 'Jumlah karyawan 全职人数', '', '', '', '', '1']
       ],
       'finance':[
@@ -104,8 +105,8 @@
     input_data = function(section, data_list){
       var tbody = $('tbody#'+section)
       console.log(data_list)
-      for(var data in data_list){
-        console.log(data)
+      for(index in data_list){
+        console.log(index)
         // const new_row = tbody.insertRow(-1)
         // data.forEach((cellData, index) => {
         //   const cell = new_row.insertCell(index);
