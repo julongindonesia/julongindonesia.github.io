@@ -83,8 +83,8 @@
 
     $('thead').click(function(){
       var tbody = $(this).first().parent().find('tbody').first()
-      // var singal = tbody.attr('class')
-      if(!tbody.is(':hidden')){
+      var singal = tbody.attr('hidden')
+      if(singal == 'false'){
         tbody.hide()
       }else{
         tbody.show
