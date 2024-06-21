@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聚龙健康100指数</title>
+    <script src="https://cdn.staticfile.net/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .section-header {
+            background-color: #e6e6e6;
+            font-weight: bold;
+        }
+        .total-row {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+  <h1>聚龙健康100指数</h1>
+  <p>Draft1 (Update: 2024.06.15)</p>
+  <p>草稿一（更新日期：2024.06.15）</p>
+
+
+  <table id="human_resource">
+    <thead id = "human_resource">
+      <tr class="section-header">
+        <td colspan="3">一 Human Resource 人</td>
+        <td colspan="3">Yang Yi 杨义</td>
+        <td colspan="2">3</td>
+      </tr>
+    </thead>
+    <tbody id='human_resource' class="inactive" style="display: none;">
+      <tr>
+        <th >No 序号</th>
+        <th>Deskripsi 分项</th>
+        <th>PIC 负责人</th>
+        <th>Prev. 前值</th>
+        <th>Est. 预测值</th>
+        <th>Act. 实际值</th>
+        <th>Nilai 分数</th>
+      </tr>
+    </tbody>
+  </table>
+
+  <table id="finance">
+    <thead id = "finance">
+      <tr class="section-header">
+        <td colspan="3">二 Finance 财</td>
+        <td colspan="3">Hou Guangzhen 侯光珍</td>
+        <td colspan="2">3</td>
+      </tr>
+    </thead>
+    <tbody id='finance' class="inactive" style="display: none;">
+      <tr>
+        <th>No 序号</th>
+        <th>Deskripsi 分项</th>
+        <th>PIC 负责人</th>
+        <th>Prev. 前值</th>
+        <th>Est. 预测值</th>
+        <th>Act. 实际值</th>
+        <th>Nilai 分数</th>
+      </tr>
+    </tbody>
+  </table>
+  
+  <table id="material">
+    <thead id = "material">
+      <tr class="section-header">
+        <td colspan="3">三 Material 物</td>
+        <td colspan="3">Sun Zhongbao 孙忠宝</td>
+        <td colspan="2">3</td>
+      </tr>
+    </thead>
+    <tbody id='material' class="inactive" style="display: none;">
+      <tr>
+        <th>No 序号</th>
+        <th>Deskripsi 分项</th>
+        <th>PIC 负责人</th>
+        <th>Prev. 前值</th>
+        <th>Est. 预测值</th>
+        <th>Act. 实际值</th>
+        <th>Nilai 分数</th>
+      </tr>
+    </tbody>
+  </table>
+
+  <table id="agriculture">
+    <thead id = "agriculture">
+      <tr class="section-header">
+        <td colspan="3">四 Agriculture 农</td>
+        <td colspan="3">Pi Jinpeng 皮金鹏</td>
+        <td colspan="2">3</td>
+      </tr>
+    </thead>
+    <tbody id='agriculture' class="inactive" style="display: none;">
+      <tr>
+        <th>No 序号</th>
+        <th>Deskripsi 分项</th>
+        <th>PIC 负责人</th>
+        <th>Prev. 前值</th>
+        <th>Est. 预测值</th>
+        <th>Act. 实际值</th>
+        <th>Nilai 分数</th>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    console.log('1114')
+
+    $('thead').click(function(){
+      var tbody = $(this).first().parent().find('tbody').first()
+      var singal = tbody.attr('class')
+      if(singal == 'active'){
+        tbody.attr('style','display:none')
+        tbody.attr('class','inactive')
+      }else{
+        tbody.attr('style','')
+        tbody.attr('class','active')
+      }
+    })
+
+    data = {
+      'human_resource': [
+        ['1', 'Jumlah karyawan 在职数', 'Vianie黎美芳', '', '', '', '1'],
+        ['2', 'Jumlah karyawan resign离职数', 'Vianie黎美芳', '', '', '', '1'],
+        ['3', 'Jumlah karyawan masuk入职数', 'Vianie黎美芳', '', '', '', '1'],
+        ['4', 'Jumlah karyawan MT 在岗培训人数', 'Nafila李丽', '', '', '', '1'],
+        ['5', 'Jumlah karyawan teknis技术序列人数', 'Nafila李丽', '', '', '', '1'],
+        ['6', 'Gaji per kapita人均工资', 'Luntoro伦敦洛', '', '', '', '1'],
+        ['7', 'Nilai produksi per Kapita人均产值', 'Luntoro伦敦洛', '', '', '', '1'],
+        ['8', 'Jumlah karyawan promosi晋升人数', 'John壮', '', '', '', '1'],
+        ['9', 'Jumlah karyawan kenaikan gaji 加薪人数', 'John壮', '', '', '', '1'],
+        ['10', 'Jumlah karyawan dapat SP/hukuman 处罚人数', 'John壮', '', '', '', '1']
+      ],
+      'finance':[
+        ['1', 'Perubahan account payable 应付款变化', 'Sinta', '', '', '', ''],
+        ['2', 'Perubahan financing 融资变化', 'Angga', '', '', '', ''],
+        ['3', 'Nilai tukar dolar US - IDR美元对印尼盾汇率', 'Ega', '', '', '', ''],
+        ['4', 'Suku bunga kredit rupiah印尼盾贷款利率', 'Renny', '', '', '', ''],
+        ['5', 'Tingkat pengembalian aset资产收益率', 'Dian苏瑞莲', '', '', '', ''],
+        ['6', 'Jumlah peningkatan proyek investasi投入项目增加额', 'Gao Weihua高卫华', '', '', '', ''],
+        ['7', 'Nilai tanah per Ha 每公顷土地产值', 'Ferry', '', '', '', ''],
+        ['8', 'Tingkat perputaran modal 资金周转率', 'Xiao Lintao肖林涛', '', '', '', ''],
+        ['9', 'Perubahan nilai pajak税额变化', 'David', '', '', '', ''],
+        ['10', 'Perubahan jumlah gaji bulanan月度工资额度变化', 'Muamar', '', '', '', '']
+      ],
+      'material':[
+        ['1', 'Jumlah CPO on shipping在途CPO量', 'Yang Song 杨松', '', '', '', ''],
+        ['2', 'Jumlah CPKO on shipping在途CPKO量', 'Yang Song 杨松', '', '', '', ''],
+        ['3', 'Jumlah PKE on shipping在途棕榈粕量', 'Yang Song 杨松', '', '', '', ''],
+        ['4', 'Jumlah pupuk on shipping在途化肥量', 'Yang Song 杨松', '', '', '', ''],
+        ['5', 'Baltic Dry Index波罗地海指数', 'Yang Song 杨松', '', '', '', ''],
+        ['6', 'Tarif pajak ekspor出口税率', 'Yang Song 杨松', '', '', '', ''],
+        ['7', 'Biaya ekspor出口成本', 'Yang Song 杨松', '', '', '', ''],
+        ['8', 'Perkiraan jumlah pengiriman发货预测量', 'Yang Song 杨松', '', '', '', ''],
+        ['9', 'Jumlah batas minimum stok utama主要安全库存量', 'Ding Guoqing丁国庆', '', '', '', ''],
+        ['10', 'Jumlah vendor供应商数', 'Wahyu瓦宇', '', '', '', '']
+      ],
+      'agriculture':[
+      ['1', 'Produksi产量', 'Tang Feixiang汤飞翔', '', '', '', ''],
+      ['2', 'Losses （%）损失率', 'Viktor维克多', '', '', '', ''],
+      ['3', 'Rotasi panen (hari)铲果周期', 'Li Chengye李成业', '', '', '', ''],
+      ['4', 'Jumlah kehadiran pemanen (orang & %)铲果工人数/出勤率', 'Liang Furun梁福润', '', '', '', ''],
+      ['5', 'Jumlah kehadiran perawatan (orang & %)养护工人数/出勤率', 'Rudhit鲁迪', '', '', '', ''],
+      ['6', 'Luas tanam baru 新种面积', 'Pak Leong/Leksono梁袼闻/雷克索诺', '', '', '', ''],
+      ['7', 'Turnover TK (%) 工人流失率', 'Joshua乔布斯', '', '', '', ''],
+      ['8', 'Jumlah pupuk 施肥量', 'Gomgom龚工', '', '', '', ''],
+      ['9', 'Jumlah pengerasan jalan 道路硬化量', ' Sun Lei孙磊', '', '', '', ''],
+      ['10', 'Jumlah penambahan rumah baru 新增住房数', 'Yang Baocai杨保才', '', '', '', '']
+      ]
+    }
+
+    input_data = function(section, data_list){
+      
+
+      var tbody = $('tbody#'+section)
+      for(var index in data_list){
+        var data = data_list[index]
+        var add_tr = 
+        `<tr>
+          <th>${data[0]}</th>
+          <th>${data[1]}</th>
+          <th>${data[2]}</th>
+          <th>${data[3]}</th>
+          <th>${data[4]}</th>
+          <th>${data[5]}</th>
+          <th>${data[6]}</th>
+        </tr>`
+        // console.log(add_tr)
+        tbody.append(add_tr)
+      }
+    }
+
+    input_data('human_resource', data['human_resource'])
+    input_data('finance', data['finance'])
+
+    input_data('material', data['material'])
+    input_data('agriculture', data['agriculture'])
+
+    // // 在表格中动态添加数据的函数
+    // function addRow(section, data) {
+    //     const table = document.getElementById(section);
+    //     const newRow = table.insertRow(-1);
+        
+    //     data.forEach((cellData, index) => {
+    //         const cell = newRow.insertCell(index);
+    //         cell.textContent = cellData;
+    //     });
+    // }
+
+    // // 向表格动态添加数据 示例：
+    // addRow('human_resource', ['1', 'Jumlah karyawan 全职人数', '', '', '', '', '1']);
+    // addRow('finance', ['1', 'Perubahan account payable 应付款变化', 'Sinta', '', '', '', '']);
+
+  </script>
+</body>
+</html>

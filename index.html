@@ -36,7 +36,7 @@
   <p>草稿一（更新日期：2024.06.15）</p>
 
 
-  <table id="human_resource">
+  <table id="standard">
     <thead id = "human_resource">
       <tr class="section-header">
         <td colspan="3">一 Human Resource 人</td>
@@ -55,9 +55,7 @@
         <th>Nilai 分数</th>
       </tr>
     </tbody>
-  </table>
 
-  <table id="finance">
     <thead id = "finance">
       <tr class="section-header">
         <td colspan="3">二 Finance 财</td>
@@ -76,9 +74,7 @@
         <th>Nilai 分数</th>
       </tr>
     </tbody>
-  </table>
   
-  <table id="material">
     <thead id = "material">
       <tr class="section-header">
         <td colspan="3">三 Material 物</td>
@@ -97,9 +93,7 @@
         <th>Nilai 分数</th>
       </tr>
     </tbody>
-  </table>
 
-  <table id="agriculture">
     <thead id = "agriculture">
       <tr class="section-header">
         <td colspan="3">四 Agriculture 农</td>
@@ -123,17 +117,38 @@
   <script>
     console.log('1114')
 
-    $('thead').click(function(){
-      var tbody = $(this).first().parent().find('tbody').first()
-      var singal = tbody.attr('class')
-      if(singal == 'active'){
-        tbody.attr('style','display:none')
-        tbody.attr('class','inactive')
-      }else{
-        tbody.attr('style','')
-        tbody.attr('class','active')
-      }
-    })
+    stand_list = ['human_resource','finance','material','agriculture']
+
+    // $('thead').click(function(){
+    //   var tbody = $(this).first().parent().find('tbody').first()
+    //   var singal = tbody.attr('class')
+    //   if(singal == 'active'){
+    //     tbody.attr('style','display:none')
+    //     tbody.attr('class','inactive')
+    //   }else{
+    //     tbody.attr('style','')
+    //     tbody.attr('class','active')
+    //   }
+    // })
+
+    cs = function(standard){
+      $('thead#'+standard).click(function(){
+        var tbody = $('tbody#'+standard)
+        var singal = tbody.attr('class')
+        if(singal == 'active'){
+          tbody.attr('style','display:none')
+          tbody.attr('class','inactive')
+        }else{
+          tbody.attr('style','')
+          tbody.attr('class','active')
+        }
+      })
+    }
+
+    for(index in stand_list){
+      cs(stand_list[index])
+    }
+    
 
     data = {
       'human_resource': [
@@ -213,20 +228,6 @@
     input_data('material', data['material'])
     input_data('agriculture', data['agriculture'])
 
-    // // 在表格中动态添加数据的函数
-    // function addRow(section, data) {
-    //     const table = document.getElementById(section);
-    //     const newRow = table.insertRow(-1);
-        
-    //     data.forEach((cellData, index) => {
-    //         const cell = newRow.insertCell(index);
-    //         cell.textContent = cellData;
-    //     });
-    // }
-
-    // // 向表格动态添加数据 示例：
-    // addRow('human_resource', ['1', 'Jumlah karyawan 全职人数', '', '', '', '', '1']);
-    // addRow('finance', ['1', 'Perubahan account payable 应付款变化', 'Sinta', '', '', '', '']);
 
   </script>
 </body>
