@@ -103,16 +103,20 @@
     }
 
     input_data = function(section, data_list){
+      add_tr = `<tr>
+        <th>${data[0]}</th>
+        <th>${data[1]}</th>
+        <th>${data[2]}</th>
+        <th>${data[3]}</th>
+        <th>${data[4]}</th>
+        <th>${data[5]}</th>
+        <th>${data[6]}</th>
+      </tr>`
+
       var tbody = $('tbody#'+section)
-      console.log(data_list)
       for(index in data_list){
-        console.log(index)
-        console.log(data_list[index])
-        // const new_row = tbody.insertRow(-1)
-        // data.forEach((cellData, index) => {
-        //   const cell = new_row.insertCell(index);
-        //   cell.textContent = cellData;
-        // });
+        data = data_list[index]
+        tbody.prepend(add_tr)
       }
     }
 
