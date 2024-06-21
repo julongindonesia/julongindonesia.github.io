@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <title>聚龙健康100指数</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .section-header {
-            background-color: #e6e6e6;
-            font-weight: bold;
-        }
-        .total-row {
-            font-weight: bold;
-        }
+      body {
+          font-family: Arial, sans-serif;
+      }
+      table {
+          width: 100%;
+          border-collapse: collapse;
+      }
+      th, td {
+          border: 1px solid black;
+          padding: 8px;
+          text-align: left;
+      }
+      th {
+          background-color: #f2f2f2;
+      }
+      .section-header {
+          background-color: #e6e6e6;
+          font-weight: bold;
+      }
+      .total-row {
+          font-weight: bold;
+      }
     </style>
 </head>
 <body>
@@ -41,16 +45,17 @@
       <td>Yang Yi 杨义</td>
       <td colspan="4">3</td>
     </tr>
-
-    <tr>
-      <th>No 序号</th>
-      <th>Deskripsi 分项</th>
-      <th>PIC 负责人</th>
-      <th>Prev. 前值</th>
-      <th>Est. 预测值</th>
-      <th>Act. 实际值</th>
-      <th>Nilai 分数</th>
-    </tr>
+    <div data-role="collapsible">
+      <tr>
+        <th>No 序号</th>
+        <th>Deskripsi 分项</th>
+        <th>PIC 负责人</th>
+        <th>Prev. 前值</th>
+        <th>Est. 预测值</th>
+        <th>Act. 实际值</th>
+        <th>Nilai 分数</th>
+      </tr>
+    </div>
   </table>
 
   
@@ -94,19 +99,19 @@
 
 
     // 添加缩放功能
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
+    // var coll = document.getElementsByClassName("collapsible");
+    // var i;
 
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
-      });
+    // for (i = 0; i < coll.length; i++) {
+    //   coll[i].addEventListener("click", function() {
+    //     this.classList.toggle("active");
+    //     var content = this.nextElementSibling;
+    //     if (content.style.display === "block") {
+    //       content.style.display = "none";
+    //     } else {
+    //       content.style.display = "block";
+    //     }
+    //   });
     }
   </script>
 </body>
