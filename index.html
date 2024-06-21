@@ -96,7 +96,7 @@
       'human_resource': [
         ['1', 'Jumlah karyawan 全职人数', '', '', '', '', '1']
       ],
-      'finace':[
+      'finance':[
         ['1', 'Perubahan account payable 应付款变化', 'Sinta', '', '', '', '']
       ]
     }
@@ -113,6 +113,9 @@
       }
     }
 
+    input_data('human_resource', data['human_resource'])
+    input_data('finance', data['finance'])
+    
     // // 在表格中动态添加数据的函数
     // function addRow(section, data) {
     //     const table = document.getElementById(section);
