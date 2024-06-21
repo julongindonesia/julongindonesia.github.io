@@ -101,7 +101,7 @@
       ]
     }
 
-    input_data = function(sectoin, data_list){
+    input_data = function(section, data_list){
       var tbody = $('tbody#'+section)
       for(data in data_list){
         console.log(data)
@@ -115,7 +115,7 @@
 
     input_data('human_resource', data['human_resource'])
     input_data('finance', data['finance'])
-    
+
     // // 在表格中动态添加数据的函数
     // function addRow(section, data) {
     //     const table = document.getElementById(section);
