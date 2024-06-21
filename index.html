@@ -77,19 +77,32 @@
       </tr>
     </tbody>
   </table>
-  
+
   <script>
 
-    $('thead#human_resource').click(function(){
-      singal = $('tbody#human_resource').attr('class')
+    $('thead').click(function(){
+      var tbody = $(this).first().parent().find('tbody').first()
+      var singal = tbody.attr('class')
       if(singal == 'active'){
-        $('tbody#human_resource').attr('style','display:none')
-        $('tbody#human_resource').attr('class','inactive')
+        tbody.attr('style','display:none')
+        tbody.attr('class','inactive')
       }else{
-        $('tbody#human_resource').attr('style','display: block')
-        $('tbody#human_resource').attr('class','active')
+        tbody.attr('style','display: block')
+        tbody.attr('class','active')
       }
     })
+
+
+    // $('thead#human_resource').click(function(){
+    //   singal = $('tbody#human_resource').attr('class')
+    //   if(singal == 'active'){
+    //     $('tbody#human_resource').attr('style','display:none')
+    //     $('tbody#human_resource').attr('class','inactive')
+    //   }else{
+    //     $('tbody#human_resource').attr('style','display: block')
+    //     $('tbody#human_resource').attr('class','active')
+    //   }
+    // })
 
     // // 在表格中动态添加数据的函数
     // function addRow(section, data) {
