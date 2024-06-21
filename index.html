@@ -27,9 +27,6 @@
         .total-row {
             font-weight: bold;
         }
-        #zoomControls {
-            margin-bottom: 10px;
-        }
     </style>
 </head>
 <body>
@@ -37,19 +34,13 @@
     <p>Draft1 (Update: 2024.06.15)</p>
     <p>草稿一（更新日期：2024.06.15）</p>
     
-    <div id="zoomControls">
-        <label for="zoomSlider">缩放：</label>
-        <input type="range" id="zoomSlider" min="50" max="200" value="100" step="10">
-        <span id="zoomValue">100%</span>
-    </div>
-
     <table id="healthIndex">
         <tr class="section-header">
             <td colspan="5">一 Human Resource 人</td>
             <td>Yang Yi 杨义</td>
             <td colspan="4">3</td>
         </tr>
-        <tr class="zoomable">
+        <tr>
             <th>No 序号</th>
             <th>Deskripsi 分项</th>
             <th>PIC 负责人</th>
@@ -65,7 +56,7 @@
             <td>Hou Guangzhen 侯光珍</td>
             <td colspan="4">1</td>
         </tr>
-        <tr class="zoomable">
+        <tr>
             <th>No 序号</th>
             <th>Deskripsi 分项</th>
             <th>PIC 负责人</th>
@@ -78,10 +69,12 @@
     </table>
 
     <script>
+        // You can add JavaScript here to manipulate the table dynamically
+        // For example, to add rows, calculate totals, etc.
+        
         function addRow(section, data) {
             const table = document.getElementById('healthIndex');
             const newRow = table.insertRow(-1);
-            newRow.className = 'zoomable';
             
             data.forEach((cellData, index) => {
                 const cell = newRow.insertCell(index);
@@ -93,20 +86,7 @@
         addRow('Human Resource', ['1', 'Jumlah karyawan 全职人数', '', '', '', '', '1']);
         addRow('Finance', ['1', 'Perubahan account payable 应付款变化', 'Sinta', '', '', '', '']);
 
-        // Zoom functionality
-        const zoomSlider = document.getElementById('zoomSlider');
-        const zoomValue = document.getElementById('zoomValue');
-        const zoomableElements = document.querySelectorAll('.zoomable');
-
-        zoomSlider.addEventListener('input', function() {
-            const zoom = this.value;
-            zoomValue.textContent = zoom + '%';
-            
-            zoomableElements.forEach(element => {
-                element.style.transform = `scale(${zoom / 100})`;
-                element.style.transformOrigin = 'top left';
-            });
-        });
+        // Add more rows and functionality as needed
     </script>
 </body>
 </html>
