@@ -132,17 +132,18 @@
     // })
 
     for(index in stand_list){
+      console.log(stand_list[index])
       $('thead#'+stand_list[index]).click(function(){
-      var tbody = $('tbody#'+stand_list[index])
-      var singal = tbody.attr('class')
-      if(singal == 'active'){
-        tbody.attr('style','display:none')
-        tbody.attr('class','inactive')
-      }else{
-        tbody.attr('style','')
-        tbody.attr('class','active')
-      }
-    })
+        var tbody = $('tbody#'+stand_list[index])
+        var singal = tbody.attr('class')
+        if(singal == 'active'){
+          tbody.attr('style','display:none')
+          tbody.attr('class','inactive')
+        }else{
+          tbody.attr('style','')
+          tbody.attr('class','active')
+        }
+      })
     }
     
 
