@@ -37,6 +37,7 @@
 
 
   <table id="standard">
+    <!-- human -->
     <thead id = "human_resource">
       <tr class="section-header">
         <td colspan="3">一 Human Resource 人</td>
@@ -55,7 +56,7 @@
         <th>Nilai 分数</th>
       </tr>
     </tbody>
-
+    <!-- finance -->
     <thead id = "finance">
       <tr class="section-header">
         <td colspan="3">二 Finance 财</td>
@@ -74,7 +75,7 @@
         <th>Nilai 分数</th>
       </tr>
     </tbody>
-  
+    <!-- material -->
     <thead id = "material">
       <tr class="section-header">
         <td colspan="3">三 Material 物</td>
@@ -93,7 +94,7 @@
         <th>Nilai 分数</th>
       </tr>
     </tbody>
-
+    <!-- agriculture -->
     <thead id = "agriculture">
       <tr class="section-header">
         <td colspan="3">四 Agriculture 农</td>
@@ -112,24 +113,129 @@
         <th>Nilai 分数</th>
       </tr>
     </tbody>
+    <!-- indutry -->
+    <thead id = "industry">
+      <tr class="section-header">
+        <td colspan="3">五 Industry 工</td>
+        <td colspan="3">Wang Tao 王涛</td>
+        <td colspan="2">3</td>
+      </tr>
+    </thead>
+    <tbody id='industry' class="inactive" style="display: none;">
+      <tr>
+        <th>No 序号</th>
+        <th>Deskripsi 分项</th>
+        <th>PIC 负责人</th>
+        <th>Prev. 前值</th>
+        <th>Est. 预测值</th>
+        <th>Act. 实际值</th>
+        <th>Nilai 分数</th>
+      </tr>
+    </tbody>
+    <!-- commerce -->
+    <thead id = "commerce">
+      <tr class="section-header">
+        <td colspan="3">六 Commerce 商</td>
+        <td colspan="3">Elvin 徐传贵</td>
+        <td colspan="2">3</td>
+      </tr>
+    </thead>
+    <tbody id='commerce' class="inactive" style="display: none;">
+      <tr>
+        <th>No 序号</th>
+        <th>Deskripsi 分项</th>
+        <th>PIC 负责人</th>
+        <th>Prev. 前值</th>
+        <th>Est. 预测值</th>
+        <th>Act. 实际值</th>
+        <th>Nilai 分数</th>
+      </tr>
+    </tbody>
+    <!-- big data -->
+    <thead id = "big_data">
+      <tr class="section-header">
+        <td colspan="3">七 4G Big Data 4G大数据</td>
+        <td colspan="3">Novayanto 杨江树</td>
+        <td colspan="2">3</td>
+      </tr>
+    </thead>
+    <tbody id='big_data' class="inactive" style="display: none;">
+      <tr>
+        <th>No 序号</th>
+        <th>Deskripsi 分项</th>
+        <th>PIC 负责人</th>
+        <th>Prev. 前值</th>
+        <th>Est. 预测值</th>
+        <th>Act. 实际值</th>
+        <th>Nilai 分数</th>
+      </tr>
+    </tbody>
+    <!-- internet -->
+    <thead id = "internet">
+      <tr class="section-header">
+        <td colspan="3">八 5G Internet 5G互联网</td>
+        <td colspan="3">Novayanto 杨江树</td>
+        <td colspan="2">3</td>
+      </tr>
+    </thead>
+    <tbody id='internet' class="inactive" style="display: none;">
+      <tr>
+        <th>No 序号</th>
+        <th>Deskripsi 分项</th>
+        <th>PIC 负责人</th>
+        <th>Prev. 前值</th>
+        <th>Est. 预测值</th>
+        <th>Act. 实际值</th>
+        <th>Nilai 分数</th>
+      </tr>
+    </tbody>
+    <!-- ai -->
+    <thead id = "ai">
+      <tr class="section-header">
+        <td colspan="3">九 Artificial Intelligence 人工智能</td>
+        <td colspan="3">Lei Wenzhong 雷文忠</td>
+        <td colspan="2">3</td>
+      </tr>
+    </thead>
+    <tbody id='ai' class="inactive" style="display: none;">
+      <tr>
+        <th>No 序号</th>
+        <th>Deskripsi 分项</th>
+        <th>PIC 负责人</th>
+        <th>Prev. 前值</th>
+        <th>Est. 预测值</th>
+        <th>Act. 实际值</th>
+        <th>Nilai 分数</th>
+      </tr>
+    </tbody>
+    <!-- legal -->
+    <thead id = "legal">
+      <tr class="section-header">
+        <td colspan="3">十 Legal, ISPO, SSL 法律</td>
+        <td colspan="3">Yang Bin 杨斌</td>
+        <td colspan="2">3</td>
+      </tr>
+    </thead>
+    <tbody id='legal' class="inactive" style="display: none;">
+      <tr>
+        <th>No 序号</th>
+        <th>Deskripsi 分项</th>
+        <th>PIC 负责人</th>
+        <th>Prev. 前值</th>
+        <th>Est. 预测值</th>
+        <th>Act. 实际值</th>
+        <th>Nilai 分数</th>
+      </tr>
+    </tbody>
+
   </table>
 
   <script>
     console.log('1114')
 
-    stand_list = ['human_resource','finance','material','agriculture']
-
-    // $('thead').click(function(){
-    //   var tbody = $(this).first().parent().find('tbody').first()
-    //   var singal = tbody.attr('class')
-    //   if(singal == 'active'){
-    //     tbody.attr('style','display:none')
-    //     tbody.attr('class','inactive')
-    //   }else{
-    //     tbody.attr('style','')
-    //     tbody.attr('class','active')
-    //   }
-    // })
+    stand_list = ['human_resource','finance','material','agriculture','industry',
+      'commerce', 'big_data','internet','ai','legal'
+    ]
 
     cs = function(standard){
       $('thead#'+standard).click(function(){
@@ -198,6 +304,9 @@
       ['8', 'Jumlah pupuk 施肥量', 'Gomgom龚工', '', '', '', ''],
       ['9', 'Jumlah pengerasan jalan 道路硬化量', ' Sun Lei孙磊', '', '', '', ''],
       ['10', 'Jumlah penambahan rumah baru 新增住房数', 'Yang Baocai杨保才', '', '', '', '']
+      ],
+      'industry':[
+        
       ]
     }
 
