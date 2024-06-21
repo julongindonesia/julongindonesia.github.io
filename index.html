@@ -44,7 +44,7 @@
         <td colspan="2">3</td>
       </tr>
     </thead>
-    <tbody id='human_resource' class="active" style="display: block;">
+    <tbody id='human_resource' class="inactive" style="display: none;">
       <tr>
         <th >No 序号</th>
         <th>Deskripsi 分项</th>
@@ -65,7 +65,7 @@
         <td colspan="2">3</td>
       </tr>
     </thead>
-    <tbody id='finance' class="active" style="display: block;">
+    <tbody id='finance' class="inactive" style="display: none;">
       <tr>
         <th>No 序号</th>
         <th>Deskripsi 分项</th>
@@ -88,7 +88,7 @@
         tbody.attr('style','display:none')
         tbody.attr('class','inactive')
       }else{
-        tbody.attr('style','display: block')
+        tbody.attr('style','')
         tbody.attr('class','active')
       }
     })
