@@ -46,7 +46,7 @@
     </thead>
     <tbody id='human_resource' class="active" style="display: block;">
       <tr>
-        <th>No 序号</th>
+        <th >No 序号</th>
         <th>Deskripsi 分项</th>
         <th>PIC 负责人</th>
         <th>Prev. 前值</th>
@@ -79,6 +79,7 @@
   </table>
   
   <script>
+    console.log('1112')
 
     $('thead').click(function(){
       var tbody = $(this).first().parent().find('tbody').first()
@@ -118,7 +119,7 @@
           <th>${data[5]}</th>
           <th>${data[6]}</th>
         </tr>`
-        console.log(add_tr)
+        // console.log(add_tr)
         tbody.append(add_tr)
       }
     }
