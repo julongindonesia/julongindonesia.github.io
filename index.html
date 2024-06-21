@@ -80,29 +80,37 @@
 
   <script>
 
-    // $('thead').click(function(){
-    //   var tbody = $(this).first().parent().find('tbody').first()
-    //   var singal = tbody.attr('class')
-    //   if(singal == 'active'){
-    //     tbody.attr('style','display:none')
-    //     tbody.attr('class','inactive')
-    //   }else{
-    //     tbody.attr('style','display: block')
-    //     tbody.attr('class','active')
-    //   }
-    // })
-
-
-    $('thead#human_resource').click(function(){
-      singal = $('tbody#human_resource').attr('class')
+    $('thead').click(function(){
+      var tbody = $(this).first().parent().find('tbody').first()
+      var singal = tbody.attr('class')
       if(singal == 'active'){
-        $('tbody#human_resource').attr('style','display:none')
-        $('tbody#human_resource').attr('class','inactive')
+        tbody.attr('style','display:none')
+        tbody.attr('class','inactive')
       }else{
-        $('tbody#human_resource').attr('style','display: block')
-        $('tbody#human_resource').attr('class','active')
+        tbody.attr('style','display: block')
+        tbody.attr('class','active')
       }
     })
+
+    data = {
+      'human_resource': [
+        ['1', 'Jumlah karyawan 全职人数', '', '', '', '', '1']
+      ],
+      'finace':[
+        ['1', 'Perubahan account payable 应付款变化', 'Sinta', '', '', '', '']
+      ]
+    }
+
+    input_data = function(sectoin, data_list){
+      var tbody = $('tbody#'+section)
+      for(data in data_list){
+        const new_row = table.insertRow(-1)
+        data.forEach((cellData, index) => {
+          const cell = newRow.insertCell(index);
+          cell.textContent = cellData;
+        });
+      }
+    }
 
     // // 在表格中动态添加数据的函数
     // function addRow(section, data) {
@@ -119,23 +127,6 @@
     // addRow('human_resource', ['1', 'Jumlah karyawan 全职人数', '', '', '', '', '1']);
     // addRow('finance', ['1', 'Perubahan account payable 应付款变化', 'Sinta', '', '', '', '']);
 
-    
-
-    // // 添加缩放功能
-    // var coll = document.getElementsByClassName("collapsible");
-    // var i;
-
-    // for (i = 0; i < coll.length; i++) {
-    //   coll[i].addEventListener("click", function() {
-    //     this.classList.toggle("active");
-    //     var content = this.nextElementSibling;
-    //     if (content.style.display === "block") {
-    //       content.style.display = "none";
-    //     } else {
-    //       content.style.display = "block";
-    //     }
-    //   });
-    // }
   </script>
 </body>
 </html>
