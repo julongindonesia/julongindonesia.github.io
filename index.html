@@ -44,7 +44,7 @@
         <td colspan="2">3</td>
       </tr>
     </thead>
-    <tbody id='human_resource' class="active" style="display: block;">
+    <tbody id='human_resource' class="active" hidden="true">
       <tr>
         <th >No 序号</th>
         <th>Deskripsi 分项</th>
@@ -79,17 +79,15 @@
   </table>
   
   <script>
-    console.log('1112')
+    console.log('1113')
 
     $('thead').click(function(){
       var tbody = $(this).first().parent().find('tbody').first()
-      var singal = tbody.attr('class')
-      if(singal == 'active'){
-        tbody.attr('style','display:none')
-        tbody.attr('class','inactive')
+      // var singal = tbody.attr('class')
+      if(!tbody.is(':hidden')){
+        tbody.hide()
       }else{
-        tbody.attr('style','display: block')
-        tbody.attr('class','active')
+        tbody.show
       }
     })
 
