@@ -44,7 +44,7 @@
         <td colspan="2">3</td>
       </tr>
     </thead>
-    <tbody id='human_resource' hidden="true">
+    <tbody id='human_resource' class="active" style="display: block;">
       <tr>
         <th >No 序号</th>
         <th>Deskripsi 分项</th>
@@ -65,7 +65,7 @@
         <td colspan="2">3</td>
       </tr>
     </thead>
-    <tbody id='finance' hidden="true">
+    <tbody id='finance' class="active" style="display: block;">
       <tr>
         <th>No 序号</th>
         <th>Deskripsi 分项</th>
@@ -79,15 +79,17 @@
   </table>
   
   <script>
-    console.log('11132')
+    console.log('1113')
 
     $('thead').click(function(){
       var tbody = $(this).first().parent().find('tbody').first()
-      var singal = tbody.attr('hidden')
-      if(singal == 'false'){
-        tbody.hide()
+      var singal = tbody.attr('class')
+      if(singal == 'active'){
+        tbody.attr('style','display:none')
+        tbody.attr('class','inactive')
       }else{
-        tbody.show()
+        tbody.attr('style','display: block')
+        tbody.attr('class','active')
       }
     })
 
