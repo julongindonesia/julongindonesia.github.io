@@ -1,53 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-  <title>聚龙健康100指数</title>
-  <style>
-    body {
-        font-family: Arial, sans-serif;
-    }
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    th, td {
-        border: 1px solid black;
-        padding: 8px;
-        text-align: left;
-    }
-    th {
-        background-color: #f2f2f2;
-    }
-    .section-header {
-        background-color: #e6e6e6;
-        font-weight: bold;
-    }
-    .total-row {
-        font-weight: bold;
-    }
-  </style>
-  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聚龙健康100指数</title>
+    <script src="https://cdn.staticfile.net/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .section-header {
+            background-color: #e6e6e6;
+            font-weight: bold;
+        }
+        .total-row {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
   <h1>聚龙健康100指数</h1>
   <p>Draft1 (Update: 2024.06.15)</p>
   <p>草稿一（更新日期：2024.06.15）</p>
   
-  <table id="human_resource">
+  <div data-role="main" class="ui-content">
     <div data-role="collapsible">
-      <h1>
-        <tr  class="section-header collapsible active">
-          <td colspan="5">一 Human Resource 人</td>
-          <td>Yang Yi 杨义</td>
-          <td colspan="4">3</td>
-        </tr>
-      </h1>
+      <h1>一 Human Resource 人 |Yang Yi 杨义</h1>
       <tr>
         <th>No 序号</th>
         <th>Deskripsi 分项</th>
@@ -58,30 +48,31 @@
         <th>Nilai 分数</th>
       </tr>
     </div>
-  </table>
+  </div>
 
-  
-  <table id="human_resource">
-    <tr class="section-header collapsible active">
-      <td colspan="5">二 Finance 财</td>
-      <td>Hou Guangzhen 侯光珍</td>
-      <td colspan="4">1</td>
+
+  <table id="healthIndex">
+
+    <tr id = "human_resource" class="section-header collapsible active">
+      <td colspan="5">一 Human Resource 人</td>
+      <td>Yang Yi 杨义</td>
+      <td colspan="4">3</td>
     </tr>
 
-    <tr>
-      <th>No 序号</th>
-      <th>Deskripsi 分项</th>
-      <th>PIC 负责人</th>
-      <th>Prev. 前值</th>
-      <th>Est. 预测值</th>
-      <th>Act. 实际值</th>
-      <th>Nilai 分数</th>
-    </tr>
-    
+    <div id='human_resource' style="display: block;">
+      <tr>
+        <th>No 序号</th>
+        <th>Deskripsi 分项</th>
+        <th>PIC 负责人</th>
+        <th>Prev. 前值</th>
+        <th>Est. 预测值</th>
+        <th>Act. 实际值</th>
+        <th>Nilai 分数</th>
+      </tr>
+      <!-- Add rows for Human Resource section -->
+    </div>
+
   </table>
-    
-
-
 
   <script>
     // 在表格中动态添加数据的函数
@@ -99,21 +90,24 @@
     addRow('human_resource', ['1', 'Jumlah karyawan 全职人数', '', '', '', '', '1']);
     addRow('finance', ['1', 'Perubahan account payable 应付款变化', 'Sinta', '', '', '', '']);
 
+    $('.collapsible').click(function(){
+      
+    })
 
     // 添加缩放功能
-    // var coll = document.getElementsByClassName("collapsible");
-    // var i;
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
 
-    // for (i = 0; i < coll.length; i++) {
-    //   coll[i].addEventListener("click", function() {
-    //     this.classList.toggle("active");
-    //     var content = this.nextElementSibling;
-    //     if (content.style.display === "block") {
-    //       content.style.display = "none";
-    //     } else {
-    //       content.style.display = "block";
-    //     }
-    //   });
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
     }
   </script>
 </body>
