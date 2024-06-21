@@ -30,63 +30,81 @@
     </style>
 </head>
 <body>
-    <h1>聚龙健康100指数</h1>
-    <p>Draft1 (Update: 2024.06.15)</p>
-    <p>草稿一（更新日期：2024.06.15）</p>
-    
-    <table id="healthIndex">
-        <tr class="section-header">
-            <td colspan="5">一 Human Resource 人</td>
-            <td>Yang Yi 杨义</td>
-            <td colspan="4">3</td>
-        </tr>
-        <tr>
-            <th>No 序号</th>
-            <th>Deskripsi 分项</th>
-            <th>PIC 负责人</th>
-            <th>Prev. 前值</th>
-            <th>Est. 预测值</th>
-            <th>Act. 实际值</th>
-            <th>Nilai 分数</th>
-        </tr>
-        <!-- Add rows for Human Resource section -->
-        
-        <tr class="section-header">
-            <td colspan="5">二 Finance 财</td>
-            <td>Hou Guangzhen 侯光珍</td>
-            <td colspan="4">1</td>
-        </tr>
-        <tr>
-            <th>No 序号</th>
-            <th>Deskripsi 分项</th>
-            <th>PIC 负责人</th>
-            <th>Prev. 前值</th>
-            <th>Est. 预测值</th>
-            <th>Act. 实际值</th>
-            <th>Nilai 分数</th>
-        </tr>
-        <!-- Add rows for Finance section -->
-    </table>
+  <h1>聚龙健康100指数</h1>
+  <p>Draft1 (Update: 2024.06.15)</p>
+  <p>草稿一（更新日期：2024.06.15）</p>
+  
+  <table id="healthIndex">
+    <tr class="section-header collapsible active">
+      <td colspan="5">一 Human Resource 人</td>
+      <td>Yang Yi 杨义</td>
+      <td colspan="4">3</td>
+    </tr>
+    <div style="display: block;">
+      <tr>
+        <th>No 序号</th>
+        <th>Deskripsi 分项</th>
+        <th>PIC 负责人</th>
+        <th>Prev. 前值</th>
+        <th>Est. 预测值</th>
+        <th>Act. 实际值</th>
+        <th>Nilai 分数</th>
+      </tr>
+      <!-- Add rows for Human Resource section -->
 
-    <script>
-        // You can add JavaScript here to manipulate the table dynamically
-        // For example, to add rows, calculate totals, etc.
+    </div>
+
+    <tr class="section-header collapsible active">
+      <td colspan="5">二 Finance 财</td>
+      <td>Hou Guangzhen 侯光珍</td>
+      <td colspan="4">1</td>
+    </tr>
+    <div style="display: block;">
+      <tr>
+        <th>No 序号</th>
+        <th>Deskripsi 分项</th>
+        <th>PIC 负责人</th>
+        <th>Prev. 前值</th>
+        <th>Est. 预测值</th>
+        <th>Act. 实际值</th>
+        <th>Nilai 分数</th>
+      </tr>
+      <!-- Add rows for Finance section -->
+    </div>
+  </table>
+
+  <script>
+    // 在表格中动态添加数据的函数
+    function addRow(section, data) {
+        const table = document.getElementById('healthIndex');
+        const newRow = table.insertRow(-1);
         
-        function addRow(section, data) {
-            const table = document.getElementById('healthIndex');
-            const newRow = table.insertRow(-1);
-            
-            data.forEach((cellData, index) => {
-                const cell = newRow.insertCell(index);
-                cell.textContent = cellData;
-            });
+        data.forEach((cellData, index) => {
+            const cell = newRow.insertCell(index);
+            cell.textContent = cellData;
+        });
+    }
+
+    // 向表格动态添加数据 示例：
+    addRow('Human Resource', ['1', 'Jumlah karyawan 全职人数', '', '', '', '', '1']);
+    addRow('Finance', ['1', 'Perubahan account payable 应付款变化', 'Sinta', '', '', '', '']);
+
+
+    // 添加缩放功能
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
         }
-
-        // Example usage:
-        addRow('Human Resource', ['1', 'Jumlah karyawan 全职人数', '', '', '', '', '1']);
-        addRow('Finance', ['1', 'Perubahan account payable 应付款变化', 'Sinta', '', '', '', '']);
-
-        // Add more rows and functionality as needed
-    </script>
+      });
+    }
+  </script>
 </body>
 </html>
