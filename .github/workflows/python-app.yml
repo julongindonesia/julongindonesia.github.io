@@ -31,5 +31,5 @@ jobs:
     - name: install tox
       run: pip install tox
     
-    - name: Run tox
-      run: tox -e py
+    - name: Run Python script
+      run: python extract_data.py
