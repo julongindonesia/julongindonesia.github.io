@@ -268,10 +268,10 @@
     request.send(null)
     request.onload = function(){
         data = JSON.parse(request.responseText)
-        console.log(data)
     }
 
-    
+    console.log(data)
+
     input_data = function(section, data_list){
       var tbody = $('tbody#'+section)
       for(var index in data_list){
