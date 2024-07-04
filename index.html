@@ -262,15 +262,16 @@
     }
     file_path = 'score_result.json'
 
+    var data = {}
     var request = new XMLHttpRequest();
     request.open('get', file_path)
     request.send(null)
     request.onload = function(){
-        var data = JSON.parse(request.responseText)
+        data = JSON.parse(request.responseText)
         console.log(data)
     }
 
-    var data = {}
+    
     input_data = function(section, data_list){
       var tbody = $('tbody#'+section)
       for(var index in data_list){
