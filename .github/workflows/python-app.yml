@@ -26,10 +26,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install --user json
         pip install pandas
-    - name: install tox
-      run: pip install tox
     
-    - name: Run Python script
-      run: python extract_data.py
+    # - name: Run Python script
+      # run: python extract_data.py
