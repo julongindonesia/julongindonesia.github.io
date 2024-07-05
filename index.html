@@ -243,6 +243,25 @@
       'commerce', 'big_data','internet','ai','legal'
     ]
 
+    input_data = function(section, data_list){
+      var tbody = $('tbody#'+section)
+      for(var index in data_list){
+        var data = data_list[index]
+        var add_tr = 
+        `<tr>
+          <th>${data[0]}</th>
+          <th>${data[1]}</th>
+          <th>${data[2]}</th>
+          <th>${data[3]}</th>
+          <th>${data[4]}</th>
+          <th>${data[5]}</th>
+          <th>${data[6]}</th>
+        </tr>`
+        // console.log(add_tr)
+        tbody.append(add_tr)
+      }
+    }
+
     cs = function(standard){
       $('thead#'+standard).click(function(){
         var tbody = $('tbody#'+standard)
@@ -269,31 +288,15 @@
     request.onload = function(){
         data = JSON.parse(request.responseText)
         console.log(data)
+        for(index in stand_list){
+        input_data(stand_list[index],data[stand_list[index]])
+    }
     }
 
 
-    input_data = function(section, data_list){
-      var tbody = $('tbody#'+section)
-      for(var index in data_list){
-        var data = data_list[index]
-        var add_tr = 
-        `<tr>
-          <th>${data[0]}</th>
-          <th>${data[1]}</th>
-          <th>${data[2]}</th>
-          <th>${data[3]}</th>
-          <th>${data[4]}</th>
-          <th>${data[5]}</th>
-          <th>${data[6]}</th>
-        </tr>`
-        // console.log(add_tr)
-        tbody.append(add_tr)
-      }
-    }
+    
 
-    for(index in stand_list){
-      input_data(stand_list[index],data[stand_list[index]])
-    }
+    
 
 
   </script>
