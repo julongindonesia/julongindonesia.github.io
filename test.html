@@ -276,18 +276,19 @@
         }
       })
 
-      $('tr#commen_',section).click(function(){
-        var tr_commen = $('tr#commen_',section)
-        var singal = tr_commen.attr('class')
-        if(singal == 'active'){
-          tr_commen.attr('style','display:none')
-          tr_commen.attr('class','inactive')
-        }else{
-          tr_commen.attr('style','')
-          tr_commen.attr('class','active')
-        }
-      })
-
+      for(var i = 0; i < 10; i++){
+        $('tr#data_',index,'_',section).click(function(){
+          var tr_commen = $('tr#commen_',index,'_',section)
+          var singal = tr_commen.attr('class')
+          if(singal == 'active'){
+            tr_commen.attr('style','display:none')
+            tr_commen.attr('class','inactive')
+          }else{
+            tr_commen.attr('style','')
+            tr_commen.attr('class','active')
+          }
+        })
+      }
     }
 
     // 函数：具体指标数据的填写
@@ -296,7 +297,7 @@
       for(var index in data_list){
         var data = data_list[index]
         var add_tr = 
-        `<tr>
+        `<tr id="data_${index}_${section}">
           <th>${data[0]}</th>
           <th>${data[1]}</th>
           <th>${data[2]}</th>
@@ -305,9 +306,9 @@
           <th>${data[5]}</th>
           <th>${data[6]}</th>
         </tr>
-        <tr id="commen_${section}" class="inactive" style="display: none;">
+        <tr id="commen_${index}_${section}" class="inactive" style="display: none;">
           <th>${data[7]}</th>
-        </tr>  
+        </tr>
         `
         // console.log(add_tr)
         tbody.append(add_tr)
@@ -333,6 +334,7 @@
       }
     }
 
+  
     get_period_data('week1')
 
     // 缩放
