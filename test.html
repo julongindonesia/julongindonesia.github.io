@@ -304,12 +304,12 @@
         // 获取数据
       file_path = 'score_result.json'
 
-      var data = {}
       var request = new XMLHttpRequest();
       request.open('get', file_path)
       request.send(null)
       request.onload = function(){
-          data = JSON.parse(request.responseText)
+          var data = JSON.parse(request.responseText)
+          data = data[period]
           console.log(data)
           // 渲染数据
           for(index in stand_list){
