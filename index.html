@@ -28,6 +28,13 @@
         .total-row {
             font-weight: bold;
         }
+        #periodSelect {
+            width: 200px;
+            height: 30px;
+            font-family: Arial, sans-serif;
+            color: #333;
+            border: 1px solid #ccc;
+        }
     </style>
 </head>
 <body>
@@ -35,9 +42,20 @@
   <h2>100 Indikator sehat Julong </h2>
   <p>草稿二（更新日期：2024.06.28）</p>
   
-  <p><a href="./indonesia.html">Bahasa Indonesia 印尼语</a> &nbsp;&nbsp;&nbsp; <a href="./chinese_indo.html">双语完全版</a></p>
-  <br>
+  <p>
+    <a href="./indonesia.html">Bahasa Indonesia 印尼语</a> &nbsp;&nbsp;&nbsp; 
+    <a href="./chinese_indo.html">双语完全版</a> &nbsp;&nbsp;&nbsp;
+    <select id="periodSelect">
+      <option value="week1">第一周</option>
+      <option value="week2">第二周</option>
+      <option value="week3">第三周</option>
+      <option value="week4">第四周</option>
+      <option value="month">月度</option>
+    </select>
+  </p>
 
+  <br>
+  
   <table id="standard">
     <thead>
         <tr class="section-header">
@@ -240,12 +258,13 @@
 
   <script>
 
-    var period = ['week1','week2','week3','week4','month']
+    var period
     
     stand_list = ['human_resource','finance','material','agriculture','industry',
       'commerce', 'big_data','internet','ai','legal'
     ]
 
+    // 函数：具体指标数据的填写
     input_data = function(section, data_list){
       var tbody = $('tbody#'+section)
       for(var index in data_list){
@@ -265,6 +284,7 @@
       }
     }
 
+    // 函数：大标题缩放功能
     cs = function(standard){
       $('thead#'+standard).click(function(){
         var tbody = $('tbody#'+standard)
@@ -279,22 +299,38 @@
       })
     }
 
+    // 函数：渲染数据
+    function get_period_data(period) {
+        // 获取数据
+      file_path = 'score_result.json'
+
+      var request = new XMLHttpRequest();
+      request.open('get', file_path)
+      request.send(null)
+      request.onload = function(){
+          var data = JSON.parse(request.responseText)
+          data = data[period]
+          console.log(data)
+          // 渲染数据
+          for(index in stand_list){
+            input_data(stand_list[index],data[stand_list[index]])
+          }
+      }
+    }
+
+    // 缩放
     for(index in stand_list){
       cs(stand_list[index])
     }
-    file_path = 'score_result.json'
 
-    var data = {}
-    var request = new XMLHttpRequest();
-    request.open('get', file_path)
-    request.send(null)
-    request.onload = function(){
-        data = JSON.parse(request.responseText)
-        console.log(data)
-        for(index in stand_list){
-          input_data(stand_list[index],data[stand_list[index]])
-        }
-    }
+    get_period_data('week1')
+
+    $("#periodSelect").change(function(){
+      // 根据下拉列表，获取当前时间段
+      period = $("#periodSelect").val()
+      console.log('period:',period)
+      get_period_data(period)
+    })
 
   </script>
 </body>
