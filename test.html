@@ -438,12 +438,14 @@
     $("#periodSelect").change(function(){
       // 根据下拉列表，获取当前时间段
       period = $("#periodSelect").val()
+      language = $('#languageSelect').val()
       update_period_data(file_path,period,language)
     })
 
     $("#languageSelect").change(function(){
       // 根据下拉列表，获取当前时间段
       language = $('#languageSelect').val()
+      period = $("#periodSelect").val()
       update_period_data(file_path,period,language)
       get_title_data(title_path, language, stand_list)
     })
