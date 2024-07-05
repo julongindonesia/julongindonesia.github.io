@@ -265,6 +265,8 @@
   <script>
     file_path = 'score_result_test.json'
     title_path = 'title.json'
+    period = 'week1'
+    language = 'china'
     stand_list = ['human_resource','finance','material','agriculture','industry',
       'commerce', 'big_data','internet','ai','legal'
     ]
@@ -425,8 +427,9 @@
       }
     }
 
-    input_period_data(file_path,'week1','china')
-    
+    input_period_data(file_path,period,language)
+    get_title_data(title_path, language, section_list)
+
     // 缩放
     for(index in stand_list){
       cs(stand_list[index])
@@ -435,13 +438,11 @@
     $("#periodSelect").change(function(){
       // 根据下拉列表，获取当前时间段
       period = $("#periodSelect").val()
-      language = $('#languageSelect').val()
       update_period_data(file_path,period,language)
     })
 
     $("#languageSelect").change(function(){
       // 根据下拉列表，获取当前时间段
-      period = $("#periodSelect").val()
       language = $('#languageSelect').val()
       update_period_data(file_path,period,language)
     })
