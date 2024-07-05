@@ -264,6 +264,18 @@
     stand_list = ['human_resource','finance','material','agriculture','industry',
       'commerce', 'big_data','internet','ai','legal'
     ]
+    section_score= {
+      'human_resource':0,
+      'finance':0,
+      'material':0,
+      'agriculture':0,
+      'industry':0,
+      'commerce':0, 
+      'big_data':0,
+      'internet':0,
+      'ai':0,
+      'legal':0
+    }
 
     // 函数：大标题缩放功能
     cs = function(section){
@@ -283,7 +295,6 @@
         var index = this.id.split('_')[1];
         tr_commen = $(`tr#commen_${index}_${section}`)
         var singal = tr_commen.attr('class')
-        console.log('singal:', singal)
         if(singal == 'active'){
           tr_commen.attr('style','display:none;')
           tr_commen.attr('class','inactive')
@@ -296,6 +307,7 @@
 
     // 函数：具体指标数据的填写
     input_data = function(section, data_list){
+      var score = 0
       var tbody = $('tbody#'+section)
       for(var index in data_list){
         var data = data_list[index]
@@ -314,6 +326,8 @@
         </tr>
         `
         tbody.append(add_tr)
+        score = score + data[6]
+        return score
       }
     }
 
@@ -334,8 +348,8 @@
     function input_period_data(period) {
         // 获取数据
       file_path = 'score_result.json'
-
-      var request = new XMLHttpRequest();
+      var score = 0
+      var request = new XMLHttpRequest()
       request.open('get', file_path)
       request.send(null)
       request.onload = function(){
@@ -343,7 +357,9 @@
           data = data[period]
           // 渲染数据
           for(index in stand_list){
-            input_data(stand_list[index],data[stand_list[index]])
+            section = stand_list[index]
+            score = input_data(section,data[section])
+            section_score[section] = score
           }
       }
     }
@@ -366,7 +382,7 @@
     }
 
     input_period_data('week1')
-
+    console.log(section_score)
     // 缩放
     for(index in stand_list){
       cs(stand_list[index])
