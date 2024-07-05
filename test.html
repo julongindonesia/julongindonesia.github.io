@@ -307,7 +307,7 @@
 
     // 函数：具体指标数据的填写
     input_data = function(section, data_list){
-      section_score = 0
+      var section_score = 0
       var tbody = $('tbody#'+section)
       for(var index in data_list){
         var data = data_list[index]
@@ -360,6 +360,7 @@
             section = stand_list[index]
             section_score[section] = input_data(section,data[section])
           }
+          console.log(section_score)
       }
     }
 
@@ -381,7 +382,7 @@
     }
 
     input_period_data('week1')
-    console.log(section_score)
+    
     // 缩放
     for(index in stand_list){
       cs(stand_list[index])
