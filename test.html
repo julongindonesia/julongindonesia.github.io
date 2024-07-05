@@ -278,7 +278,7 @@
       // 注释缩放功能
       $('tbody#'+section).on('click', '[id^="data_"]', function(){
         var index = this.id.split('_')[1];
-        tr_commen = $(`tr#commen${index}_${section}`)
+        tr_commen = $(`tr#commen_${index}_${section}`)
         var singal = tr_commen.attr('class')
         if(singal == 'active'){
           tr_commen.attr('style','display:none')
@@ -379,9 +379,6 @@
     input_period_data('week1')
 
     // 缩放
-    // $(document).ready(function(){
-    //   stand_list.foreach(cs)
-    // })
     for(index in stand_list){
       cs(stand_list[index])
     }
