@@ -335,13 +335,12 @@
     input_total_score = function(section_score){
       var total = 0
       for(var key in section_score){
-        td_key = $('thead#'+key).children('tr:nth-child(1)').children('td:nth-child(3)')
-        td_key.val(section_score[key])
-        console.log(td_key)
+        td_key = $('thead#'+key).find('tr:first').children('td:nth-child(3)')
+        td_key.text(section_score[key])
         total = total + section_score[key]
       }
       total_score = '总得分:' + total
-      $('thead#total').children('tr:nth-child(1)').children('td:nth-child(2)').val(total_score)
+      $('thead#total').children('tr:nth-child(1)').children('td:nth-child(2)').text(total_score)
     }
 
     update_data = function(section, data_list){
@@ -371,6 +370,7 @@
         // 渲染数据
         for(index in stand_list){
           section = stand_list[index]
+          section_score[section] = 0
           section_score[section] = input_data(section,data[section])
         }
         // 渲染总分数
