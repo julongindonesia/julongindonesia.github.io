@@ -319,10 +319,11 @@
       for(var index in data_list){
         data = data_list[index]
         tr_data = $('tr#data_',index,'_',section)
+        console.log(tr_data)
         tr_commen = $('tr#commen_',index,'_',section)
         for(var i=1; i<=7; i++){
           tr_child = tr_data.children(`th:nth-child(${i})`)
-          console.log('tr_child:',tr_child)
+          // console.log('tr_child:',tr_child)
           tr_child.text(data[i-1])
         }
         tr_commen.children('th:nth-child(1)').text(data[7])
