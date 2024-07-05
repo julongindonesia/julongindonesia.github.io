@@ -344,6 +344,7 @@
     }
 
     update_data = function(section, data_list){
+      var section_score = 0
       for(var index in data_list){
         data = data_list[index]
         tr_data = $(`tr#data_${index}_${section}`)
@@ -353,7 +354,9 @@
           tr_child.text(data[i-1])
         }
         tr_commen.children('th:nth-child(1)').text(data[7])
+        section_score = section_score + data[6]
       }
+      return section_score
     }
 
     // 函数：渲染数据
@@ -370,7 +373,7 @@
         // 渲染数据
         for(index in stand_list){
           section = stand_list[index]
-          section_score[section] = 0
+          section_score[section] = 0  //将分数置为零，防止累加之前计算的得分
           section_score[section] = input_data(section,data[section])
         }
         // 渲染总分数
@@ -386,12 +389,16 @@
       request.open('get', file_path)
       request.send(null)
       request.onload = function(){
-          var data = JSON.parse(request.responseText)
-          data = data[period]
-          // 渲染数据
-          for(index in stand_list){
-            update_data(stand_list[index],data[stand_list[index]])
-          }
+        var data = JSON.parse(request.responseText)
+        data = data[period]
+        // 渲染数据
+        for(index in stand_list){
+          section = stand_list[index]
+          section_score[section] = 0  //将分数置为零，防止累加之前计算的得分
+          section_score[section] = update_data(section,data[section])
+        }
+        // 渲染总分数
+        input_total_score(section_score)
       }
     }
 
