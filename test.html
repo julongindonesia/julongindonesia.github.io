@@ -322,25 +322,13 @@
           <th>${data[6]}</th>
         </tr>
         <tr id="commen_${index}_${section}" class="inactive" style="display: none;">
-          <th colspan="10">${data[7]}</th>
+          <th colspan="10">tips: ${data[7]}</th>
         </tr>
         `
         tbody.append(add_tr)
         section_score = section_score + data[6]
       }
       return section_score
-    }
-
-    // 将总得分写入指定位置
-    input_total_score = function(section_score){
-      var total = 0
-      for(var key in section_score){
-        td_key = $('thead#'+key).find('tr:first').children('td:nth-child(3)')
-        td_key.text(section_score[key])
-        total = total + section_score[key]
-      }
-      total_score = '总得分:' + total
-      $('thead#total').children('tr:nth-child(1)').children('td:nth-child(2)').text(total_score)
     }
 
     update_data = function(section, data_list){
@@ -357,6 +345,18 @@
         section_score = section_score + data[6]
       }
       return section_score
+    }
+     
+    // 将总得分写入指定位置
+     input_total_score = function(section_score){
+      var total = 0
+      for(var key in section_score){
+        td_key = $('thead#'+key).find('tr:first').children('td:nth-child(3)')
+        td_key.text(section_score[key])
+        total = total + section_score[key]
+      }
+      total_score = '总得分:' + total
+      $('thead#total').children('tr:nth-child(1)').children('td:nth-child(2)').text(total_score)
     }
 
     // 函数：渲染数据
