@@ -402,7 +402,7 @@
       }
     }
 
-    input_period_data(path,'week1','china')
+    input_period_data(file_path,'week1','china')
     
     // 缩放
     for(index in stand_list){
@@ -413,14 +413,14 @@
       // 根据下拉列表，获取当前时间段
       period = $("#periodSelect").val()
       language = $('#languageSelect').val()
-      update_period_data(path,period,language)
+      update_period_data(file_path,period,language)
     })
 
     $("#languageSelect").change(function(){
       // 根据下拉列表，获取当前时间段
       period = $("#periodSelect").val()
       language = $('#languageSelect').val()
-      update_period_data(path,period,language)
+      update_period_data(file_path,period,language)
     })
 
   </script>
