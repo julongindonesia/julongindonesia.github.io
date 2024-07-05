@@ -335,7 +335,9 @@
     input_total_score = function(section_score){
       var total = 0
       for(var key in section_score){
-        $('thead#'+key).children('tr:nth-child(1)').children('td:nth-child(3)').val(section_score[key])
+        thead_key = $('thead#'+key)
+        thead_key.children('tr:nth-child(1)').children('td:nth-child(3)').val(section_score[key])
+        console.log(thead_key)
         total = total + section_score[key]
       }
       total_score = '总得分:' + total
