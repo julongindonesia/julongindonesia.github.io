@@ -257,8 +257,6 @@
   </table>
 
   <script>
-
-    var period
     
     stand_list = ['human_resource','finance','material','agriculture','industry',
       'commerce', 'big_data','internet','ai','legal'
@@ -278,7 +276,11 @@
           <th>${data[4]}</th>
           <th>${data[5]}</th>
           <th>${data[6]}</th>
-        </tr>`
+        </tr>
+        <tr id='commen_${section}'>
+          <th>${data[7]}</th>
+        </tr>  
+        `
         // console.log(add_tr)
         tbody.append(add_tr)
       }
