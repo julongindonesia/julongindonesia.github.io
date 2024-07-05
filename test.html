@@ -321,11 +321,11 @@
         tr_data = $('tr#data_',index,'_',section)
         tr_commen = $('tr#commen_',index,'_',section)
         for(var i=1; i<=7; i++){
-          tr_child = tr_data.find(`th:nth-child(${i})`)
+          tr_child = tr_data.children(`th:nth-child(${i})`)
           console.log('tr_child:',tr_child)
           tr_child.text(data[i-1])
         }
-        tr_commen.find('th:nth-child(1)').text(data[7])
+        tr_commen.children('th:nth-child(1)').text(data[7])
       }
     }
 
