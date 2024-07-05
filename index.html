@@ -268,6 +268,7 @@
     request.send(null)
     request.onload = function(){
         data = JSON.parse(request.responseText)
+        console.log(data)
     }
 
     console.log(data)
