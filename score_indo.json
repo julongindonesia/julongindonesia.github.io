@@ -1,7 +1,7 @@
 {
     "human_resource": [
       ["1", "Jumlah karyawan(staf level 3 keatas)", "Vianie", 0, 0, 0, 0,""],
-      ["2", "Jumlah karyawan resign", "Andri M", 0, 0, 0, 0,""],
+      ["2", "Jumlah karyawan resign(staf level 3 keatas)", "Andri M", 0, 0, 0, 0,""],
       ["3", "Jumlah karyawan masuk", "Arif", 0, 0, 0, 0,""],
       ["4", "Jumlah karyawan MT", "Nafila", 0, 0, 0, 0,""],
       ["5", "Jumlah karyawan teknis", "Walman", 0, 0, 0, 0,""],

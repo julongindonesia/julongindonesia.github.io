@@ -1,7 +1,7 @@
 {
     "human_resource": [
       ["1", "Jumlah karyawan(staf level 3 keatas) 在职数(3级以上员工)", "Vianie黎美芳", 0, 0, 0, 0,""],
-      ["2", "Jumlah karyawan resign离职数", "Andri M", 0, 0, 0, 0,""],
+      ["2", "Jumlah karyawan resign(staf level 3 keatas) 离职数(3级以上员工)", "Andri M", 0, 0, 0, 0,""],
       ["3", "Jumlah karyawan masuk入职数", "Arif", 0, 0, 0, 0,""],
       ["4", "Jumlah karyawan MT 在岗培训人数", "Nafila李丽", 0, 0, 0, 0,""],
       ["5", "Jumlah karyawan teknis技术序列人数", "Walman", 0, 0, 0, 0,""],
