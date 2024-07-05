@@ -307,7 +307,6 @@
 
     // 函数：具体指标数据的填写
     input_data = function(section, data_list){
-      var score = 0
       var tbody = $('tbody#'+section)
       for(var index in data_list){
         var data = data_list[index]
@@ -326,8 +325,6 @@
         </tr>
         `
         tbody.append(add_tr)
-        score = score + data[6]
-        return score
       }
     }
 
@@ -358,8 +355,7 @@
           // 渲染数据
           for(index in stand_list){
             section = stand_list[index]
-            score = input_data(section,data[section])
-            section_score[section] = score
+            input_data(section,data[section])
           }
       }
     }
