@@ -40,7 +40,7 @@ def set_data(section, data, config, df):
         data[section][i][4] = int(df.iloc[start_row + i, pred_col])
         data[section][i][5] = int(df.iloc[start_row + i, real_col])
         data[section][i][6] = int(df.iloc[start_row + i, score_col])
-        data[section][i][7] = int(df.iloc[start_row + i, analyze_col])
+        data[section][i][7] = str(df.iloc[start_row + i, analyze_col])
     return data
 
 # 设置所需信息的起始行，终行为起始行+9
