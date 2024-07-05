@@ -280,11 +280,12 @@
         var index = this.id.split('_')[1];
         tr_commen = $(`tr#commen_${index}_${section}`)
         var singal = tr_commen.attr('class')
+        console.log('singal:', singal)
         if(singal == 'active'){
-          tr_commen.attr('style','display:none;background-color: #ffffff;')
+          tr_commen.attr('style','display:none;')
           tr_commen.attr('class','inactive')
         }else{
-          tr_commen.attr('style','background-color: #ffffff;')
+          tr_commen.attr('style','')
           tr_commen.attr('class','active')
         }
       })
@@ -305,11 +306,10 @@
           <th>${data[5]}</th>
           <th>${data[6]}</th>
         </tr>
-        <tr id="commen_${index}_${section}" class="inactive" style="display: none;background-color: #ffffff;">
+        <tr id="commen_${index}_${section}" class="inactive commen" style="display: none;">
           <th colspan="10">${data[7]}</th>
         </tr>
         `
-        // console.log(add_tr)
         tbody.append(add_tr)
       }
     }
