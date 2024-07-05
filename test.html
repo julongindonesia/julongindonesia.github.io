@@ -379,12 +379,12 @@
     input_period_data('week1')
 
     // 缩放
-    $(document).ready(function(){
-      stand_list.foreach(cs)
-    })
-    // for(index in stand_list){
-    //   cs(stand_list[index])
-    // }
+    // $(document).ready(function(){
+    //   stand_list.foreach(cs)
+    // })
+    for(index in stand_list){
+      cs(stand_list[index])
+    }
 
     $("#periodSelect").change(function(){
       // 根据下拉列表，获取当前时间段
