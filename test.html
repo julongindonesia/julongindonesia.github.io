@@ -263,6 +263,7 @@
   </table>
 
   <script>
+    file_path = 'score_result_test.json'
     stand_list = ['human_resource','finance','material','agriculture','industry',
       'commerce', 'big_data','internet','ai','legal'
     ]
@@ -362,12 +363,11 @@
     }
 
     // 函数：渲染数据
-    function input_period_data(period,language) {
+    function input_period_data(path,period,language) {
         // 获取数据
-      file_path = 'score_result.json'
       var score = 0
       var request = new XMLHttpRequest()
-      request.open('get', file_path)
+      request.open('get', path)
       request.send(null)
       request.onload = function(){
         var data = JSON.parse(request.responseText)
@@ -383,12 +383,10 @@
       }
     }
 
-    function update_period_data(period, language) {
+    function update_period_data(path, period, language) {
         // 获取数据
-      file_path = 'score_result.json'
-
       var request = new XMLHttpRequest();
-      request.open('get', file_path)
+      request.open('get', path)
       request.send(null)
       request.onload = function(){
         var data = JSON.parse(request.responseText)
@@ -404,7 +402,7 @@
       }
     }
 
-    input_period_data('week1','china')
+    input_period_data(path,'week1','china')
     
     // 缩放
     for(index in stand_list){
@@ -415,14 +413,14 @@
       // 根据下拉列表，获取当前时间段
       period = $("#periodSelect").val()
       language = $('#languageSelect').val()
-      update_period_data(period)
+      update_period_data(path,period,language)
     })
 
     $("#languageSelect").change(function(){
       // 根据下拉列表，获取当前时间段
       period = $("#periodSelect").val()
       language = $('#languageSelect').val()
-      update_period_data(period)
+      update_period_data(path,period,language)
     })
 
   </script>
