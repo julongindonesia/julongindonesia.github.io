@@ -322,6 +322,7 @@
         tr_commen = $('tr#commen_',index,'_',section)
         for(var i=1; i<=7; i++){
           tr_child = tr_data.find(`th:nth-child(${i})`)
+          console.log('tr_child:',tr_child)
           tr_child.text(data[i-1])
         }
         tr_commen.find('th:nth-child(1)').text(data[7])
@@ -357,7 +358,7 @@
       request.onload = function(){
           var data = JSON.parse(request.responseText)
           data = data[period]
-          console.log(data)
+          // console.log(data)
           // 渲染数据
           for(index in stand_list){
             update_data(stand_list[index],data[stand_list[index]])
