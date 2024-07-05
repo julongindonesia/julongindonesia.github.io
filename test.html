@@ -315,8 +315,21 @@
       }
     }
 
+    update_data = function(section, data_list){
+      for(var index in data_list){
+        data = data_list[index]
+        tr_data = $('tr#data_',index,'_',section)
+        tr_commen = $('tr#commen_',index,'_',section)
+        for(var i=1; i<=7; i++){
+          tr_child = tr_data.find(`th:nth-child(${i})`)
+          tr_child.text(data[i-1])
+        }
+        tr_commen.find('th:nth-child(1)').text(data[7])
+      }
+    }
+
     // 函数：渲染数据
-    function get_period_data(period) {
+    function input_period_data(period) {
         // 获取数据
       file_path = 'score_result.json'
 
@@ -334,8 +347,25 @@
       }
     }
 
-  
-    get_period_data('week1')
+    function update_period_data(period) {
+        // 获取数据
+      file_path = 'score_result.json'
+
+      var request = new XMLHttpRequest();
+      request.open('get', file_path)
+      request.send(null)
+      request.onload = function(){
+          var data = JSON.parse(request.responseText)
+          data = data[period]
+          console.log(data)
+          // 渲染数据
+          for(index in stand_list){
+            update_data(stand_list[index],data[stand_list[index]])
+          }
+      }
+    }
+
+    input_period_data('week1')
 
     // 缩放
     for(index in stand_list){
@@ -346,7 +376,7 @@
       // 根据下拉列表，获取当前时间段
       period = $("#periodSelect").val()
       console.log('period:',period)
-      get_period_data(period)
+      update_period_data(period)
     })
 
   </script>
