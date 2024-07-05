@@ -60,7 +60,7 @@
   <br>
   
   <table id="standard">
-    <thead>
+    <thead id="total">
         <tr class="section-header">
           <td colspan="3"><h3>聚龙健康100指数</h3></td>
           <td colspan="5">总分数：100</td>
@@ -331,6 +331,17 @@
       return section_score
     }
 
+    // 将总得分写入指定位置
+    input_total_score = function(section_score){
+      var total = 0
+      for(var key in section_score){
+        $('thead#'+key).children('tr:nth-children(1)').children('td:nth-children(3)').val(section_score[key])
+        total = total + section_score[key]
+      }
+      total_score = '总得分:' + total
+      $('thead#total').children('tr:nth-children(1)').children('td:nth-children(2)').val(total_score)
+    }
+
     update_data = function(section, data_list){
       for(var index in data_list){
         data = data_list[index]
@@ -353,14 +364,15 @@
       request.open('get', file_path)
       request.send(null)
       request.onload = function(){
-          var data = JSON.parse(request.responseText)
-          data = data[period]
-          // 渲染数据
-          for(index in stand_list){
-            section = stand_list[index]
-            section_score[section] = input_data(section,data[section])
-          }
-          console.log(section_score)
+        var data = JSON.parse(request.responseText)
+        data = data[period]
+        // 渲染数据
+        for(index in stand_list){
+          section = stand_list[index]
+          section_score[section] = input_data(section,data[section])
+        }
+        // 渲染总分数
+        input_total_score(section_score)
       }
     }
 
@@ -391,7 +403,6 @@
     $("#periodSelect").change(function(){
       // 根据下拉列表，获取当前时间段
       period = $("#periodSelect").val()
-      console.log('period:',period)
       update_period_data(period)
     })
 
