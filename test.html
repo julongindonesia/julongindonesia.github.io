@@ -264,6 +264,7 @@
 
   <script>
     file_path = 'score_result_test.json'
+    title_path = 'title.json'
     stand_list = ['human_resource','finance','material','agriculture','industry',
       'commerce', 'big_data','internet','ai','legal'
     ]
@@ -358,8 +359,30 @@
         td_key.text(section_score[key])
         total = total + section_score[key]
       }
-      total_score = '总得分:' + total
+      total_score = 'Total:' + total
       $('thead#total').children('tr:nth-child(1)').children('td:nth-child(2)').text(total_score)
+    }
+
+    // 渲染标题
+    function get_title_data(title_path,language,section_list){
+      // 获取数据
+      var request = new XMLHttpRequest();
+        request.open('get', title_path)
+        request.send(null)
+        request.onload = function(){
+          var data = JSON.parse(request.responseText)
+          data = data[language]
+          $('thead#total').children('tr:nth-child(1)').children('td:nth-child(1)').find('h3:first').text(data['title'])
+
+          section_title = data["section"]
+          for(index in section_list){
+            section = section_list[index]
+            title = section_title[section]
+            tr = $('thead#'+section).find("tr:first")
+            tr.children("td:nth-child(1)").text(title["title"])
+            tr.children("td:nth-child(2)").text(title["PIC"])
+          }
+      }
     }
 
     // 函数：渲染数据
