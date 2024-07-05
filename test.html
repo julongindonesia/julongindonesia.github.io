@@ -307,6 +307,7 @@
 
     // 函数：具体指标数据的填写
     input_data = function(section, data_list){
+      section_score = 0
       var tbody = $('tbody#'+section)
       for(var index in data_list){
         var data = data_list[index]
@@ -325,6 +326,8 @@
         </tr>
         `
         tbody.append(add_tr)
+        section_score = section_score + data[6]
+        console.log('section_score:', section_score)
       }
     }
 
