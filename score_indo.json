@@ -1,0 +1,122 @@
+{
+    "human_resource": [
+      ["1", "Jumlah karyawan(staf level 3 keatas)", "Vianie", 0, 0, 0, 0,""],
+      ["2", "Jumlah karyawan resign", "Andri M", 0, 0, 0, 0,""],
+      ["3", "Jumlah karyawan masuk", "Arif", 0, 0, 0, 0,""],
+      ["4", "Jumlah karyawan MT", "Nafila", 0, 0, 0, 0,""],
+      ["5", "Jumlah karyawan teknis", "Walman", 0, 0, 0, 0,""],
+      ["6", "Gaji per kapita", "Luntoro", 0, 0, 0, 0,""],
+      ["7", "Nilai produksi per Kapita", "Brigita", 0, 0, 0, 0,""],
+      ["8", "Jumlah karyawan promosi", "John", 0, 0, 0, 0,""],
+      ["9", "Jumlah karyawan kenaikan gaji", "Elza", 0, 0, 0, 0,""],
+      ["10", "Jumlah karyawan dapat SP/hukuman", "Maesa S", 0, 0, 0, 0,""]
+    ],
+    "finance":[
+      ["1", "Perubahan account payable", "Sinta", 0, 0, 0, 0,""],
+      ["2", "Perubahan financing ", "Angga", 0, 0, 0, 0,""],
+      ["3", "Nilai tukar dolar US - IDR", "Ega", 0, 0, 0, 0,""],
+      ["4", "Suku bunga kredit rupiah", "Renny", 0, 0, 0, 0,""],
+      ["5", "Tingkat pengembalian aset", "Dian", 0, 0, 0, 0,""],
+      ["6", "Jumlah peningkatan proyek investasi", "Gao Weihua", 0, 0, 0, 0,""],
+      ["7", "Nilai tanah per Ha ", "Ferry", 0, 0, 0, 0,""],
+      ["8", "Tingkat perputaran modal", "Xiao Lintao", 0, 0, 0, 0,""],
+      ["9", "Perubahan nilai pajak", "David", 0, 0, 0, 0,""],
+      ["10", "Perubahan jumlah gaji bulanan", "Muamar", 0, 0, 0, 0,""]
+    ],
+    "material":[
+      ["1", "Jumlah CPO on shipping", "Dela", 0, 0, 0, 0,""],
+      ["2", "Jumlah CPKO on shipping", "Dela", 0, 0, 0, 0,""],
+      ["3", "Jumlah PKE on shipping", "Santi", 0, 0, 0, 0,""],
+      ["4", "Jumlah pupuk on shipping", "Zhu Guohui", 0, 0, 0, 0,""],
+      ["5", "Baltic Dry Index", "Deng Qihang", 0, 0, 0, 0,""],
+      ["6", "Tarif pajak ekspor", "Ivan", 0, 0, 0, 0,""],
+      ["7", "Biaya ekspor", "Caroline", 0, 0, 0, 0,""],
+      ["8", "Perkiraan jumlah pengiriman", "Li Zongxiao", 0, 0, 0, 0,""],
+      ["9", "Jumlah batas minimum stok utama", "Ding Guoqing", 0, 0, 0, 0,""],
+      ["10", "Jumlah vendor", "Wahyu", 0, 0, 0, 0,""]
+    ],
+    "agriculture":[
+      ["1", "Produksi", "Tang Feixiang", 0, 0, 0, 0,""],
+      ["2", "Losses(%)", "Viktor", 0, 0, 0, 0,""],
+      ["3", "Rotasi panen (hari)", "Li Chengye", 0, 0, 0, 0,""],
+      ["4", "Jumlah kehadiran pemanen (orang & %)", "Liang Furun", 0, 0, 0, 0,""],
+      ["5", "Jumlah kehadiran perawatan (orang & %)", "Rudhit", 0, 0, 0, 0,""],
+      ["6", "Luas tanam baru", "Pak Leong", 0, 0, 0, 0,""],
+      ["7", "Turnover TK (%)", "Joshua", 0, 0, 0, 0,""],
+      ["8", "Jumlah pupuk", "Gomgom", 0, 0, 0, 0,""],
+      ["9", "Jumlah pengerasan jalan", " Sun Lei", 0, 0, 0, 0,""],
+      ["10", "Jumlah penambahan rumah baru", "Yang Baocai", 0, 0, 0, 0,""]
+    ],
+    "industry":[
+      ["1","Jumlah Produksi Minyak: CPO/CPKO","Hu Shengyuan",0,0,0,0,""],
+      ["2","OER CPO/CPKO","Wang Qiang",0,0,0,0,""],
+      ["3","Tingkat operasional","Bao Haishi",0,0,0,0,""],
+      ["4","Tingkat kerusakan Alat","Liu Jinfeng",0,0,0,0,""],
+      ["5","Implementasi keamanan bergulir","Han Zhiyong",0,0,0,0,""],
+      ["6","Nilai produksi biodiesel","Liu Yongcheng",0,0,0,0,""],
+      ["7","Nilai produksi pabrik mekanisasi","Chen Jiajin",0,0,0,0,""],
+      ["8","Nilai produksi pabrik refinery","Wang Lei",0,0,0,0,""],
+      ["9","Progress proyek baru","Xie Yapeng",0,0,0,0,""],
+      ["10","Jumlah insinyur industri","Kristo",0,0,0,0,""]
+    ],
+    "commerce":[
+      ["1","Harga CPO/CPKO","Ghoni",0,0,0,0,""],
+      ["2","Jumlah penjualan CPO/CPKO","Albert",0,0,0,0,""],
+      ["3","Jumlah barang keluar","Richard Yos",0,0,0,0,""],
+      ["4","Jumlah stock","Caroline",0,0,0,0,""],
+      ["5","Jumlah pembelian buah luar","Ding Guoqing",0,0,0,0,""],
+      ["6","Jumlah pembelian kernel luar","Wahyu",0,0,0,0,""],
+      ["7","Jumlah pembelian PKE luar","Deng Qihang",0,0,0,0,""],
+      ["8","Jumlah customer","Caroline",0,0,0,0,""],
+      ["9","Bisnis jembatann pelangi","Huang Yaliang",0,0,0,0,""],
+      ["10","Perubahan kredit dagang","Caroline",0,0,0,0,""]
+    ],
+    "big_data":[
+      ["1","Aplikasi platform data dasar","Novayanto",0,0,0,0,""],
+      ["2","Hubungan platform data SAP","Riswanto",0,0,0,0,""],
+      ["3","Pembangunan platform data kinerja","Zhang Xiangyu",0,0,0,0,""],
+      ["4","Harga rata-rata kelapa sawit di berbagai pasar","Zhao Wencai",0,0,0,0,""],
+      ["5","Big data industri kelapa sawit","Zhang Jia",0,0,0,0,""],
+      ["6","Kemajuan pengembangan perangkat lunak aplikasi","Yan Ba ",0,0,0,0,""],
+      ["7","Julong Indikator Sehat","Charline",0,0,0,0,""],
+      ["8","Follow up sekretaris","Johannes ",0,0,0,0,""],
+      ["9","Arsip rapat sekretaris","Venny",0,0,0,0,""],
+      ["10","Sora Video","Vivian",0,0,0,0,""]
+    ],
+    "internet":[
+      ["1", "Tingkat pemeriksaan server", "Reza", 0, 0, 0, 0,""],
+      ["2", "Cadangan keamanan data", "Fian", 0, 0, 0, 0,""],
+      ["3", "Tingkat pengoperasian normal ruang server di setiap kebun", "Lukman", 0, 0, 0, 0,""],
+      ["4", "Kualitas keamanan internet", "Rizki", 0, 0, 0, 0,""],
+      ["5", "Area cakupan internet kebun", "Zaini", 0, 0, 0, 0,""],
+      ["6", "SAP berjalan normal SAP", "Wulan", 0, 0, 0, 0,""],
+      ["7", "OA berjalan normal OA", "Nelson", 0, 0, 0, 0,""],
+      ["8", "Aplikasi Smart Agri", "Fahmi", 0, 0, 0, 0,""],
+      ["9", "Migrasi data", "Eko", 0, 0, 0, 0,""],
+      ["10", "Rapat Internal IT", "Hu Jun", 0, 0, 0, 0,""]
+    ],
+    "ai":[
+      ["1","Tingkat integritas alat dan tingkat kehadiran","Wang Gang",0,0,0,0,""],
+      ["2","Rasio 3 operator vs 2 operator","Wang Xinghua",0,0,0,0,""],
+      ["3","Progress mekanisasi agronomi","Guo Gang",0,0,0,0,""],
+      ["4","Proporsi operasi pemetikan agronomi yang efisien","Yu Haiyang",0,0,0,0,""],
+      ["5","Cakupan penggunaan smart salary, rasio konsumsi e-Card","Wu Xianglong",0,0,0,0,""],
+      ["6","Penghapusan generator diesel secara bertahap","Wang Jun",0,0,0,0,""],
+      ["7","Transformasi otomatisasi industri yang berdampak tingkat pengurangan biaya tenaga kerja","Duan Jinfeng",0,0,0,0,""],
+      ["8","Cakupan otomatisasi pompa air","Xi Shuai",0,0,0,0,""],
+      ["9","Tingkat elektrifikasi mekanisasi pertanian","Huang Guangyuan",0,0,0,0,""],
+      ["10","Tingkat cakupan otomatisasi pemantauan tanah dan iklim","Wu Zhengbiao",0,0,0,0,""]
+    ],
+    "legal":[
+        ["1", "Progres organisasi ahli hukum", "Liana", 0, 0, 0, 0,""],
+        ["2", "Progres kasus besar", "Johannes", 0, 0, 0, 0,""],
+        ["3", "Progres sidang umum ", "Dani", 0, 0, 0, 0,""],
+        ["4", "Arsip dokumen lahan", "Nadila", 0, 0, 0, 0,""],
+        ["5", "Luas lahan yang baru dibeli", "Didit", 0, 0, 0, 0,""],
+        ["6", "Audit ISPO", "Arya", 0, 0, 0, 0,""],
+        ["7", "Pengurusan RSPO/ISG", "Lia", 0, 0, 0, 0,""],
+        ["8", "Manajemen Plasma/Koperasi", "Marihot", 0, 0, 0, 0,""],
+        ["9", "Internal Audit", " Sahha", 0, 0, 0, 0,""],
+        ["10", "Proyek urbanisasi industri dan komersial", "Sun Zhongbao", 0, 0, 0, 0,""]
+    ]
+  }
