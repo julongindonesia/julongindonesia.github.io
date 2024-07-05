@@ -257,37 +257,15 @@
   </table>
 
   <script>
-
-    var period
     
     stand_list = ['human_resource','finance','material','agriculture','industry',
       'commerce', 'big_data','internet','ai','legal'
     ]
 
-    // 函数：具体指标数据的填写
-    input_data = function(section, data_list){
-      var tbody = $('tbody#'+section)
-      for(var index in data_list){
-        var data = data_list[index]
-        var add_tr = 
-        `<tr>
-          <th>${data[0]}</th>
-          <th>${data[1]}</th>
-          <th>${data[2]}</th>
-          <th>${data[3]}</th>
-          <th>${data[4]}</th>
-          <th>${data[5]}</th>
-          <th>${data[6]}</th>
-        </tr>`
-        // console.log(add_tr)
-        tbody.append(add_tr)
-      }
-    }
-
     // 函数：大标题缩放功能
-    cs = function(standard){
-      $('thead#'+standard).click(function(){
-        var tbody = $('tbody#'+standard)
+    cs = function(section){
+      $('thead#'+section).click(function(){
+        var tbody = $('tbody#'+section)
         var singal = tbody.attr('class')
         if(singal == 'active'){
           tbody.attr('style','display:none')
@@ -297,10 +275,64 @@
           tbody.attr('class','active')
         }
       })
+
+      for(var i = 0; i < 10; i++){
+        $(`tr#data_${index}_${section}`).click(function(){
+          var tr_commen = $(`tr#commen_${index}_${section}`)
+          var singal = tr_commen.attr('class')
+          if(singal == 'active'){
+            tr_commen.attr('style','display:none')
+            tr_commen.attr('class','inactive')
+          }else{
+            tr_commen.attr('style','')
+            tr_commen.attr('class','active')
+          }
+        })
+      }
+    }
+
+    // 函数：具体指标数据的填写
+    input_data = function(section, data_list){
+      var tbody = $('tbody#'+section)
+      for(var index in data_list){
+        var data = data_list[index]
+        var add_tr = 
+        `<tr id="data_${index}_${section}">
+          <th>${data[0]}</th>
+          <th>${data[1]}</th>
+          <th>${data[2]}</th>
+          <th>${data[3]}</th>
+          <th>${data[4]}</th>
+          <th>${data[5]}</th>
+          <th>${data[6]}</th>
+        </tr>
+        <tr id="commen_${index}_${section}" class="inactive" style="display: none;">
+          <th>${data[7]}</th>
+        </tr>
+        `
+        // console.log(add_tr)
+        tbody.append(add_tr)
+      }
+    }
+
+    update_data = function(section, data_list){
+      for(var index in data_list){
+        data = data_list[index]
+        tr_data = $(`tr#data_${index}_${section}`)
+        // console.log('tr_data:',tr_data)
+        tr_commen = $(`tr#commen_${index}_${section}`)
+        // console.log('tr_commen:',tr_commen)
+        for(var i=1; i<=7; i++){
+          tr_child = tr_data.children(`th:nth-child(${i})`)
+          // console.log('tr_child:',tr_child)
+          tr_child.text(data[i-1])
+        }
+        tr_commen.children('th:nth-child(1)').text(data[7])
+      }
     }
 
     // 函数：渲染数据
-    function get_period_data(period) {
+    function input_period_data(period) {
         // 获取数据
       file_path = 'score_result.json'
 
@@ -318,18 +350,36 @@
       }
     }
 
+    function update_period_data(period) {
+        // 获取数据
+      file_path = 'score_result.json'
+
+      var request = new XMLHttpRequest();
+      request.open('get', file_path)
+      request.send(null)
+      request.onload = function(){
+          var data = JSON.parse(request.responseText)
+          data = data[period]
+          // console.log(data)
+          // 渲染数据
+          for(index in stand_list){
+            update_data(stand_list[index],data[stand_list[index]])
+          }
+      }
+    }
+
+    input_period_data('week1')
+
     // 缩放
     for(index in stand_list){
       cs(stand_list[index])
     }
 
-    get_period_data('week1')
-
     $("#periodSelect").change(function(){
       // 根据下拉列表，获取当前时间段
       period = $("#periodSelect").val()
       console.log('period:',period)
-      get_period_data(period)
+      update_period_data(period)
     })
 
   </script>
