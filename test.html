@@ -279,14 +279,14 @@
       $('tbody#'+section).on('click', '[id^="data_"]', function(){
         var index = this.id.split('_')[1];
         tr_commen = $(`tr#commen_${index}_${section}`)
-        var singal = tr_commen.attr('class')
+        var singal = tr_commen.attr('class').split(" ")[0]
         console.log('singal:', singal)
         if(singal == 'active'){
           tr_commen.attr('style','display:none;')
-          tr_commen.attr('class','inactive')
+          tr_commen.attr('class','inactive common')
         }else{
           tr_commen.attr('style','')
-          tr_commen.attr('class','active')
+          tr_commen.attr('class','active common')
         }
       })
     }
