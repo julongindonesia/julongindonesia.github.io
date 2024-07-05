@@ -35,7 +35,7 @@
             color: #333;
             border: 1px solid #ccc;
         }
-        .common{
+        tr.active, tr.inactive{
           background-color: #ffffff;
         }
     </style>
@@ -286,10 +286,10 @@
         console.log('singal:', singal)
         if(singal == 'active'){
           tr_commen.attr('style','display:none;')
-          tr_commen.attr('class','inactive common')
+          tr_commen.attr('class','inactive')
         }else{
           tr_commen.attr('style','')
-          tr_commen.attr('class','active common')
+          tr_commen.attr('class','active')
         }
       })
     }
@@ -309,7 +309,7 @@
           <th>${data[5]}</th>
           <th>${data[6]}</th>
         </tr>
-        <tr id="commen_${index}_${section}" class="inactive commen" style="display: none;">
+        <tr id="commen_${index}_${section}" class="inactive" style="display: none;">
           <th colspan="10">${data[7]}</th>
         </tr>
         `
