@@ -1,5 +1,6 @@
 import pandas as pd
 import json
+import copy
 
 # 设置df显示所有的行和列
 pd.set_option('display.max_rows', None)
@@ -88,20 +89,24 @@ urls_julong = {
 json_data_path = 'score_template.json'
 # 设置数据要输出到的文件路径
 data_output_path = 'score_result.json'
+# 
+language_list = ['china','indonesia','double']
 # 从模板文件中读取模板数据
 data_template = get_data_json(json_data_path)
 # 预先定义总数据
-data = {} 
+data = {"china":{}, "indonesia":{}, "double":{}} 
+
 # 遍历每个文件链接，获取数据，并聚合到总数据
 for url_key in urls_julong.keys():
     # 从url中获取数据，存入df
     df = get_data_google_sheet(urls_julong[url_key])
-    section_list = data_template.keys()
-    # 遍历每个部门的数据，分别将各部门数据存入模板数据
-    for section in section_list:
-        data_template = set_data(section, data_template, my_config, df)
-    # 将该文件数据存入总数据
-    data[url_key] = data_template
+    section_list = data_template['china'].keys()
+    for language in language_list:
+        # 遍历每个部门的数据，分别将各部门数据存入模板数据
+        for section in section_list:
+            set_data(section, data_template[language], my_config, df)
+        # 将该文件数据存入总数据
+        data[language][url_key] = data_template[language]
 
 # 将数据写入输出文件
 with open(data_output_path, 'w', encoding='utf-8') as f:
