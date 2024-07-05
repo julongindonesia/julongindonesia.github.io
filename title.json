@@ -1,0 +1,50 @@
+{
+    "china":{
+        "title": "聚龙健康100指数",
+        "score": "总分数:",
+        "section":{
+            "1": { "title":"一、  人", "PIC":"杨义" },
+            "2": { "title":"二、  财", "PIC":"侯光珍" },
+            "3": { "title":"三、  物", "PIC":"孙忠宝" },
+            "4": { "title":"四、  农", "PIC":"皮金鹏" },
+            "5": { "title":"五、  工", "PIC":"王涛" },
+            "6": { "title":"六、  商", "PIC":"徐传贵" },
+            "7": { "title":"七、  4G大数据", "PIC":"杨江树" },
+            "8": { "title":"八、  5G互联网", "PIC":"胡军" },
+            "9": { "title":"九、  人工智能", "PIC":"雷文忠" },
+            "10": { "title":"十、  法律", "PIC":"杨斌" }
+        }
+    },
+    "indonesia":{
+        "title": "100 Indikator sehat Julong",
+        "score": "Total:",
+        "section":{
+            "1": { "title":"1. Human Resource", "PIC":"Yang Yi" },
+            "2": { "title":"2. Finance", "PIC":"Hou Guangzhen" },
+            "3": { "title":"3. Material", "PIC":"Sun Zhongbao" },
+            "4": { "title":"4. Agriculture", "PIC":"Pi Jinpeng" },
+            "5": { "title":"5. Industry", "PIC":"Wang Tao" },
+            "6": { "title":"6. Commerce", "PIC":"Elvin" },
+            "7": { "title":"7. 4G Big Data", "PIC":"Novayanto" },
+            "8": { "title":"8. 5G Internet", "PIC":"Hu Jun" },
+            "9": { "title":"9. Artificial Intelligence", "PIC":"Lei Wenzhong" },
+            "10": { "title":"10. Legal, ISPO, SSL", "PIC":"Yang Bin" }
+        }
+    },
+    "double":{
+        "title": "100 Indikator sehat Julong\n聚龙健康100指数",
+        "score": "Total总分数:",
+        "section":{
+            "1": { "title":"1. Human Resource 人", "PIC":"Yang Yi 杨义" },
+            "2": { "title":"2. Finance 财", "PIC":"Hou Guangzhen 侯光珍" },
+            "3": { "title":"3. Material 物", "PIC":"Sun Zhongbao 孙忠宝" },
+            "4": { "title":"4. Agriculture 农", "PIC":"Pi Jinpeng 皮金鹏" },
+            "5": { "title":"5. Industry 工", "PIC":"Wang Tao 王涛" },
+            "6": { "title":"6. Commerce 商", "PIC":"Elvin 徐传贵" },
+            "7": { "title":"7. 4G Big Data 4G大数据", "PIC":"Novayanto 杨江树" },
+            "8": { "title":"8. 5G Internet 5G互联网", "PIC":"Hu Jun 胡军" },
+            "9": { "title":"9. Artificial Intelligence 人工智能", "PIC":"Lei Wenzhong 雷文忠" },
+            "10": { "title":"10. Legal, ISPO, SSL 法律", "PIC":"Yang Bin 杨斌" }
+        }
+    }
+}
