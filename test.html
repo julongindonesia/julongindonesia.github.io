@@ -262,6 +262,34 @@
       'commerce', 'big_data','internet','ai','legal'
     ]
 
+    // 函数：大标题缩放功能
+    cs = function(section){
+      $('thead#'+section).click(function(){
+        var tbody = $('tbody#'+section)
+        var singal = tbody.attr('class')
+        if(singal == 'active'){
+          tbody.attr('style','display:none')
+          tbody.attr('class','inactive')
+        }else{
+          tbody.attr('style','')
+          tbody.attr('class','active')
+        }
+      })
+
+      $('tr#commen_',section).click(function(){
+        var tr_commen = $('tr#commen_',section)
+        var singal = tr_commen.attr('class')
+        if(singal == 'active'){
+          tr_commen.attr('style','display:none')
+          tr_commen.attr('class','inactive')
+        }else{
+          tr_commen.attr('style','')
+          tr_commen.attr('class','active')
+        }
+      })
+
+    }
+
     // 函数：具体指标数据的填写
     input_data = function(section, data_list){
       var tbody = $('tbody#'+section)
@@ -277,28 +305,13 @@
           <th>${data[5]}</th>
           <th>${data[6]}</th>
         </tr>
-        <tr id='commen_${section}'>
+        <tr id="commen_${section}" class="inactive" style="display: none;">
           <th>${data[7]}</th>
         </tr>  
         `
         // console.log(add_tr)
         tbody.append(add_tr)
       }
-    }
-
-    // 函数：大标题缩放功能
-    cs = function(standard){
-      $('thead#'+standard).click(function(){
-        var tbody = $('tbody#'+standard)
-        var singal = tbody.attr('class')
-        if(singal == 'active'){
-          tbody.attr('style','display:none')
-          tbody.attr('class','inactive')
-        }else{
-          tbody.attr('style','')
-          tbody.attr('class','active')
-        }
-      })
     }
 
     // 函数：渲染数据
@@ -320,12 +333,12 @@
       }
     }
 
+    get_period_data('week1')
+
     // 缩放
     for(index in stand_list){
       cs(stand_list[index])
     }
-
-    get_period_data('week1')
 
     $("#periodSelect").change(function(){
       // 根据下拉列表，获取当前时间段
