@@ -39,37 +39,50 @@
 
         /* 添加响应式设计 */
       @media screen and (max-width: 600px) {
-        table, thead, tbody, th, td, tr {
+        table, tbody tr,tbody td{
             display: block;
         }
         
         tbody th {
-            position: absolute;
-            top: -9999px;
-            left: -9999px;
+            display: none;
         }
 
-        tr { border: 1px solid #ccc; }
-        
-        td {
-          border: none;
+        /* 保持表头的原有布局 */
+        thead {
+            display: none; /* 在极小的屏幕上可能需要隐藏 */
+        }
+
+        /* 数据行样式 */
+        tbody tr {
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        tbody td {
+            border: none;
             position: relative;
             padding-left: 50%;
+            text-align: left;
         }
 
-        td:before {
+        tbody td:before {
+            content: attr(data-label);
             position: absolute;
-            top: 6px;
             left: 6px;
             width: 45%;
             padding-right: 10px;
             white-space: nowrap;
-            content: attr(data-label);
+            font-weight: bold;
         }
         
         /* 调整字体大小 */
         body {
             font-size: 14px;
+        }
+
+        /* 确保宽度不超过屏幕 */
+        table {
+            width: 100%;
         }
       }
     </style>
