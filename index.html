@@ -349,7 +349,7 @@
       return section_score
     }
 
-    update_data = function(section, data_list){
+    update_data = function(section, data_list, language){
       var section_score = 0
       for(var index in data_list){
         data = data_list[index]
@@ -359,7 +359,12 @@
           tr_child = tr_data.children(`th:nth-child(${i})`)
           tr_child.text(data[i-1])
         }
-        tr_commen.children('th:nth-child(1)').text(data[7])
+        if(language == 'china'){
+          tr_commen.children('th:nth-child(1)').text("分析:" + data[7])
+        }else{
+          tr_commen.children('th:nth-child(1)').text("Analisa:" + data[7])
+        }
+        
         section_score = section_score + data[6]
       }
       return section_score
@@ -439,7 +444,7 @@
         for(index in stand_list){
           section = stand_list[index]
           section_score[section] = 0  //将分数置为零，防止累加之前计算的得分
-          section_score[section] = update_data(section,data[section])
+          section_score[section] = update_data(section,data[section],language)
         }
         // 渲染总分数
         input_total_score(section_score)
