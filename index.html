@@ -389,10 +389,8 @@
           }
           
           sub_title = data["sub_title"]
-          console.log('sub_title', sub_title)
           tbody_tr = $('tbody').find('tr:first')
           for(var i=1; i<=7; i++){
-            console.log(i)
             tbody_tr.children(`th:nth-child(${i})`).text(sub_title[i-1])
           }
       }
