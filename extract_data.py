@@ -106,7 +106,7 @@ for url_key in urls_julong.keys():
         for section in section_list:
             set_data(section, data_template[language], my_config, df)
         # 将该文件数据存入总数据
-        data[language][url_key] = data_template[language]
+        data[language][url_key] = copy.deepcopy(data_template[language])
 
 # 将数据写入输出文件
 with open(data_output_path, 'w', encoding='utf-8') as f:
