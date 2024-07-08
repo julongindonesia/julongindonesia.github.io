@@ -348,7 +348,7 @@
           <td data-label="分数">${data[6]}</td>
         </tr>
         <tr id="commen_${index}_${section}" class="inactive" style="display: none;">
-          <th colspan="10">分析: ${data[7]}</th>
+          <td colspan="10">分析: ${data[7]}</td>
         </tr>
         `
         tbody.append(add_tr)
@@ -364,13 +364,13 @@
         tr_data = $(`tr#data_${index}_${section}`)
         tr_commen = $(`tr#commen_${index}_${section}`)
         for(var i=1; i<=7; i++){
-          tr_child = tr_data.children(`th:nth-child(${i})`)
+          tr_child = tr_data.children(`td:nth-child(${i})`)
           tr_child.text(data[i-1])
         }
         if(language == 'china'){
-          tr_commen.children('th:nth-child(1)').text("分析:" + data[7])
+          tr_commen.children('td:nth-child(1)').text("分析:" + data[7])
         }else{
-          tr_commen.children('th:nth-child(1)').text("Analisa:" + data[7])
+          tr_commen.children('td:nth-child(1)').text("Analisa:" + data[7])
         }
         
         section_score = section_score + data[6]
