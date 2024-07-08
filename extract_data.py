@@ -37,9 +37,9 @@ def set_data(section, data, config, df):
     score_col = 8
     start_row = config[section]['start_row']
     for i in range(0, 10):
-        data[section][i][3] = int(df.iloc[start_row + i, pev_col])
-        data[section][i][4] = int(df.iloc[start_row + i, pred_col])
-        data[section][i][5] = int(df.iloc[start_row + i, real_col])
+        data[section][i][3] = str(df.iloc[start_row + i, pev_col])
+        data[section][i][4] = str(df.iloc[start_row + i, pred_col])
+        data[section][i][5] = str(df.iloc[start_row + i, real_col])
         data[section][i][6] = int(df.iloc[start_row + i, score_col])
         data[section][i][7] = str(df.iloc[start_row + i, analyze_col])
     return data
