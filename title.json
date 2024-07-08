@@ -13,7 +13,8 @@
             "internet": { "title":"八、  5G互联网", "PIC":"胡军" },
             "ai": { "title":"九、  人工智能", "PIC":"雷文忠" },
             "legal": { "title":"十、  法律", "PIC":"杨斌" }
-        }
+        },
+        "sub_title": ["序号","分项","负责人","前值","预测值","实际值","分数"]
     },
     "indonesia":{
         "title": "100 Indikator sehat Julong",
@@ -29,7 +30,8 @@
             "internet": { "title":"8. 5G Internet", "PIC":"Hu Jun" },
             "ai": { "title":"9. Artificial Intelligence", "PIC":"Lei Wenzhong" },
             "legal": { "title":"10. Legal, ISPO, SSL", "PIC":"Yang Bin" }
-        }
+        },
+        "sub_title": ["No","Deskripsi","PIC","Prev.","Est.","Act.","Nilai"]
     },
     "double":{
         "title": "100 Indikator sehat Julong\n聚龙健康100指数",
@@ -45,6 +47,7 @@
             "internet": { "title":"8. 5G Internet 5G互联网", "PIC":"Hu Jun 胡军" },
             "ai": { "title":"9. Artificial Intelligence 人工智能", "PIC":"Lei Wenzhong 雷文忠" },
             "legal": { "title":"10. Legal, ISPO, SSL 法律", "PIC":"Yang Bin 杨斌" }
-        }
+        },
+        "sub_title": ["No 序号","Deskripsi 分项","PIC 负责人","Prev. 前值","Est. 预测值","Act. 实际值","Nilai 分数"]
     }
 }

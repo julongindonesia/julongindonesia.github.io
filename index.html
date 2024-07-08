@@ -368,6 +368,8 @@
 
     // 渲染标题
     function get_title_data(title_path,language,section_list){
+
+
       // 获取数据
       var request = new XMLHttpRequest();
         request.open('get', title_path)
@@ -384,6 +386,12 @@
             tr = $('thead#'+section).find("tr:first")
             tr.children("td:nth-child(1)").text(title["title"])
             tr.children("td:nth-child(2)").text(title["PIC"])
+          }
+          
+          sub_title = data["sub_title"]
+          tbody_tr = $('tbody').find('tr:first')
+          for(var i=1; i<=7; i++){
+            tbody_tr.children(`th:nth-child(${i})`).text(sub_title[i-1])
           }
       }
     }
