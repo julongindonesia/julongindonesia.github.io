@@ -32,4 +32,4 @@ jobs:
         pip install -r .github/workflows/requirements.txt
         
     - name: Run Python script
-      run: python .github/workflows/extract_data.py
+      run: python extract_data.py
