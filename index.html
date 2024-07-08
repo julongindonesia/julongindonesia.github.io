@@ -428,6 +428,7 @@
       request.onload = function(){
         var data = JSON.parse(request.responseText)
         data = data[language][period]
+        
         // 渲染数据
         for(index in stand_list){
           section = stand_list[index]
@@ -448,6 +449,8 @@
       request.onload = function(){
         var data = JSON.parse(request.responseText)
         data = data[language][period]
+        console.log("language:", language)
+        console.log("data:", data)
         // 渲染数据
         for(index in stand_list){
           section = stand_list[index]
