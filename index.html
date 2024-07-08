@@ -264,13 +264,16 @@
   </table>
 
   <script>
-    file_path = 'score_result.json'
-    title_path = 'title.json'
-    period = 'week1'
-    language = 'china'
+    // 默认值
+    file_path = 'score_result.json' // 主要数据的存储文件
+    title_path = 'title.json' // 标题国际化的存储文件
+    period = 'week1' // 时间段
+    language = 'china' // 语言
+    // 大指标的关键字
     stand_list = ['human_resource','finance','material','agriculture','industry',
       'commerce', 'big_data','internet','ai','legal'
     ]
+    // 计算得分的数据结构
     section_score= {
       'human_resource':0,
       'finance':0,
@@ -283,7 +286,7 @@
       'ai':0,
       'legal':0
     }
-
+    // 每个时间段对应的日期
     tanggal = {
       "week1" : "2024.06.29 - 2024.07.05",
       "week2" : "2024.07.06 - 2024.07.12",
@@ -423,6 +426,7 @@
       }
     }
 
+    // 只更新数据部分的数据
     function update_period_data(path, period, language) {
         // 获取数据
       var request = new XMLHttpRequest();
@@ -442,8 +446,10 @@
       }
     }
 
+    // 网页开始时，要处理的事情
     input_period_data(file_path,period,language)
     get_title_data(title_path, language, stand_list)
+    $("p#tanggal").text(tanggal[period])
 
     // 缩放
     for(index in stand_list){
