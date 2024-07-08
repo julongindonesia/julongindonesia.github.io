@@ -88,7 +88,7 @@ urls_julong = {
 # 设置数据结构的文件路径
 json_data_path = 'score_template.json'
 # 设置数据要输出到的文件路径
-data_output_path = 'score_result.json'
+data_output_path = 'test.json'
 # 
 language_list = ['china','indonesia','double']
 # 从模板文件中读取模板数据
