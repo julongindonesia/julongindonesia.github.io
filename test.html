@@ -7,11 +7,13 @@
     <script src="https://cdn.staticfile.net/jquery/1.10.2/jquery.min.js"></script>
     <style>
         body {
+            
             font-family: Arial, sans-serif;
         }
         table {
             width: 100%;
             border-collapse: collapse;
+            white-space: pre-line; 
         }
         th, td {
             border: 1px solid black;
@@ -39,51 +41,10 @@
 
         /* 添加响应式设计 */
       @media screen and (max-width: 600px) {
-        table, tbody tr,tbody td{
-            display: block;
-        }
-        
-        tbody th {
-            display: none;
-        }
-
-        /* 保持表头的原有布局 */
-        /* thead {
-            display: none; 
-        } */
-
-        /* 数据行样式 */
-        tbody tr {
-            border: 1px solid #ccc;
-            margin-bottom: 10px;
-        }
-
-        tbody td {
-            border: none;
-            position: relative;
-            padding-left: 50%;
-            text-align: left;
-        }
-
-        tbody td:before {
-            content: attr(data-label);
-            position: absolute;
-            left: 6px;
-            width: 45%;
-            padding-right: 10px;
-            white-space: nowrap;
-            font-weight: bold;
-        }
-        
-        /* 调整字体大小 */
-        body {
-            font-size: 14px;
-        }
-
-        /* 确保宽度不超过屏幕 */
-        /* table {
-            width: 100%;
-        } */
+          /* 调整字体大小 */
+          body {
+              font-size: 10px;
+          }
       }
     </style>
 </head>
@@ -314,7 +275,7 @@
 
   <script>
     // 默认值
-    file_path = 'test.json' // 主要数据的存储文件
+    file_path = 'score_result.json' // 主要数据的存储文件
     title_path = 'title.json' // 标题国际化的存储文件
     period = 'week1' // 时间段
     language = 'china' // 语言
@@ -389,7 +350,7 @@
           <td data-label="分数">${data[6]}</td>
         </tr>
         <tr id="commen_${index}_${section}" class="inactive" style="display: none;">
-          <th colspan="9">分析: ${data[7]}</th>
+          <td colspan="10">分析: ${data[7]}</td>
         </tr>
         `
         tbody.append(add_tr)
@@ -405,13 +366,13 @@
         tr_data = $(`tr#data_${index}_${section}`)
         tr_commen = $(`tr#commen_${index}_${section}`)
         for(var i=1; i<=7; i++){
-          tr_child = tr_data.children(`th:nth-child(${i})`)
+          tr_child = tr_data.children(`td:nth-child(${i})`)
           tr_child.text(data[i-1])
         }
         if(language == 'china'){
-          tr_commen.children('th:nth-child(1)').text("分析:" + data[7])
+          tr_commen.children('td:nth-child(1)').text("分析:\n" + data[7])
         }else{
-          tr_commen.children('th:nth-child(1)').text("Analisa:" + data[7])
+          tr_commen.children('td:nth-child(1)').text("Analisa:\n" + data[7])
         }
         
         section_score = section_score + data[6]
@@ -469,6 +430,7 @@
       request.onload = function(){
         var data = JSON.parse(request.responseText)
         data = data[period][language]
+        
         // 渲染数据
         for(index in stand_list){
           section = stand_list[index]
@@ -489,6 +451,8 @@
       request.onload = function(){
         var data = JSON.parse(request.responseText)
         data = data[period][language]
+        console.log("language:", language)
+        console.log("data:", data)
         // 渲染数据
         for(index in stand_list){
           section = stand_list[index]
