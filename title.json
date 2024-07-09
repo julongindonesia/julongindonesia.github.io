@@ -3,15 +3,15 @@
         "title": "聚龙健康100指数",
         "score": "总分数:",
         "section":{
-            "human_resource": { "title":"一、  人", "PIC":"杨义/壮/李丽" },
-            "finance": { "title":"二、  财", "PIC":"侯光珍/左琳/景天" },
-            "material": { "title":"三、  物", "PIC":"孙忠宝/朱国辉/邓静英" },
-            "agriculture": { "title":"四、  农", "PIC":"皮金鹏/维克多/汤飞翔" },
-            "industry": { "title":"五、  工", "PIC":"王涛/谢亚鹏/克里斯多" },
-            "commerce": { "title":"六、  商", "PIC":"徐传贵/杨松/王库尼" },
-            "big_data": { "title":"七、  4G大数据", "PIC":"杨江树/张佳/张汉雄" },
-            "internet": { "title":"八、  5G互联网", "PIC":"胡军/杨铭豪/吴兰" },
-            "ai": { "title":"九、  人工智能", "PIC":"雷文忠/王兴华/张太平" },
+            "human_resource": { "title":"一、  人", "PIC":"杨义/ 壮/ 李丽" },
+            "finance": { "title":"二、  财", "PIC":"侯光珍/ 左琳/ 景天" },
+            "material": { "title":"三、  物", "PIC":"孙忠宝/ 朱国辉/ 邓静英" },
+            "agriculture": { "title":"四、  农", "PIC":"皮金鹏/ 维克多/ 汤飞翔" },
+            "industry": { "title":"五、  工", "PIC":"王涛/ 谢亚鹏/ 克里斯多" },
+            "commerce": { "title":"六、  商", "PIC":"徐传贵/ 杨松/ 王库尼" },
+            "big_data": { "title":"七、  4G大数据", "PIC":"杨江树/ 张佳/ 张汉雄" },
+            "internet": { "title":"八、  5G互联网", "PIC":"胡军/ 杨铭豪/ 吴兰" },
+            "ai": { "title":"九、  人工智能", "PIC":"雷文忠/ 王兴华/ 张太平" },
             "legal": { "title":"十、  法律", "PIC":"杨斌" }
         },
         "sub_title": ["序号","分项","负责人","前值","预测值","实际值","分数"]
@@ -37,7 +37,7 @@
         "title": "100 Indikator sehat Julong\n聚龙健康100指数",
         "score": "Total总分数:",
         "section":{
-            "human_resource": { "title":"1. Human Resource 人", "PIC":"Yang Yi/John/Nafila\n杨义/壮/李丽" },
+            "human_resource": { "title":"1. Human Resource 人", "PIC":"Yang Yi/John/Nafila<br>杨义/壮/李丽" },
             "finance": { "title":"2. Finance 财", "PIC":"Hou Guangzhen/Elsa/Kornel\n侯光珍/左琳/景天" },
             "material": { "title":"3. Material 物", "PIC":"Sun Zhongbao/Zhu Guohui/Erwin\n孙忠宝/朱国辉/邓静英" },
             "agriculture": { "title":"4. Agriculture 农", "PIC":"Pi Jinpeng/Victor/Tang Feixiang\n皮金鹏/维克多/汤飞翔" },
