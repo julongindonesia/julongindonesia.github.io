@@ -370,9 +370,9 @@
           tr_child.text(data[i-1])
         }
         if(language == 'china'){
-          tr_commen.children('td:nth-child(1)').text("分析:" + data[7])
+          tr_commen.children('td:nth-child(1)').text("<b>分析:</b>\n" + data[7])
         }else{
-          tr_commen.children('td:nth-child(1)').text("Analisa:" + data[7])
+          tr_commen.children('td:nth-child(1)').text("<b>Analisa:</b>\n" + data[7])
         }
         
         section_score = section_score + data[6]
