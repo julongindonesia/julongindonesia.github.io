@@ -12,7 +12,7 @@
             "big_data": { "title":"七、  4G大数据", "PIC":"杨江树/ 张佳/ 张汉雄" },
             "internet": { "title":"八、  5G互联网", "PIC":"胡军/ 杨铭豪/ 吴兰" },
             "ai": { "title":"九、  人工智能", "PIC":"雷文忠/ 王兴华/ 张太平" },
-            "legal": { "title":"十、  法律", "PIC":"杨斌" }
+            "legal": { "title":"十、  法律", "PIC":"杨斌/ 萨哈/ 林俊爽" }
         },
         "sub_title": ["序号","分项","负责人","前值","预测值","实际值","分数"]
     },
@@ -29,7 +29,7 @@
             "big_data": { "title":"7. 4G Big Data", "PIC":"Novayanto/Zhang Jia/Riswanto" },
             "internet": { "title":"8. 5G Internet", "PIC":"Hu Jun/Nelson/Wulan" },
             "ai": { "title":"9. Artificial Intelligence", "PIC":"Lei Wenzhong/Wang Xinghua/Zhang Taiping" },
-            "legal": { "title":"10. Legal, ISPO, SSL", "PIC":"Yang Bin" }
+            "legal": { "title":"10. Legal, ISPO, SSL", "PIC":"Yang Bin/Sahha/Rahmad" }
         },
         "sub_title": ["No","Deskripsi","PIC","Prev.","Est.","Act.","Nilai"]
     },
@@ -46,7 +46,7 @@
             "big_data": { "title":"7. 4G Big Data 4G大数据", "PIC":"Novayanto/Zhang Jia/Riswanto\n杨江树/张佳/张汉雄" },
             "internet": { "title":"8. 5G Internet 5G互联网", "PIC":"Hu Jun/Nelson/Wulan\n胡军/杨铭豪/吴兰"},
             "ai": { "title":"9. Artificial Intelligence 人工智能", "PIC":"Lei Wenzhong/Wang Xinghua/Zhang Taiping\n雷文忠/王兴华/张太平" },
-            "legal": { "title":"10. Legal, ISPO, SSL 法律", "PIC":"Yang Bin 杨斌" }
+            "legal": { "title":"10. Legal, ISPO, SSL 法律", "PIC":"Yang Bin/Sahha/Rahmad\n杨斌/萨哈/林俊爽" }
         },
         "sub_title": ["No 序号","Deskripsi 分项","PIC 负责人","Prev. 前值","Est. 预测值","Act. 实际值","Nilai 分数"]
     }
