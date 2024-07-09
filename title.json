@@ -3,7 +3,7 @@
         "title": "聚龙健康100指数",
         "score": "总分数:",
         "section":{
-            "human_resource": { "title":"一、  人", "PIC":"杨义" },
+            "human_resource": { "title":"一、  人", "PIC":"杨义/壮/李丽" },
             "finance": { "title":"二、  财", "PIC":"侯光珍" },
             "material": { "title":"三、  物", "PIC":"孙忠宝" },
             "agriculture": { "title":"四、  农", "PIC":"皮金鹏" },
@@ -37,15 +37,15 @@
         "title": "100 Indikator sehat Julong\n聚龙健康100指数",
         "score": "Total总分数:",
         "section":{
-            "human_resource": { "title":"1. Human Resource 人", "PIC":"Yang Yi 杨义" },
-            "finance": { "title":"2. Finance 财", "PIC":"Hou Guangzhen 侯光珍" },
-            "material": { "title":"3. Material 物", "PIC":"Sun Zhongbao 孙忠宝" },
-            "agriculture": { "title":"4. Agriculture 农", "PIC":"Pi Jinpeng 皮金鹏" },
-            "industry": { "title":"5. Industry 工", "PIC":"Wang Tao 王涛" },
-            "commerce": { "title":"6. Commerce 商", "PIC":"Elvin 徐传贵" },
-            "big_data": { "title":"7. 4G Big Data 4G大数据", "PIC":"Novayanto 杨江树" },
-            "internet": { "title":"8. 5G Internet 5G互联网", "PIC":"Hu Jun 胡军" },
-            "ai": { "title":"9. Artificial Intelligence 人工智能", "PIC":"Lei Wenzhong 雷文忠" },
+            "human_resource": { "title":"1. Human Resource 人", "PIC":"Yang Yi/John/Nafila\n杨义/壮/李丽" },
+            "finance": { "title":"2. Finance 财", "PIC":"Hou Guangzhen/Elsa/Kornel\n侯光珍/左琳/景天" },
+            "material": { "title":"3. Material 物", "PIC":"Sun Zhongbao/Zhu Guohui/Erwin\n孙忠宝/朱国辉/邓静英" },
+            "agriculture": { "title":"4. Agriculture 农", "PIC":"Pi Jinpeng/Victor/Tang Feixiang\n皮金鹏/维克多/汤飞翔" },
+            "industry": { "title":"5. Industry 工", "PIC":"Wang Tao/Xie Yapeng/Kristo\n王涛/谢亚鹏/克里斯多" },
+            "commerce": { "title":"6. Commerce 商", "PIC":"Elvin/Yang Song/Ghoni\n徐传贵/杨松/王库尼" },
+            "big_data": { "title":"7. 4G Big Data 4G大数据", "PIC":"Novayanto/Zhang Jia/Riswanto\n杨江树/张佳/张汉雄" },
+            "internet": { "title":"8. 5G Internet 5G互联网", "PIC":"Hu Jun/Nelson/Wulan\n胡军/杨铭豪/吴兰"},
+            "ai": { "title":"9. Artificial Intelligence 人工智能", "PIC":"Lei Wenzhong/Wang Xinghua/Zhang Taiping\n雷文忠/王兴华/张太平" },
             "legal": { "title":"10. Legal, ISPO, SSL 法律", "PIC":"Yang Bin 杨斌" }
         },
         "sub_title": ["No 序号","Deskripsi 分项","PIC 负责人","Prev. 前值","Est. 预测值","Act. 实际值","Nilai 分数"]
