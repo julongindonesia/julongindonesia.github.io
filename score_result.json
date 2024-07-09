@@ -100,7 +100,7 @@
                     "0",
                     "1",
                     1,
-                    "SP 1 tersebut dikeluarkan di PT. MAU pada Prevoius dan actual karena kurang penerapan fungsi cek dan kontrol terhadap hasil pekerjaan pihak ketiga. Untuk di region Sintang di Previous ada 7 Staff; Kelalaian Pengawasan Panen (3 org; SP1, 2,3) dan tdk ikut Apel pagi  minimal 3 kali dlm sebulan (4 org; 1 org SP1 dan 3 org SP3, sedangkan periode minggu ini TIDAK ADA"
+                    "\u5728PT MAU\u53d1\u51fa\u8b66\u544a\u4fe11\uff08\u524d\u503c\u548c\u5b9e\u9645\u503c\uff09\uff0c\u56e0\u4e3a\u7f3a\u4e4f\u5bf9\u7b2c\u4e09\u65b9\u7684\u5de5\u4f5c\u7ed3\u679c\u8fdb\u884c\u68c0\u67e5\u548c\u63a7\u5236\u3002\u65b0\u6863\u7684\u524d\u503c\u4e3a7\u540d\uff1b\u67093\u4eba\u758f\u5ffd\u4e86\u94f2\u679c\u76d1\u7763\uff08\u8b66\u544a\u4fe11\u30012\u30013\uff09\uff0c\u5e76\u4e14\u6bcf\u6708\u81f3\u5c113\u6b21\u4e0d\u53c2\u4e0e\u65e9\u4f1a\uff08\u603b\u51714\u4eba\uff0c\u53731\u4eba\u4e3a\u8b66\u544a\u4fe11\u548c3\u4eba\u4e3a\u8b66\u544a\u4fe13\uff09\uff0c\u800c\u672c\u5468\u88ab\u6ca1\u6709\u88ab\u5904\u7f5a\u7684\u5458\u5de5\u3002"
                 ]
             ],
             "finance": [
@@ -178,8 +178,8 @@
                     "8",
                     "\u8d44\u91d1\u5468\u8f6c\u7387",
                     "\u8096\u6797\u6d9b",
-                    "0",
-                    "0",
+                    "1.59",
+                    "1.55",
                     "1.53",
                     1,
                     "Tingkat perputaran dana rendah, mengingat situasi account payable yang ada, kondisi keuangan tidak sehat.\n\u8d44\u91d1\u5468\u8f6c\u7387\u6c34\u5e73\u8f83\u4f4e\uff0c\u8003\u8651\u5230\u5e94\u4ed8\u8d26\u6b3e\u5b9e\u9645\u60c5\u51b5\uff0c\u8d44\u91d1\u60c5\u51b5\u4e0d\u5065\u5eb7"
@@ -230,8 +230,8 @@
                     "3",
                     "\u5728\u9014\u68d5\u6988\u7c95\u91cf",
                     "\u4e09\u8fea",
-                    "0",
-                    "0",
+                    "4099.79 \u5428",
+                    "5,000 \u5428",
                     "5,344.8 \u5428",
                     1,
                     "0"
@@ -386,7 +386,7 @@
                     "2557",
                     "1061.2",
                     1,
-                    "1. Pencapaian pemupukan minggu ini dibandingkan minggu lalu ada penurunan 21%\n2. Pencapaian pemupukan minggu ini dibandingkan dengan target mingguan hanya mencapai 42%\n3. Estate yang aplikasi pupuk terbanyak dari seluruh estate minggu ini adalah Estate Manusup mencapai 239.9 Ton, Lamunti 239.4 Ton, Jangkang 87.75 Ton, Seikapar 65.9 Ton, Sona 64.7 Ton.\n4. Estate yang tidak aplikasi pupuk yaitu Berlian 1, Nungki, Tapin, MAU dikarenakan stok pupuk digudang tidak ada dan sangat sedikit.\n5. Pencapaian minggu 1 juli rendah dikarenakan intensitas hujan cukup tinggi  "
+                    "1. Pencapaian pemupukan minggu ini dibandingkan minggu lalu ada penurunan 21%\n\u672c\u5468\u7684\u65bd\u80a5\u5b8c\u6210\u7387\u4e0e\u4e0a\u5468\u76f8\u6bd4\u4e0b\u964d\u4e8621%\u3002\n2. Pencapaian pemupukan minggu ini dibandingkan dengan target mingguan hanya mencapai 42%\n\u672c\u5468\u7684\u65bd\u80a5\u5b8c\u6210\u7387\u4ec5\u8fbe\u5230\u4e86\u5468\u5ea6\u76ee\u6807\u768442%\u3002\n3. Estate yang aplikasi pupuk terbanyak dari seluruh estate minggu ini adalah Estate Manusup mencapai 239.9 Ton, Lamunti 239.4 Ton, Jangkang 87.75 Ton, Seikapar 65.9 Ton, Sona 64.7 Ton.\n\u672c\u5468\u65bd\u80a5\u91cf\u6700\u591a\u7684\u533a\u57df\u5305\u62ec\uff1a\u9a6c\u52aa\u82cf\u8fbe\u5230239.9\u5428\uff0c\u62c9\u59c6\u65af239.4\u5428\uff0c\u6c5f\u676087.75\u5428\uff0c\u8d5b\u5361\u5df465.9\u5428\uff0c\u5a11\u5a1c64.7\u5428\u3002\n4. Estate yang tidak aplikasi pupuk yaitu Berlian 1, Nungki, Tapin, MAU dikarenakan stok pupuk digudang tidak ada dan sangat sedikit.\n\u7531\u4e8e\u4ed3\u5e93\u4e2d\u80a5\u6599\u5e93\u5b58\u6781\u5c11\u6216\u6ca1\u6709\uff0cPU1\u533a\u3001\u5f04\u7ed9\u3001\u5927\u5bbe\u3001MAU\u672c\u5468\u672a\u8fdb\u884c\u80a5\u6599\u65bd\u7528\u3002\n5. Pencapaian minggu 1 juli rendah dikarenakan intensitas hujan cukup tinggi \n7\u6708\u7b2c\u4e00\u5468\u7684\u65bd\u80a5\u5b8c\u6210\u7387\u4f4e\u7684\u539f\u56e0\u662f\u7531\u4e8e\u964d\u96e8\u8f83\u5927 \u3002"
                 ],
                 [
                     "9",
@@ -414,11 +414,11 @@
                     "1",
                     "\u4ea7\u6cb9\u91cf\uff1aCPO/CPKO",
                     "\u963f\u4f1f",
+                    "891.079 / 104.493",
+                    "600.000 / 100.000",
                     "771.085 / 107.925",
-                    "0",
-                    "0",
                     1,
-                    "0"
+                    "Rata-rata produksi CPO menurun karena sejalan dengan penerimaan tbs. Rata-rata produksi CPKO naik karena sejalan dengan penerimaan kernel."
                 ],
                 [
                     "2",
@@ -464,11 +464,11 @@
                     "6",
                     "\u751f\u7269\u67f4\u6cb9\u4ea7\u503c",
                     "\u5218\u6c38\u6210",
-                    "0",
-                    "0",
-                    "0",
+                    "15920 KG",
+                    "19298 KG",
+                    "14343 KG",
                     1,
-                    "0"
+                    "Terdapat kendala kebocoran pada hider dan outlet ke dua reaktor untuk saat ini sudah di lakukan pergantian dengan yang baru;\nperlunya penambahan setting yank karena jika olah 4 reaktor per hari maka harus ada yang tunggu satu reaktor disebabkan destilasibelum selesai yang menuebabkan capasitas tidak tercapai 6T/D;\n\u4e24\u4e2a\u53cd\u5e94\u5668\u7684\u9690\u85cf\u5668\u548c\u51fa\u53e3\u5b58\u5728\u6cc4\u6f0f\u95ee\u9898\uff0c\u73b0\u5df2\u66f4\u6362\u65b0\u7684\uff1b\n\u9700\u8981\u6dfb\u52a0\u989d\u5916\u7684\u8bbe\u7f6e\uff0c\u56e0\u4e3a\u5982\u679c\u6bcf\u5929\u5904\u7406 4 \u4e2a\u53cd\u5e94\u5668\uff0c\u5219\u5fc5\u987b\u6709\u4eba\u7b49\u5f85\u5176\u4e2d\u4e00\u4e2a\u53cd\u5e94\u5668\uff0c\u56e0\u4e3a\u84b8\u998f\u5c1a\u672a\u5b8c\u6210\uff0c\u8fd9\u610f\u5473\u7740\u5bb9\u91cf\u672a\u8fbe\u5230 6T/D"
                 ],
                 [
                     "7",
@@ -560,7 +560,7 @@
                     "2200 MT",
                     "1935 MT",
                     1,
-                    "\u6574\u4f53\u5916\u91c7\u679c\u6b20\u6b3e\u4f9d\u7136\u8f83\u591a\uff0c\u9700\u8981\u53ca\u65f6\u4ed8\u6b3e\u4fdd\u969c\u5468\u671f"
+                    "\u6574\u4f53\u5916\u91c7\u679c\u6b20\u6b3e\u4f9d\u7136\u8f83\u591a\uff0c\u9700\u8981\u53ca\u65f6\u4ed8\u6b3e\u4fdd\u969c\u4ed8\u6b3e\u5468\u671f\uff1b\n\u5916\u91c7\u679c\u4e70\u6cb9\u5468\u8f6c\u8d44\u91d1\u6ca1\u6709\u843d\u5b9e\u5230\u4f4d\uff1b"
                 ],
                 [
                     "6",
@@ -642,7 +642,7 @@
                     "53%",
                     "55%",
                     1,
-                    "Keseluruhan projek direncanakan 24 minggu, dibagi menjadi 3 bagian besar, dengan 17 item. Saat ini sudah selesai 8 item, 3 item sedang proses, perkiraan 3 item ini akan selesandi minggu depan.\n\u6574\u4e2a\u9879\u76ee\u8ba1\u521224\u5468\uff0c\u5206\u62103\u4e2a\u5927\u90e8\u5206\uff0c17\u4e2a\u5c0f\u9879\uff0c\u76ee\u524d\u5df2\u7ecf\u5b8c\u62108\u4e2a\u5c0f\u9879\uff0c\u6b63\u5728\u8fdb\u884c\u7684\u67093\u9879\uff0c\u9884\u8ba1\u4e0b\u5468\u8fd93\u9879\u53ef\u4ee5\u5b8c\u6210\u3002"
+                    "Keseluruhan projek direncanakan 14 minggu, dibagi menjadi 3 bagian besar, dengan 17 item. Saat ini sudah selesai 8 item, 3 item sedang proses, perkiraan 3 item ini akan selesandi minggu depan.\n\u6574\u4e2a\u9879\u76ee\u8ba1\u521214\u5468\uff0c\u5206\u62103\u4e2a\u5927\u90e8\u5206\uff0c17\u4e2a\u5c0f\u9879\uff0c\u76ee\u524d\u5df2\u7ecf\u5b8c\u62108\u4e2a\u5c0f\u9879\uff0c\u6b63\u5728\u8fdb\u884c\u7684\u67093\u9879\uff0c\u9884\u8ba1\u4e0b\u5468\u8fd93\u9879\u53ef\u4ee5\u5b8c\u6210\u3002"
                 ],
                 [
                     "4",
@@ -998,7 +998,7 @@
                     "0",
                     "Rp 283.642.607.554",
                     1,
-                    "sudah ada pembayaran untuk ketiganya dengan total Rp 6.153.940.775.\n\u5df2\u7ecf\u5bf9\u4e09\u4e2a\u5408\u4f5c\u793e\u5408\u4f5c\u79cd\u690d\u8fdb\u884c\u4e86\u652f\u4ed8\uff0c\u603b\u8ba1Rp6.153.940.775"
+                    "sudah ada pembayaran untuk ketiganya dengan total Rp 6.153.940.775.\n\u5df2\u7ecf\u5bf9\u4e09\u4e2a\u5408\u4f5c\u79cd\u690d\u5408\u4f5c\u793e\u8fdb\u884c\u4e86\u652f\u4ed8\uff0c\u603b\u8ba1Rp6.153.940.775"
                 ],
                 [
                     "9",
@@ -1052,7 +1052,7 @@
                     "19",
                     "9",
                     1,
-                    "Estimasi perekrutan Staff cukup tinggi. Dikarenakan angka perekrutan staff tersebut adalah Permintaan karyawan baru yang belum Masuk bekerja akan tetapi sudah ada kesepakatan Masuk di minggu-minggu selanjutnya. Dan est 19 orang adalah estimasi Karywan masuk dalam jangka 1 bulan, lebih tepatnya di Bulan Juli. Dan perekrutan terbanyak ada pada jabatan Assistant Afdeling dengan estimasi permintaan rekrut dari seluruh region untuk bulan Juli adalah 9 Orang."
+                    "Estimasi perekrutan staff cukup tinggi. Dikarenakan angka perekrutan staff tersebut adalah Permintaan karyawan baru yang belum masuk bekerja akan tetapi sudah ada kesepakatan Masuk di minggu-minggu selanjutnya. Dan est 19 orang adalah estimasi karyawan masuk dalam jangka 1 bulan, lebih tepatnya di bulan Juli. Dan perekrutan terbanyak ada pada jabatan Assistant Afdeling dengan estimasi permintaan rekrut dari seluruh region untuk bulan Juli adalah 9 Orang."
                 ],
                 [
                     "4",
@@ -1122,7 +1122,7 @@
                     "0",
                     "1",
                     1,
-                    "SP 1 tersebut dikeluarkan di PT. MAU pada Prevoius dan actual karena kurang penerapan fungsi cek dan kontrol terhadap hasil pekerjaan pihak ketiga. Untuk di region Sintang di Previous ada 7 Staff; Kelalaian Pengawasan Panen (3 org; SP1, 2,3) dan tdk ikut Apel pagi  minimal 3 kali dlm sebulan (4 org; 1 org SP1 dan 3 org SP3, sedangkan periode minggu ini TIDAK ADA"
+                    "SP 1 tersebut dikeluarkan di PT. MAU pada previous dan actual karena kurang penerapan fungsi cek dan kontrol terhadap hasil pekerjaan pihak ketiga. Untuk di region Sintang di Previous ada 7 Staff; Kelalaian Pengawasan Panen (3 org; SP1, 2,3) dan tidak ikut Apel pagi  minimal 3 kali dalam sebulan (4 orang; 1 orang SP1 dan 3 orang SP3, sedangkan periode minggu ini TIDAK ADA"
                 ]
             ],
             "finance": [
@@ -1200,8 +1200,8 @@
                     "8",
                     "Tingkat perputaran modal",
                     "Xiao Lintao",
-                    "0",
-                    "0",
+                    "1.59",
+                    "1.55",
                     "1.53",
                     1,
                     "Tingkat perputaran dana rendah, mengingat situasi account payable yang ada, kondisi keuangan tidak sehat.\n\u8d44\u91d1\u5468\u8f6c\u7387\u6c34\u5e73\u8f83\u4f4e\uff0c\u8003\u8651\u5230\u5e94\u4ed8\u8d26\u6b3e\u5b9e\u9645\u60c5\u51b5\uff0c\u8d44\u91d1\u60c5\u51b5\u4e0d\u5065\u5eb7"
@@ -1252,8 +1252,8 @@
                     "3",
                     "Jumlah PKE on shipping",
                     "Santi",
-                    "0",
-                    "0",
+                    "4099.79 \u5428",
+                    "5,000 \u5428",
                     "5,344.8 \u5428",
                     1,
                     "0"
@@ -1408,7 +1408,7 @@
                     "2557",
                     "1061.2",
                     1,
-                    "1. Pencapaian pemupukan minggu ini dibandingkan minggu lalu ada penurunan 21%\n2. Pencapaian pemupukan minggu ini dibandingkan dengan target mingguan hanya mencapai 42%\n3. Estate yang aplikasi pupuk terbanyak dari seluruh estate minggu ini adalah Estate Manusup mencapai 239.9 Ton, Lamunti 239.4 Ton, Jangkang 87.75 Ton, Seikapar 65.9 Ton, Sona 64.7 Ton.\n4. Estate yang tidak aplikasi pupuk yaitu Berlian 1, Nungki, Tapin, MAU dikarenakan stok pupuk digudang tidak ada dan sangat sedikit.\n5. Pencapaian minggu 1 juli rendah dikarenakan intensitas hujan cukup tinggi  "
+                    "1. Pencapaian pemupukan minggu ini dibandingkan minggu lalu ada penurunan 21%\n\u672c\u5468\u7684\u65bd\u80a5\u5b8c\u6210\u7387\u4e0e\u4e0a\u5468\u76f8\u6bd4\u4e0b\u964d\u4e8621%\u3002\n2. Pencapaian pemupukan minggu ini dibandingkan dengan target mingguan hanya mencapai 42%\n\u672c\u5468\u7684\u65bd\u80a5\u5b8c\u6210\u7387\u4ec5\u8fbe\u5230\u4e86\u5468\u5ea6\u76ee\u6807\u768442%\u3002\n3. Estate yang aplikasi pupuk terbanyak dari seluruh estate minggu ini adalah Estate Manusup mencapai 239.9 Ton, Lamunti 239.4 Ton, Jangkang 87.75 Ton, Seikapar 65.9 Ton, Sona 64.7 Ton.\n\u672c\u5468\u65bd\u80a5\u91cf\u6700\u591a\u7684\u533a\u57df\u5305\u62ec\uff1a\u9a6c\u52aa\u82cf\u8fbe\u5230239.9\u5428\uff0c\u62c9\u59c6\u65af239.4\u5428\uff0c\u6c5f\u676087.75\u5428\uff0c\u8d5b\u5361\u5df465.9\u5428\uff0c\u5a11\u5a1c64.7\u5428\u3002\n4. Estate yang tidak aplikasi pupuk yaitu Berlian 1, Nungki, Tapin, MAU dikarenakan stok pupuk digudang tidak ada dan sangat sedikit.\n\u7531\u4e8e\u4ed3\u5e93\u4e2d\u80a5\u6599\u5e93\u5b58\u6781\u5c11\u6216\u6ca1\u6709\uff0cPU1\u533a\u3001\u5f04\u7ed9\u3001\u5927\u5bbe\u3001MAU\u672c\u5468\u672a\u8fdb\u884c\u80a5\u6599\u65bd\u7528\u3002\n5. Pencapaian minggu 1 juli rendah dikarenakan intensitas hujan cukup tinggi \n7\u6708\u7b2c\u4e00\u5468\u7684\u65bd\u80a5\u5b8c\u6210\u7387\u4f4e\u7684\u539f\u56e0\u662f\u7531\u4e8e\u964d\u96e8\u8f83\u5927 \u3002"
                 ],
                 [
                     "9",
@@ -1436,11 +1436,11 @@
                     "1",
                     "Jumlah Produksi Minyak: CPO/CPKO",
                     "Alwi",
+                    "891.079 / 104.493",
+                    "600.000 / 100.000",
                     "771.085 / 107.925",
-                    "0",
-                    "0",
                     1,
-                    "0"
+                    "Rata-rata produksi CPO menurun karena sejalan dengan penerimaan tbs. Rata-rata produksi CPKO naik karena sejalan dengan penerimaan kernel."
                 ],
                 [
                     "2",
@@ -1486,11 +1486,11 @@
                     "6",
                     "Nilai produksi biodiesel",
                     "Liu Yongcheng",
-                    "0",
-                    "0",
-                    "0",
+                    "15920 KG",
+                    "19298 KG",
+                    "14343 KG",
                     1,
-                    "0"
+                    "Terdapat kendala kebocoran pada hider dan outlet ke dua reaktor untuk saat ini sudah di lakukan pergantian dengan yang baru;\nperlunya penambahan setting yank karena jika olah 4 reaktor per hari maka harus ada yang tunggu satu reaktor disebabkan destilasibelum selesai yang menuebabkan capasitas tidak tercapai 6T/D;\n\u4e24\u4e2a\u53cd\u5e94\u5668\u7684\u9690\u85cf\u5668\u548c\u51fa\u53e3\u5b58\u5728\u6cc4\u6f0f\u95ee\u9898\uff0c\u73b0\u5df2\u66f4\u6362\u65b0\u7684\uff1b\n\u9700\u8981\u6dfb\u52a0\u989d\u5916\u7684\u8bbe\u7f6e\uff0c\u56e0\u4e3a\u5982\u679c\u6bcf\u5929\u5904\u7406 4 \u4e2a\u53cd\u5e94\u5668\uff0c\u5219\u5fc5\u987b\u6709\u4eba\u7b49\u5f85\u5176\u4e2d\u4e00\u4e2a\u53cd\u5e94\u5668\uff0c\u56e0\u4e3a\u84b8\u998f\u5c1a\u672a\u5b8c\u6210\uff0c\u8fd9\u610f\u5473\u7740\u5bb9\u91cf\u672a\u8fbe\u5230 6T/D"
                 ],
                 [
                     "7",
@@ -1582,7 +1582,7 @@
                     "2200 MT",
                     "1935 MT",
                     1,
-                    "\u6574\u4f53\u5916\u91c7\u679c\u6b20\u6b3e\u4f9d\u7136\u8f83\u591a\uff0c\u9700\u8981\u53ca\u65f6\u4ed8\u6b3e\u4fdd\u969c\u5468\u671f"
+                    "\u6574\u4f53\u5916\u91c7\u679c\u6b20\u6b3e\u4f9d\u7136\u8f83\u591a\uff0c\u9700\u8981\u53ca\u65f6\u4ed8\u6b3e\u4fdd\u969c\u4ed8\u6b3e\u5468\u671f\uff1b\n\u5916\u91c7\u679c\u4e70\u6cb9\u5468\u8f6c\u8d44\u91d1\u6ca1\u6709\u843d\u5b9e\u5230\u4f4d\uff1b"
                 ],
                 [
                     "6",
@@ -1664,7 +1664,7 @@
                     "53%",
                     "55%",
                     1,
-                    "Keseluruhan projek direncanakan 24 minggu, dibagi menjadi 3 bagian besar, dengan 17 item. Saat ini sudah selesai 8 item, 3 item sedang proses, perkiraan 3 item ini akan selesandi minggu depan.\n\u6574\u4e2a\u9879\u76ee\u8ba1\u521224\u5468\uff0c\u5206\u62103\u4e2a\u5927\u90e8\u5206\uff0c17\u4e2a\u5c0f\u9879\uff0c\u76ee\u524d\u5df2\u7ecf\u5b8c\u62108\u4e2a\u5c0f\u9879\uff0c\u6b63\u5728\u8fdb\u884c\u7684\u67093\u9879\uff0c\u9884\u8ba1\u4e0b\u5468\u8fd93\u9879\u53ef\u4ee5\u5b8c\u6210\u3002"
+                    "Keseluruhan projek direncanakan 14 minggu, dibagi menjadi 3 bagian besar, dengan 17 item. Saat ini sudah selesai 8 item, 3 item sedang proses, perkiraan 3 item ini akan selesandi minggu depan.\n\u6574\u4e2a\u9879\u76ee\u8ba1\u521214\u5468\uff0c\u5206\u62103\u4e2a\u5927\u90e8\u5206\uff0c17\u4e2a\u5c0f\u9879\uff0c\u76ee\u524d\u5df2\u7ecf\u5b8c\u62108\u4e2a\u5c0f\u9879\uff0c\u6b63\u5728\u8fdb\u884c\u7684\u67093\u9879\uff0c\u9884\u8ba1\u4e0b\u5468\u8fd93\u9879\u53ef\u4ee5\u5b8c\u6210\u3002"
                 ],
                 [
                     "4",
@@ -2020,7 +2020,7 @@
                     "0",
                     "Rp 283.642.607.554",
                     1,
-                    "Monitoring pembayaran hutang Koperasi plasma yang sudah memiliki akta pengakuan hutang dengan detail sbb:\n\u5df2\u7ecf\u5177\u6709\u503a\u52a1\u786e\u8ba4\u4e66\u7684\u5408\u4f5c\u793e\u5408\u4f5c\u79cd\u690d\u7684\u503a\u52a1\u652f\u4ed8\u76d1\u63a7\uff0c\u8be6\u7ec6\u5982\u4e0b\uff1a\n1. KSU Karima : Rp 37.685.246.184\n2. KSU Bina Usaha : Rp 228. 662. 284.247\n3. KSU Klutap Sejahtera : Rp 23.449.017.898"
+                    "Monitoring pembayaran hutang Koperasi plasma yang sudah memiliki akta pengakuan hutang dengan detail sbb:\n\u5df2\u7ecf\u5177\u6709\u503a\u52a1\u786e\u8ba4\u4e66\u7684\u5408\u4f5c\u79cd\u690d\u5408\u4f5c\u793e\u7684\u503a\u52a1\u652f\u4ed8\u76d1\u63a7\uff0c\u8be6\u7ec6\u5982\u4e0b\uff1a\n1. KSU Karima : Rp 37.685.246.184\n2. KSU Bina Usaha : Rp 228. 662. 284.247\n3. KSU Klutap Sejahtera : Rp 23.449.017.898"
                 ],
                 [
                     "9",
@@ -2074,7 +2074,7 @@
                     "19",
                     "9",
                     1,
-                    "Estimasi perekrutan Staff cukup tinggi. Dikarenakan angka perekrutan staff tersebut adalah Permintaan karyawan baru yang belum Masuk bekerja akan tetapi sudah ada kesepakatan Masuk di minggu-minggu selanjutnya. Dan est 19 orang adalah estimasi Karywan masuk dalam jangka 1 bulan, lebih tepatnya di Bulan Juli. Dan perekrutan terbanyak ada pada jabatan Assistant Afdeling dengan estimasi permintaan rekrut dari seluruh region untuk bulan Juli adalah 9 Orang.\n\u5bf9\u5458\u5de5\u7684\u62db\u8058\u9884\u4f30\u76f8\u5f53\u9ad8\u3002\u56e0\u4e3a\u8fd9\u4e9b\u5458\u5de5\u7684\u62db\u8058\u6570\u5b57\u662f\u6307\u90a3\u4e9b\u5c1a\u672a\u5f00\u59cb\u5de5\u4f5c\u4f46\u5df2\u7ecf\u8fbe\u6210\u534f\u8bae\u5c06\u5728\u63a5\u4e0b\u6765\u7684\u51e0\u5468\u5185\u5165\u804c\u7684\u65b0\u5458\u5de5\u3002\u9884\u4f30\u670919\u4eba\u57287\u6708\u4efd\u5165\u804c\uff0c\u800c\u62db\u8058\u6700\u591a\u7684\u804c\u4f4d\u662f\u5c0f\u533a\u52a9\u7406\uff0c7\u6708\u4efd\u5404\u4e2a\u533a\u57df\u7684\u4f5c\u54c1\u603b\u62db\u8058\u9700\u6c42\u4f30\u8ba1\u4e3a9\u4eba\u3002"
+                    "Estimasi perekrutan staff cukup tinggi. Dikarenakan angka perekrutan staff tersebut adalah Permintaan karyawan baru yang belum masuk bekerja akan tetapi sudah ada kesepakatan Masuk di minggu-minggu selanjutnya. Dan est 19 orang adalah estimasi karyawan masuk dalam jangka 1 bulan, lebih tepatnya di bulan Juli. Dan perekrutan terbanyak ada pada jabatan Assistant Afdeling dengan estimasi permintaan rekrut dari seluruh region untuk bulan Juli adalah 9 Orang.\n\u5bf9\u5458\u5de5\u7684\u62db\u8058\u9884\u4f30\u76f8\u5f53\u9ad8\u3002\u56e0\u4e3a\u8fd9\u4e9b\u5458\u5de5\u7684\u62db\u8058\u6570\u5b57\u662f\u6307\u90a3\u4e9b\u5c1a\u672a\u5f00\u59cb\u5de5\u4f5c\u4f46\u5df2\u7ecf\u8fbe\u6210\u534f\u8bae\u5c06\u5728\u63a5\u4e0b\u6765\u7684\u51e0\u5468\u5185\u5165\u804c\u7684\u65b0\u5458\u5de5\u3002\u9884\u4f30\u670919\u4eba\u57287\u6708\u4efd\u5165\u804c\uff0c\u800c\u62db\u8058\u6700\u591a\u7684\u804c\u4f4d\u662f\u5c0f\u533a\u52a9\u7406\uff0c7\u6708\u4efd\u5404\u4e2a\u533a\u57df\u7684\u4f5c\u54c1\u603b\u62db\u8058\u9700\u6c42\u4f30\u8ba1\u4e3a9\u4eba\u3002"
                 ],
                 [
                     "4",
@@ -2144,7 +2144,7 @@
                     "0",
                     "1",
                     1,
-                    "SP 1 tersebut dikeluarkan di PT. MAU pada Prevoius dan actual karena kurang penerapan fungsi cek dan kontrol terhadap hasil pekerjaan pihak ketiga. Untuk di region Sintang di Previous ada 7 Staff; Kelalaian Pengawasan Panen (3 org; SP1, 2,3) dan tdk ikut Apel pagi  minimal 3 kali dlm sebulan (4 org; 1 org SP1 dan 3 org SP3, sedangkan periode minggu ini TIDAK ADA"
+                    "SP 1 tersebut dikeluarkan di PT. MAU pada previous dan actual karena kurang penerapan fungsi cek dan kontrol terhadap hasil pekerjaan pihak ketiga. Untuk di region Sintang di Previous ada 7 Staff; Kelalaian Pengawasan Panen (3 org; SP1, 2,3) dan tidak ikut Apel pagi  minimal 3 kali dalam sebulan (4 orang; 1 orang SP1 dan 3 orang SP3, sedangkan periode minggu ini TIDAK ADA\n\u5728PT MAU\u53d1\u51fa\u8b66\u544a\u4fe11\uff08\u524d\u503c\u548c\u5b9e\u9645\u503c\uff09\uff0c\u56e0\u4e3a\u7f3a\u4e4f\u5bf9\u7b2c\u4e09\u65b9\u7684\u5de5\u4f5c\u7ed3\u679c\u8fdb\u884c\u68c0\u67e5\u548c\u63a7\u5236\u3002\u65b0\u6863\u7684\u524d\u503c\u4e3a7\u540d\uff1b\u67093\u4eba\u758f\u5ffd\u4e86\u94f2\u679c\u76d1\u7763\uff08\u8b66\u544a\u4fe11\u30012\u30013\uff09\uff0c\u5e76\u4e14\u6bcf\u6708\u81f3\u5c113\u6b21\u4e0d\u53c2\u4e0e\u65e9\u4f1a\uff08\u603b\u51714\u4eba\uff0c\u53731\u4eba\u4e3a\u8b66\u544a\u4fe11\u548c3\u4eba\u4e3a\u8b66\u544a\u4fe13\uff09\uff0c\u800c\u672c\u5468\u88ab\u6ca1\u6709\u88ab\u5904\u7f5a\u7684\u5458\u5de5\u3002"
                 ]
             ],
             "finance": [
@@ -2222,8 +2222,8 @@
                     "8",
                     "Tingkat perputaran modal \u8d44\u91d1\u5468\u8f6c\u7387",
                     "Xiao Lintao\u8096\u6797\u6d9b",
-                    "0",
-                    "0",
+                    "1.59",
+                    "1.55",
                     "1.53",
                     1,
                     "Tingkat perputaran dana rendah, mengingat situasi account payable yang ada, kondisi keuangan tidak sehat.\n\u8d44\u91d1\u5468\u8f6c\u7387\u6c34\u5e73\u8f83\u4f4e\uff0c\u8003\u8651\u5230\u5e94\u4ed8\u8d26\u6b3e\u5b9e\u9645\u60c5\u51b5\uff0c\u8d44\u91d1\u60c5\u51b5\u4e0d\u5065\u5eb7"
@@ -2274,8 +2274,8 @@
                     "3",
                     "Jumlah PKE on shipping\u5728\u9014\u68d5\u6988\u7c95\u91cf",
                     "Santi \u4e09\u8fea",
-                    "0",
-                    "0",
+                    "4099.79 \u5428",
+                    "5,000 \u5428",
                     "5,344.8 \u5428",
                     1,
                     "0"
@@ -2430,7 +2430,7 @@
                     "2557",
                     "1061.2",
                     1,
-                    "1. Pencapaian pemupukan minggu ini dibandingkan minggu lalu ada penurunan 21%\n2. Pencapaian pemupukan minggu ini dibandingkan dengan target mingguan hanya mencapai 42%\n3. Estate yang aplikasi pupuk terbanyak dari seluruh estate minggu ini adalah Estate Manusup mencapai 239.9 Ton, Lamunti 239.4 Ton, Jangkang 87.75 Ton, Seikapar 65.9 Ton, Sona 64.7 Ton.\n4. Estate yang tidak aplikasi pupuk yaitu Berlian 1, Nungki, Tapin, MAU dikarenakan stok pupuk digudang tidak ada dan sangat sedikit.\n5. Pencapaian minggu 1 juli rendah dikarenakan intensitas hujan cukup tinggi  "
+                    "1. Pencapaian pemupukan minggu ini dibandingkan minggu lalu ada penurunan 21%\n\u672c\u5468\u7684\u65bd\u80a5\u5b8c\u6210\u7387\u4e0e\u4e0a\u5468\u76f8\u6bd4\u4e0b\u964d\u4e8621%\u3002\n2. Pencapaian pemupukan minggu ini dibandingkan dengan target mingguan hanya mencapai 42%\n\u672c\u5468\u7684\u65bd\u80a5\u5b8c\u6210\u7387\u4ec5\u8fbe\u5230\u4e86\u5468\u5ea6\u76ee\u6807\u768442%\u3002\n3. Estate yang aplikasi pupuk terbanyak dari seluruh estate minggu ini adalah Estate Manusup mencapai 239.9 Ton, Lamunti 239.4 Ton, Jangkang 87.75 Ton, Seikapar 65.9 Ton, Sona 64.7 Ton.\n\u672c\u5468\u65bd\u80a5\u91cf\u6700\u591a\u7684\u533a\u57df\u5305\u62ec\uff1a\u9a6c\u52aa\u82cf\u8fbe\u5230239.9\u5428\uff0c\u62c9\u59c6\u65af239.4\u5428\uff0c\u6c5f\u676087.75\u5428\uff0c\u8d5b\u5361\u5df465.9\u5428\uff0c\u5a11\u5a1c64.7\u5428\u3002\n4. Estate yang tidak aplikasi pupuk yaitu Berlian 1, Nungki, Tapin, MAU dikarenakan stok pupuk digudang tidak ada dan sangat sedikit.\n\u7531\u4e8e\u4ed3\u5e93\u4e2d\u80a5\u6599\u5e93\u5b58\u6781\u5c11\u6216\u6ca1\u6709\uff0cPU1\u533a\u3001\u5f04\u7ed9\u3001\u5927\u5bbe\u3001MAU\u672c\u5468\u672a\u8fdb\u884c\u80a5\u6599\u65bd\u7528\u3002\n5. Pencapaian minggu 1 juli rendah dikarenakan intensitas hujan cukup tinggi \n7\u6708\u7b2c\u4e00\u5468\u7684\u65bd\u80a5\u5b8c\u6210\u7387\u4f4e\u7684\u539f\u56e0\u662f\u7531\u4e8e\u964d\u96e8\u8f83\u5927 \u3002"
                 ],
                 [
                     "9",
@@ -2458,11 +2458,11 @@
                     "1",
                     "Jumlah Produksi Minyak: CPO/CPKO \u4ea7\u6cb9\u91cf\uff1aCPO/CPKO",
                     "Alwi \u963f\u4f1f",
+                    "891.079 / 104.493",
+                    "600.000 / 100.000",
                     "771.085 / 107.925",
-                    "0",
-                    "0",
                     1,
-                    "0"
+                    "Rata-rata produksi CPO menurun karena sejalan dengan penerimaan tbs. Rata-rata produksi CPKO naik karena sejalan dengan penerimaan kernel."
                 ],
                 [
                     "2",
@@ -2508,11 +2508,11 @@
                     "6",
                     "Nilai produksi biodiesel \u751f\u7269\u67f4\u6cb9\u4ea7\u503c",
                     "Liu Yongcheng \u5218\u6c38\u6210",
-                    "0",
-                    "0",
-                    "0",
+                    "15920 KG",
+                    "19298 KG",
+                    "14343 KG",
                     1,
-                    "0"
+                    "Terdapat kendala kebocoran pada hider dan outlet ke dua reaktor untuk saat ini sudah di lakukan pergantian dengan yang baru;\nperlunya penambahan setting yank karena jika olah 4 reaktor per hari maka harus ada yang tunggu satu reaktor disebabkan destilasibelum selesai yang menuebabkan capasitas tidak tercapai 6T/D;\n\u4e24\u4e2a\u53cd\u5e94\u5668\u7684\u9690\u85cf\u5668\u548c\u51fa\u53e3\u5b58\u5728\u6cc4\u6f0f\u95ee\u9898\uff0c\u73b0\u5df2\u66f4\u6362\u65b0\u7684\uff1b\n\u9700\u8981\u6dfb\u52a0\u989d\u5916\u7684\u8bbe\u7f6e\uff0c\u56e0\u4e3a\u5982\u679c\u6bcf\u5929\u5904\u7406 4 \u4e2a\u53cd\u5e94\u5668\uff0c\u5219\u5fc5\u987b\u6709\u4eba\u7b49\u5f85\u5176\u4e2d\u4e00\u4e2a\u53cd\u5e94\u5668\uff0c\u56e0\u4e3a\u84b8\u998f\u5c1a\u672a\u5b8c\u6210\uff0c\u8fd9\u610f\u5473\u7740\u5bb9\u91cf\u672a\u8fbe\u5230 6T/D"
                 ],
                 [
                     "7",
@@ -2604,7 +2604,7 @@
                     "2200 MT",
                     "1935 MT",
                     1,
-                    "\u6574\u4f53\u5916\u91c7\u679c\u6b20\u6b3e\u4f9d\u7136\u8f83\u591a\uff0c\u9700\u8981\u53ca\u65f6\u4ed8\u6b3e\u4fdd\u969c\u5468\u671f"
+                    "\u6574\u4f53\u5916\u91c7\u679c\u6b20\u6b3e\u4f9d\u7136\u8f83\u591a\uff0c\u9700\u8981\u53ca\u65f6\u4ed8\u6b3e\u4fdd\u969c\u4ed8\u6b3e\u5468\u671f\uff1b\n\u5916\u91c7\u679c\u4e70\u6cb9\u5468\u8f6c\u8d44\u91d1\u6ca1\u6709\u843d\u5b9e\u5230\u4f4d\uff1b"
                 ],
                 [
                     "6",
@@ -2686,7 +2686,7 @@
                     "53%",
                     "55%",
                     1,
-                    "Keseluruhan projek direncanakan 24 minggu, dibagi menjadi 3 bagian besar, dengan 17 item. Saat ini sudah selesai 8 item, 3 item sedang proses, perkiraan 3 item ini akan selesandi minggu depan.\n\u6574\u4e2a\u9879\u76ee\u8ba1\u521224\u5468\uff0c\u5206\u62103\u4e2a\u5927\u90e8\u5206\uff0c17\u4e2a\u5c0f\u9879\uff0c\u76ee\u524d\u5df2\u7ecf\u5b8c\u62108\u4e2a\u5c0f\u9879\uff0c\u6b63\u5728\u8fdb\u884c\u7684\u67093\u9879\uff0c\u9884\u8ba1\u4e0b\u5468\u8fd93\u9879\u53ef\u4ee5\u5b8c\u6210\u3002"
+                    "Keseluruhan projek direncanakan 14 minggu, dibagi menjadi 3 bagian besar, dengan 17 item. Saat ini sudah selesai 8 item, 3 item sedang proses, perkiraan 3 item ini akan selesandi minggu depan.\n\u6574\u4e2a\u9879\u76ee\u8ba1\u521214\u5468\uff0c\u5206\u62103\u4e2a\u5927\u90e8\u5206\uff0c17\u4e2a\u5c0f\u9879\uff0c\u76ee\u524d\u5df2\u7ecf\u5b8c\u62108\u4e2a\u5c0f\u9879\uff0c\u6b63\u5728\u8fdb\u884c\u7684\u67093\u9879\uff0c\u9884\u8ba1\u4e0b\u5468\u8fd93\u9879\u53ef\u4ee5\u5b8c\u6210\u3002"
                 ],
                 [
                     "4",
@@ -3042,7 +3042,7 @@
                     "0",
                     "Rp 283.642.607.554",
                     1,
-                    "Monitoring pembayaran hutang Koperasi plasma yang sudah memiliki akta pengakuan hutang dengan detail sbb:\n\u5df2\u7ecf\u5177\u6709\u503a\u52a1\u786e\u8ba4\u4e66\u7684\u5408\u4f5c\u793e\u5408\u4f5c\u79cd\u690d\u7684\u503a\u52a1\u652f\u4ed8\u76d1\u63a7\uff0c\u8be6\u7ec6\u5982\u4e0b\uff1a\n1. KSU Karima : Rp 37.685.246.184\n2. KSU Bina Usaha : Rp 228. 662. 284.247\n3. KSU Klutap Sejahtera : Rp 23.449.017.898\nsudah ada pembayaran untuk ketiganya dengan total Rp 6.153.940.775.\n\u5df2\u7ecf\u5bf9\u4e09\u4e2a\u5408\u4f5c\u793e\u5408\u4f5c\u79cd\u690d\u8fdb\u884c\u4e86\u652f\u4ed8\uff0c\u603b\u8ba1Rp6.153.940.775"
+                    "Monitoring pembayaran hutang Koperasi plasma yang sudah memiliki akta pengakuan hutang dengan detail sbb:\n\u5df2\u7ecf\u5177\u6709\u503a\u52a1\u786e\u8ba4\u4e66\u7684\u5408\u4f5c\u79cd\u690d\u5408\u4f5c\u793e\u7684\u503a\u52a1\u652f\u4ed8\u76d1\u63a7\uff0c\u8be6\u7ec6\u5982\u4e0b\uff1a\n1. KSU Karima : Rp 37.685.246.184\n2. KSU Bina Usaha : Rp 228. 662. 284.247\n3. KSU Klutap Sejahtera : Rp 23.449.017.898\nsudah ada pembayaran untuk ketiganya dengan total Rp 6.153.940.775.\n\u5df2\u7ecf\u5bf9\u4e09\u4e2a\u5408\u4f5c\u79cd\u690d\u5408\u4f5c\u793e\u8fdb\u884c\u4e86\u652f\u4ed8\uff0c\u603b\u8ba1Rp6.153.940.775"
                 ],
                 [
                     "9",
@@ -3482,8 +3482,8 @@
                     "1",
                     "\u4ea7\u6cb9\u91cf\uff1aCPO/CPKO",
                     "\u963f\u4f1f",
-                    "0",
-                    "0",
+                    "771.085 / 107.925",
+                    "600.000 / 100.000",
                     "0",
                     1,
                     "0"
@@ -4504,8 +4504,8 @@
                     "1",
                     "Jumlah Produksi Minyak: CPO/CPKO",
                     "Alwi",
-                    "0",
-                    "0",
+                    "771.085 / 107.925",
+                    "600.000 / 100.000",
                     "0",
                     1,
                     "0"
@@ -5526,8 +5526,8 @@
                     "1",
                     "Jumlah Produksi Minyak: CPO/CPKO \u4ea7\u6cb9\u91cf\uff1aCPO/CPKO",
                     "Alwi \u963f\u4f1f",
-                    "0",
-                    "0",
+                    "771.085 / 107.925",
+                    "600.000 / 100.000",
                     "0",
                     1,
                     "0"
