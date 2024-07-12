@@ -30,10 +30,18 @@ def create_title_data(df):
     # 初始化data的数据结构
     for language in language_list:
         data[language] = {}
-    for section in section_list:
-        for language in language_list:
-            data[language][section] = {'title': '', 'PIC': '','sekre': '','sub': []}
-        
+        data[language]['title'] = {}
+        for section in section_list:
+            data[language][section] = {'title': '', 'PIC': '','sekre': '', 'sub': []}
+    # 
+    data['china']['title']['subtitle'] = ["序号","分项","负责人","前值","预测值","实际值","分数"]
+    data['indonesia']['title']['subtitle'] = ["No","Deskripsi","PIC","Prev.","Est.","Act.","Nilai"]
+    data['double']['title']['subtitle'] = ["No 序号","Deskripsi 分项","PIC 负责人","Prev. 前值","Est. 预测值","Act. 实际值","Nilai 分数"]
+
+    data['china']['title']['title'] = '聚龙健康100指数'
+    data['indonesia']['title']['title'] = '100 Indikator sehat Julong'
+    data['double']['title']['title'] = '100 Indikator sehat Julong\n聚龙健康100指数'
+
     # 配置循环中需要的标识符
     index_df = 0  # df结构中的行
     index_section_list = -1 # 当前section在section_list中的位置，用来判断当前的section
@@ -111,8 +119,8 @@ def data_to_json(data, output_file):
 excel_url = 'https://docs.google.com/spreadsheets/d/1XyGv34ix2nLOAbrTB7sAwAUinyxkjki9/edit?gid=1901615913#gid=1901615913'
 output_json_file = 'title_result.json'
 df = extract_google_sheet(excel_url)
-print(df)
-print(len(df))
+# print(df)
+# print(len(df))
 data = create_title_data(df)
 # print(data)
 data_to_json(data, output_json_file)

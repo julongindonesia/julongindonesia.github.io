@@ -276,12 +276,17 @@
 
   <script>
     // 默认值
-    file_path = 'score_result.json' // 主要数据的存储文件
-    title_path = 'title.json' // 标题国际化的存储文件
-    period = 'week1' // 时间段
+    file_path = 'total_data.json' // 主要数据的存储文件
+    title_path = 'total_data.json' // 标题国际化的存储文件
+    period = {
+      'year': '2024',
+      'month': '7',
+      'period': 'week1'
+    } // 时间段
+   
     language = 'china' // 语言
     // 大指标的关键字
-    stand_list = ['human_resource','finance','material','agriculture','industry',
+    section_list = ['human_resource','finance','material','agriculture','industry',
       'commerce', 'big_data','internet','ai','legal'
     ]
     // 计算得分的数据结构
@@ -401,10 +406,10 @@
         request.send(null)
         request.onload = function(){
           var data = JSON.parse(request.responseText)
-          data = data[language]
-          $('thead#total').children('tr:nth-child(1)').children('td:nth-child(1)').find('h3:first').text(data['title'])
+          data = data[period['year']][period['month']][period['period']][language]
+          $('thead#total').children('tr:nth-child(1)').children('td:nth-child(1)').find('h3:first').text(data['title']['title'])
 
-          section_title = data["section"]
+          section_title = data
           for(index in section_list){
             section = section_list[index]
             title = section_title[section]
@@ -413,7 +418,7 @@
             tr.children("td:nth-child(2)").text(title["PIC"])
           }
           
-          sub_title = data["sub_title"]
+          sub_title = data["title"]['subtitle']
           tbody_tr = $('tbody').find('tr:first')
           for(var i=1; i<=7; i++){
             tbody_tr.children(`th:nth-child(${i})`).text(sub_title[i-1])
@@ -430,13 +435,13 @@
       request.send(null)
       request.onload = function(){
         var data = JSON.parse(request.responseText)
-        data = data[period][language]
+        data = data[period['year']][period['month']][period['period']][language]
         
         // 渲染数据
-        for(index in stand_list){
-          section = stand_list[index]
+        for(index in section_list){
+          section = section_list[index]
           section_score[section] = 0  //将分数置为零，防止累加之前计算的得分
-          section_score[section] = input_data(section,data[section])
+          section_score[section] = input_data(section,data[section]['sub'])
         }
         // 渲染总分数
         input_total_score(section_score)
@@ -451,14 +456,12 @@
       request.send(null)
       request.onload = function(){
         var data = JSON.parse(request.responseText)
-        data = data[period][language]
-        console.log("language:", language)
-        console.log("data:", data)
+        data = data[period['year']][period['month']][period['period']][language]
         // 渲染数据
-        for(index in stand_list){
-          section = stand_list[index]
+        for(index in section_list){
+          section = section_list[index]
           section_score[section] = 0  //将分数置为零，防止累加之前计算的得分
-          section_score[section] = update_data(section,data[section],language)
+          section_score[section] = update_data(section,data[section]['sub'],language)
         }
         // 渲染总分数
         input_total_score(section_score)
@@ -467,20 +470,20 @@
 
     // 网页开始时，要处理的事情
     input_period_data(file_path,period,language)
-    get_title_data(title_path, language, stand_list)
+    get_title_data(title_path, language, section_list)
     $("p#tanggal").text(tanggal[period])
 
     // 缩放
-    for(index in stand_list){
-      cs(stand_list[index])
+    for(index in section_list){
+      cs(section_list[index])
     }
 
     $("#periodSelect").change(function(){
       // 根据下拉列表，获取当前时间段
-      period = $("#periodSelect").val()
+      period['period'] = $("#periodSelect").val()
       language = $('#languageSelect').val()
       // 按照时间段更新数据，只重新渲染数据
-      update_period_data(file_path,period,language)
+      update_period_data(file_path, period, language)
       // 显示出所选时间段的具体时间
       $("p#tanggal").text(tanggal[period])
     })
@@ -488,10 +491,10 @@
     $("#languageSelect").change(function(){
       // 根据下拉列表，获取当前时间段
       language = $('#languageSelect').val()
-      period = $("#periodSelect").val()
+      period['period'] = $("#periodSelect").val()
       // 按照选择的语言更新数据，只重新渲染数据
       update_period_data(file_path,period,language)
-      get_title_data(title_path, language, stand_list)
+      get_title_data(title_path, language, section_list)
     })
 
   </script>

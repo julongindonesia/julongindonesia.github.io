@@ -1,5 +1,17 @@
 {
     "china": {
+        "title": {
+            "subtitle": [
+                "\u5e8f\u53f7",
+                "\u5206\u9879",
+                "\u8d1f\u8d23\u4eba",
+                "\u524d\u503c",
+                "\u9884\u6d4b\u503c",
+                "\u5b9e\u9645\u503c",
+                "\u5206\u6570"
+            ],
+            "title": "\u805a\u9f99\u5065\u5eb7100\u6307\u6570"
+        },
         "human_resource": {
             "title": "\u4eba | 1:1:1    \u52b3\u52a8\u529b\u8bc5\u5492    \u4eba\u4e8b\u5408\u4e00",
             "PIC": "\u6768\u4e49/\u58ee/\u963f\u798f",
@@ -43,7 +55,7 @@
                     "240.0",
                     "243.0",
                     1,
-                    "1. 7\u6708\u7b2c\u4e00\u5468\u7684\u5458\u5de5\u6570\u636e\u4e0e6\u6708\u7b2c\u56db\u5468\u7684\u6570\u636e\u76f8\u540c\uff0c\u5171\u6709205\u540dMT\u548c40\u540d\u91d1\u68d5\u6988\u5458\u5de5\u3002\n"
+                    "1. 7\u6708\u7b2c\u4e00\u5468\u7684\u5458\u5de5\u6570\u636e\u4e0e6\u6708\u7b2c\u56db\u5468\u7684\u6570\u636e\u76f8\u540c\uff0c\u5171\u6709205\u540dMT\u548c40\u540d\u91d1\u68d5\u6988\u5458\u5de5\u3002\n2. \u57fa\u4e8e\u4e0a\u4e2a\u6708\u7684\u79bb\u804c\u6570\u636e\uff0c7\u6708\u7b2c\u4e09\u5468\u7684\u9884\u6d4b\u503c\u5c06\u4f1a\u6709\u53d8\u5316\u3002\u5728\u8fc7\u53bb3\u4e2a\u6708\uff083\u6708\u81f36\u6708\uff09\u7684\u7b2c\u4e09\u5468\u603b\u6709\u4e00\u4eba\u63d0\u51fa\u79bb\u804c\uff0c\u56e0\u6b64\u9884\u8ba1\u79bb\u804c\u8ba4\u8bc6\u4e3a240\u4eba\u3002\n3. \u622a\u6b622024\u5e747\u6708\u7684\u5b9e\u9645\u6570\u636e\uff0c\u5171\u6709245\u540dMT\u548c\u91d1\u68d5\u6988\u5458\u5de5\u3002"
                 ],
                 [
                     5,
@@ -1072,6 +1084,18 @@
         }
     },
     "indonesia": {
+        "title": {
+            "subtitle": [
+                "No",
+                "Deskripsi",
+                "PIC",
+                "Prev.",
+                "Est.",
+                "Act.",
+                "Nilai"
+            ],
+            "title": "100 Indikator sehat Julong"
+        },
         "human_resource": {
             "title": "Human Resource | 1:1:1    Kutukan Tenaga Kerja     Kesatuan SDM dan Masalah",
             "PIC": "Yang Yi/John/Stephanus",
@@ -1115,7 +1139,7 @@
                     "240.0",
                     "243.0",
                     1,
-                    "1. Data karyawan Bulan Juli minggu pertama sama dengan data di bulan Juni minggu keempat yakni karyawan existing program MT sebanyak 205 karyawan dan program Golden Palm sebanyak 40 karyawan. \n2. Data estimasi di bulan Juli minggu ketiga akan ada perubahan. Hal ini didasarkan pada data tren resign di bulan sebelumnya. Pada data di 3 bulan terakhir dari bulan Maret sampai Juni minggu ketiga selalu terdapat 1 orang yang mengajukan resign, sehingga diestimasikan data resign sebanyak 240 karyawan\n3. Data aktual sampai dengan 12 Juli 2024 adalah 245 karyawan MT dan Golden Palm."
+                    "1. Data karyawan Bulan Juli minggu pertama sama dengan data di bulan Juni minggu keempat yakni karyawan existing program MT sebanyak 205 karyawan dan program Golden Palm sebanyak 40 karyawan. \n2. Data estimasi di bulan Juli minggu ketiga akan ada perubahan. Hal ini didasarkan pada data tren resign di bulan sebelumnya. Pada data di 3 bulan terakhir dari bulan Maret sampai Juni minggu ketiga selalu terdapat 1 orang yang mengajukan resign, sehingga diestimasikan data resign sebanyak 240 karyawan.\n3. Data aktual sampai dengan 12 Juli 2024 adalah 245 karyawan MT dan Golden Palm."
                 ],
                 [
                     5,
@@ -2144,6 +2168,18 @@
         }
     },
     "double": {
+        "title": {
+            "subtitle": [
+                "No \u5e8f\u53f7",
+                "Deskripsi \u5206\u9879",
+                "PIC \u8d1f\u8d23\u4eba",
+                "Prev. \u524d\u503c",
+                "Est. \u9884\u6d4b\u503c",
+                "Act. \u5b9e\u9645\u503c",
+                "Nilai \u5206\u6570"
+            ],
+            "title": "100 Indikator sehat Julong\n\u805a\u9f99\u5065\u5eb7100\u6307\u6570"
+        },
         "human_resource": {
             "title": "Human Resource | 1:1:1    Kutukan Tenaga Kerja     Kesatuan SDM dan Masalah\n\u4eba | 1:1:1    \u52b3\u52a8\u529b\u8bc5\u5492    \u4eba\u4e8b\u5408\u4e00",
             "PIC": "Yang Yi/John/Stephanus\n\u6768\u4e49/\u58ee/\u963f\u798f",
@@ -2187,7 +2223,7 @@
                     "240.0",
                     "243.0",
                     1,
-                    "1. Data karyawan Bulan Juli minggu pertama sama dengan data di bulan Juni minggu keempat yakni karyawan existing program MT sebanyak 205 karyawan dan program Golden Palm sebanyak 40 karyawan. \n2. Data estimasi di bulan Juli minggu ketiga akan ada perubahan. Hal ini didasarkan pada data tren resign di bulan sebelumnya. Pada data di 3 bulan terakhir dari bulan Maret sampai Juni minggu ketiga selalu terdapat 1 orang yang mengajukan resign, sehingga diestimasikan data resign sebanyak 240 karyawan\n3. Data aktual sampai dengan 12 Juli 2024 adalah 245 karyawan MT dan Golden Palm.\n1. 7\u6708\u7b2c\u4e00\u5468\u7684\u5458\u5de5\u6570\u636e\u4e0e6\u6708\u7b2c\u56db\u5468\u7684\u6570\u636e\u76f8\u540c\uff0c\u5171\u6709205\u540dMT\u548c40\u540d\u91d1\u68d5\u6988\u5458\u5de5\u3002\n"
+                    "1. Data karyawan Bulan Juli minggu pertama sama dengan data di bulan Juni minggu keempat yakni karyawan existing program MT sebanyak 205 karyawan dan program Golden Palm sebanyak 40 karyawan. \n2. Data estimasi di bulan Juli minggu ketiga akan ada perubahan. Hal ini didasarkan pada data tren resign di bulan sebelumnya. Pada data di 3 bulan terakhir dari bulan Maret sampai Juni minggu ketiga selalu terdapat 1 orang yang mengajukan resign, sehingga diestimasikan data resign sebanyak 240 karyawan.\n3. Data aktual sampai dengan 12 Juli 2024 adalah 245 karyawan MT dan Golden Palm.\n1. 7\u6708\u7b2c\u4e00\u5468\u7684\u5458\u5de5\u6570\u636e\u4e0e6\u6708\u7b2c\u56db\u5468\u7684\u6570\u636e\u76f8\u540c\uff0c\u5171\u6709205\u540dMT\u548c40\u540d\u91d1\u68d5\u6988\u5458\u5de5\u3002\n2. \u57fa\u4e8e\u4e0a\u4e2a\u6708\u7684\u79bb\u804c\u6570\u636e\uff0c7\u6708\u7b2c\u4e09\u5468\u7684\u9884\u6d4b\u503c\u5c06\u4f1a\u6709\u53d8\u5316\u3002\u5728\u8fc7\u53bb3\u4e2a\u6708\uff083\u6708\u81f36\u6708\uff09\u7684\u7b2c\u4e09\u5468\u603b\u6709\u4e00\u4eba\u63d0\u51fa\u79bb\u804c\uff0c\u56e0\u6b64\u9884\u8ba1\u79bb\u804c\u8ba4\u8bc6\u4e3a240\u4eba\u3002\n3. \u622a\u6b622024\u5e747\u6708\u7684\u5b9e\u9645\u6570\u636e\uff0c\u5171\u6709245\u540dMT\u548c\u91d1\u68d5\u6988\u5458\u5de5\u3002"
                 ],
                 [
                     5,
