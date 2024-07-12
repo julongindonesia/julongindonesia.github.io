@@ -1,8 +1,5 @@
 import pandas as pd
 import json
-import copy
-import os
-
 
 def extract_google_sheet(url):
     # 设置df显示所有的行和列
@@ -28,21 +25,7 @@ def create_title_data(df):
     section_list = ['human_resource','finance','material','agriculture','industry',
       'commerce', 'big_data','internet','ai','legal']
     language_list = ['china', 'indonesia', 'double']
-    # data 模板参考
-    # data = {
-    #     'china':{
-    #         'title': '',
-    #         'score': '',
-    #         'section':{
-    #             'title': '',
-    #             'PIC': '',
-    #             'sekre': '',
-    #             'sub': [[],[]]
-    #         }
-    #     }, 
-    #     'indonesia':{}, 
-    #     'double':{}
-    # }
+    # data 声明
     data = {}
     # 初始化data的数据结构
     for language in language_list:
@@ -56,7 +39,7 @@ def create_title_data(df):
     index_section_list = -1 # 当前section在section_list中的位置，用来判断当前的section
     section_start_row = 0 # 当前section的起始行，用来判断sub行在section中的位置
 
-    while index_df < len(df):
+    while index_df <= len(df):
         # 获取index列的值，通过该列的值，判断当前行是sub小标题还是大标题
         index_value = int(df.iloc[index_df, 0])
         # 如果是大标题
@@ -106,7 +89,7 @@ def create_title_data(df):
                 data['double'][section]['sub'][index_sub][1] = str(df.iloc[index_df, 2])
             elif len(subtitle_section) == 1:
                 for language in language_list:
-                    data[language][section]['sun'][index_sub][1] = subtitle_section
+                    data[language][section]['sun'][index_sub][1] = subtitle_section[0]
 
             # 写入每项负责人PIC
             PIC_section = str(df.iloc[index_df, 3]).split('\n')
@@ -116,7 +99,7 @@ def create_title_data(df):
                 data['double'][section]['sub'][index_sub][2] = str(df.iloc[index_df, 3])
             elif len(PIC_section) == 1:
                 for language in language_list:
-                    data[language][section]['sub'][index_sub][2] = PIC_section         
+                    data[language][section]['sub'][index_sub][2] = PIC_section[0]         
             index_df += 1
     return data
 
