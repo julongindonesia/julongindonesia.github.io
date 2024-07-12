@@ -471,7 +471,7 @@
     // 网页开始时，要处理的事情
     input_period_data(file_path,period,language)
     get_title_data(title_path, language, section_list)
-    $("p#tanggal").text(tanggal[period])
+    $("p#tanggal").text(tanggal[period['period']])
 
     // 缩放
     for(index in section_list){
@@ -485,7 +485,7 @@
       // 按照时间段更新数据，只重新渲染数据
       update_period_data(file_path, period, language)
       // 显示出所选时间段的具体时间
-      $("p#tanggal").text(tanggal[period])
+      $("p#tanggal").text(tanggal[period['period']])
       get_title_data(title_path, language, section_list)
     })
 
