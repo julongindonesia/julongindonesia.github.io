@@ -18,7 +18,7 @@ def extract_google_sheet(url):
     # 转换数据类型
     # df = df.astype({'前值': int, '预测值': int, '实际值': int, 'Nilai\n分数':int})
     # 删除最后一行备注
-    df = df.drop(112)
+    df = df.drop(df[df['No\n序号'] == '备注：'].index)
     return df
 
 def create_title_data(df):
@@ -39,7 +39,7 @@ def create_title_data(df):
     index_section_list = -1 # 当前section在section_list中的位置，用来判断当前的section
     section_start_row = 0 # 当前section的起始行，用来判断sub行在section中的位置
 
-    while index_df <= len(df):
+    while index_df < len(df):
         # 获取index列的值，通过该列的值，判断当前行是sub小标题还是大标题
         index_value = int(df.iloc[index_df, 0])
         # 如果是大标题
@@ -111,7 +111,8 @@ def data_to_json(data, output_file):
 excel_url = 'https://docs.google.com/spreadsheets/d/1XyGv34ix2nLOAbrTB7sAwAUinyxkjki9/edit?gid=1901615913#gid=1901615913'
 output_json_file = 'title_result.json'
 df = extract_google_sheet(excel_url)
-# print(df)
+print(df)
+print(len(df))
 data = create_title_data(df)
 # print(data)
 data_to_json(data, output_json_file)

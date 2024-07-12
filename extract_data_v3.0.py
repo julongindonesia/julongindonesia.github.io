@@ -1,6 +1,7 @@
 import pandas as pd
 import json
 import copy
+import numpy as np
 import os
 
 def extract_google_sheet(url):
@@ -16,11 +17,12 @@ def extract_google_sheet(url):
     df = df.dropna(axis=1, how='all')
     df = df.dropna(axis=0, how='all')
     # 将空值置为0
-    df = df.fillna(0)
+    # df = df.fillna()
+    df['No\n序号'] = df['No\n序号'].fillna(0)
     # 转换数据类型
     # df = df.astype({'前值': int, '预测值': int, '实际值': int, 'Nilai\n分数':int})
     # 删除 序号列数据非法的行
-    df = df.drop(df[ (df['No\n序号'] == 0 | df['No\n序号'] == 1)])
+    df = df.drop(df[df['No\n序号'] == '备注：'].index)
 
     return df
 
@@ -42,7 +44,7 @@ def set_data_title(template, df):
     index_section_list = -1 # 当前section在section_list中的位置，用来判断当前的section
     section_start_row = 0 # 当前section的起始行，用来判断sub行在section中的位置
 
-    while index_df< len(df):
+    while index_df < len(df):
         # 获取index列的值，通过该列的值，判断当前行是sub小标题还是大标题
         index_value = int(df.iloc[index_df, 0])
         # 如果是大标题
@@ -58,11 +60,13 @@ def set_data_title(template, df):
             # # 判断现在是哪个section
             section = section_list[index_section_list]
             index_sub = index_df - section_start_row - 1
-            index_data = 0
             for index_data in range(3,8):
                 if index_data == 6:
                     continue
-                data_temp = str(df.iloc[index_df,index_data+1]).split('\n\n')
+                data_temp = df.iloc[index_df,index_data+1]
+                if pd.isnull(data_temp):
+                    continue
+                data_temp = str(data_temp).split('\n\n')
                 if len(data_temp) == 2:
                     data['china'][section]['sub'][index_sub][index_data] = data_temp[1]
                     data['indonesia'][section]['sub'][index_sub][index_data] = data_temp[0]
@@ -71,11 +75,11 @@ def set_data_title(template, df):
                     for language in language_list:
                         data[language][section]['sub'][index_sub][index_data] = data_temp[0]
 
-            for language in language_list:
-                data[language][section]['sub'][index_sub][6] = int(df.iloc[index_df, 7])
-
+            data_temp = df.iloc[index_df, 7]
+            if (~np.isnan(data_temp)) and len(str(data_temp).strip())>0:
+                for language in language_list:        
+                    data[language][section]['sub'][index_sub][6] = int(data_temp)
             index_df += 1
-
     return data
 
 def data_to_json(data, output_file):
@@ -89,8 +93,7 @@ url_data_sheet = {'week2': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgn
 output_file = 'data_result.json'
 
 df = extract_google_sheet(url_data_sheet['week2'])
-print(len(df))
-print(df)
-# template = get_title_json(title_path)
-# data = set_data_title(template, df)
-# data_to_json(data, output_file)
+# print(df)
+template = get_title_json(title_path)
+data = set_data_title(template, df)
+data_to_json(data, output_file)
