@@ -486,6 +486,7 @@
       update_period_data(file_path, period, language)
       // 显示出所选时间段的具体时间
       $("p#tanggal").text(tanggal[period])
+      get_title_data(title_path, language, section_list)
     })
 
     $("#languageSelect").change(function(){
