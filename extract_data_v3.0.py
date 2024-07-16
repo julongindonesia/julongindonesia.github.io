@@ -79,6 +79,10 @@ def set_data_title(template, df):
             if (~np.isnan(data_temp)) and len(str(data_temp).strip())>0:
                 for language in language_list:        
                     data[language][section]['sub'][index_sub][6] = int(data_temp)
+            else:
+                for language in language_list:
+                    data[language][section]['sub'][index_sub][6] = 0
+
             index_df += 1
     return data
 
