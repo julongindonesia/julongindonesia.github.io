@@ -7,3 +7,5 @@ git status
 git commit -m "update data - Script auto push"
 git status
 git push -u origin main
+
+set /p=
