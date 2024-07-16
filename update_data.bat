@@ -4,6 +4,6 @@ python merge_data_v3.0.py
 
 git add .
 git status
-git commit -m "update data ??????"
+git commit -m "update data - Script auto push"
 git status
-git push -u origin master
+git push -u origin main
