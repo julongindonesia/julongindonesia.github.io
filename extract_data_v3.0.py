@@ -57,10 +57,12 @@ def set_data_title(template, df):
             section = section_list[index_section_list]
             index_df += 1
         elif index_value == 0:
-            # # 判断现在是哪个section
+            # 判断现在是哪个section
             section = section_list[index_section_list]
             index_sub = index_df - section_start_row - 1
+            # 设置数据，根据‘\n\n’分离中文和印尼语
             for index_data in range(3,8):
+                # 跳过分数数据
                 if index_data == 6:
                     continue
                 data_temp = df.iloc[index_df,index_data+1]
@@ -74,7 +76,7 @@ def set_data_title(template, df):
                 elif len(data_temp) == 1:
                     for language in language_list:
                         data[language][section]['sub'][index_sub][index_data] = data_temp[0]
-
+            # 因为分数一栏不用分离中文和印尼语 单独设置分数一栏
             data_temp = df.iloc[index_df, 7]
             if (~np.isnan(data_temp)) and len(str(data_temp).strip())>0:
                 for language in language_list:        
