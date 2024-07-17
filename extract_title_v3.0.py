@@ -1,6 +1,6 @@
 import pandas as pd
 import json
-
+import time
 def extract_google_sheet(url):
     # 设置df显示所有的行和列
     pd.set_option('display.max_rows', None)
@@ -8,6 +8,9 @@ def extract_google_sheet(url):
     pd.set_option('display.width', None)
     # 编辑url为需要的格式
     url = url.replace('/edit?gid=', '/export?format=csv&gid=')
+    # url += f'&timestamp={int(time.time())}'
+    # print(url)
+    
     # 根据链接，从google sheet读取数据
     df = pd.read_csv(url, header=3)
     # 处理数据
@@ -116,7 +119,7 @@ def data_to_json(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(data, f)
 
-excel_url = 'https://docs.google.com/spreadsheets/d/1XyGv34ix2nLOAbrTB7sAwAUinyxkjki9/edit?gid=1901615913#gid=1901615913'
+excel_url = 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1901615913#gid=1901615913'
 output_json_file = 'title_result.json'
 df = extract_google_sheet(excel_url)
 # print(df)

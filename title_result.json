@@ -121,7 +121,7 @@
         },
         "finance": {
             "title": "\u8d22 | \u91d1\u878d     \u4fdd\u5de5\u8d44     \u8d44\u4ea7\u5b89\u5168",
-            "PIC": "\u4faf\u5149\u73cd/\u82cf\u745e\u83b2/\u666f\u5929",
+            "PIC": "\u4faf\u5149\u73cd/\u82cf\u745e\u83b2/\u5de6\u7433",
             "sekre": "\u674e\u91c7\u83f1",
             "sub": [
                 [
@@ -722,7 +722,7 @@
                 [
                     7,
                     "\u805a\u9f99\u4eba\u673a\u5408\u4e00\u5065\u5eb7\u6307\u6570 ",
-                    "\u674e\u91c7\u83f1",
+                    "\u5f20\u82ac\u59ae",
                     "",
                     "",
                     "",
@@ -819,7 +819,7 @@
                 [
                     6,
                     "sap\u7cfb\u7edf\u7a33\u5b9a\u8fd0\u884c",
-                    "\u5434\u5170",
+                    "\u4f59\u798f\u5170",
                     "",
                     "",
                     "",
@@ -916,7 +916,7 @@
                 [
                     5,
                     "\u667a\u6167\u85aa\u916c\u4f7f\u7528\u8986\u76d6\u7387\uff0c\u5458\u5de5\u4e00\u5361\u901a\u6d88\u8d39\u5360\u6bd4",
-                    "\u4f73\u4e3d\u65af",
+                    "\u695a\u59d7\u59d7",
                     "",
                     "",
                     "",
@@ -1205,7 +1205,7 @@
         },
         "finance": {
             "title": "Finance | Keuangan     Jaminan upah     Keamanan Aset",
-            "PIC": "Hou Guangzhen/Dian/Kornel",
+            "PIC": "Hou Guangzhen/Dian/Elsa",
             "sekre": "Charline ",
             "sub": [
                 [
@@ -1348,7 +1348,7 @@
                 [
                     4,
                     "Lingkungan Emplacement (Olahraga dan Rekreasi)",
-                    "Khadapi\r",
+                    "Khadapi",
                     "",
                     "",
                     "",
@@ -1368,7 +1368,7 @@
                 [
                     6,
                     "Lingkungan Emplacement (Supermarket dan Cafe)",
-                    "Zhu Jixiang\r",
+                    "Zhu Jixiang",
                     "",
                     "",
                     "",
@@ -1806,7 +1806,7 @@
                 [
                     7,
                     "Julong Indikator Sehat Mekanisasi",
-                    "Charline",
+                    "Venny",
                     "",
                     "",
                     "",
@@ -1815,7 +1815,7 @@
                 ],
                 [
                     8,
-                    "Follow up sekretaris \r",
+                    "Follow up sekretaris ",
                     "Johannes",
                     "",
                     "",
@@ -2289,7 +2289,7 @@
         },
         "finance": {
             "title": "Finance | Keuangan     Jaminan upah     Keamanan Aset\n\u8d22 | \u91d1\u878d     \u4fdd\u5de5\u8d44     \u8d44\u4ea7\u5b89\u5168",
-            "PIC": "Hou Guangzhen/Dian/Kornel\n\u4faf\u5149\u73cd/\u82cf\u745e\u83b2/\u666f\u5929",
+            "PIC": "Hou Guangzhen/Dian/Elsa\n\u4faf\u5149\u73cd/\u82cf\u745e\u83b2/\u5de6\u7433",
             "sekre": "Charline \n\u674e\u91c7\u83f1",
             "sub": [
                 [
@@ -2432,7 +2432,7 @@
                 [
                     4,
                     "Lingkungan Emplacement (Olahraga dan Rekreasi)\n\u793e\u533a\u73af\u5883\uff08\u4f53\u80b2\u4f11\u95f2\uff09",
-                    "Khadapi\r\n\u738b\u519b\u5b87",
+                    "Khadapi\n\u738b\u519b\u5b87",
                     "",
                     "",
                     "",
@@ -2452,7 +2452,7 @@
                 [
                     6,
                     "Lingkungan Emplacement (Supermarket dan Cafe)\n\u793e\u533a\u73af\u5883\uff08\u5546\u8d85\u5496\u5561\uff09",
-                    "Zhu Jixiang\r\n\u6731\u5409\u7965",
+                    "Zhu Jixiang\n\u6731\u5409\u7965",
                     "",
                     "",
                     "",
@@ -2890,7 +2890,7 @@
                 [
                     7,
                     "Julong Indikator Sehat Mekanisasi\n\u805a\u9f99\u4eba\u673a\u5408\u4e00\u5065\u5eb7\u6307\u6570 ",
-                    "Charline\n\u674e\u91c7\u83f1",
+                    "Venny\n\u5f20\u82ac\u59ae",
                     "",
                     "",
                     "",
@@ -2899,7 +2899,7 @@
                 ],
                 [
                     8,
-                    "Follow up sekretaris \r\n\u79d8\u4e66\u9879\u76ee\u8ffd\u8e2a\u8868",
+                    "Follow up sekretaris \n\u79d8\u4e66\u9879\u76ee\u8ffd\u8e2a\u8868",
                     "Johannes\n\u5b59\u7f8e\u5b89",
                     "",
                     "",
@@ -2987,7 +2987,7 @@
                 [
                     6,
                     "SAP berjalan normal \nsap\u7cfb\u7edf\u7a33\u5b9a\u8fd0\u884c",
-                    "Wulan\n\u5434\u5170",
+                    "Wulan\n\u4f59\u798f\u5170",
                     "",
                     "",
                     "",
@@ -3084,7 +3084,7 @@
                 [
                     5,
                     "Cakupan penggunaan smart salary, rasio konsumsi e-Card\n\u667a\u6167\u85aa\u916c\u4f7f\u7528\u8986\u76d6\u7387\uff0c\u5458\u5de5\u4e00\u5361\u901a\u6d88\u8d39\u5360\u6bd4",
-                    "Calista\n\u4f73\u4e3d\u65af",
+                    "Calista\n\u695a\u59d7\u59d7",
                     "",
                     "",
                     "",
