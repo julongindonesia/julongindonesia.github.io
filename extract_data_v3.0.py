@@ -80,7 +80,7 @@ def set_data_title(template, df):
             data_temp = df.iloc[index_df, 7]
             if (~np.isnan(data_temp)) and len(str(data_temp).strip())>0:
                 for language in language_list:        
-                    data[language][section]['sub'][index_sub][6] = int(data_temp)
+                    data[language][section]['sub'][index_sub][6] = float(data_temp)
             index_df += 1
     return data
 
