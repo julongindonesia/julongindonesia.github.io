@@ -91,10 +91,12 @@ def data_to_json(data, output_file):
 
 title_path = 'title_result.json'
 
-url_data_sheet = {'week2': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=182614782#gid=182614782'}
+# ！！！！！ 阶段性修改周期变量
+url_data_sheet = {'week3': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1606022133#gid=1606022133'}
 output_file = 'data_result.json'
 
-df = extract_google_sheet(url_data_sheet['week2'])
+# ！！！！！ 阶段性修改周期变量
+df = extract_google_sheet(url_data_sheet['week3'])
 # print(df)
 template = get_title_json(title_path)
 data = set_data_title(template, df)
