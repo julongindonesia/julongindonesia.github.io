@@ -123,6 +123,9 @@ def create_title_data(df):
                     data['china'][section]['sub'][index_sub][3] = satuan_section[1]
                     data['indonesia'][section]['sub'][index_sub][3] = satuan_section[0]
                     data['double'][section]['sub'][index_sub][3] = str(df.iloc[index_df, 4])
+                elif len(satuan_section) == 1:
+                    for language in language_list:
+                        data[language][section]['sub'][index_sub][3] = satuan_section[0]
 
             # 写入每项算分方法
             cara_nilai = str(df.iloc[index_df, 8])
