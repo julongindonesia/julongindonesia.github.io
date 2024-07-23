@@ -86,23 +86,23 @@ def set_data_title(template, df):
                         data[language][section]['sub'][index_sub][index_data] = data_temp[0]
 
             # 因为分数一栏不用分离中文和印尼语 单独设置分数一栏
-            # data_temp = df.iloc[index_df, 9]
-            # if (~np.isnan(data_temp)) and len(str(data_temp).strip())>0:
-            #     for language in language_list:
-            #         data[language][section]['sub'][index_sub][6] = int(data_temp)
+            data_temp = df.iloc[index_df, 9]
+            if (~np.isnan(data_temp)) and len(str(data_temp).strip())>0:
+                for language in language_list:
+                    data[language][section]['sub'][index_sub][8] = int(data_temp)
             
-            # 根据分数算法 得到分数 
-            cara_nilai = data['china'][section]['sub'][index_sub][7]
-            if cara_nilai == '和预测值进行对比\n（差距10%以内）':
-                nilai = 1
-            elif cara_nilai == '小于等于前值':
-                nilai = 1
-            elif cara_nilai == '大于等于前值':
-                nilai = 1
-            else:
-                nilai = 0
-            for language in language_list:
-                data[language][section]['sub'][index_sub][8] = nilai
+            # # 根据分数算法 得到分数 
+            # cara_nilai = data['china'][section]['sub'][index_sub][7]
+            # if cara_nilai == '和预测值进行对比\n（差距10%以内）':
+            #     nilai = 1
+            # elif cara_nilai == '小于等于前值':
+            #     nilai = 1
+            # elif cara_nilai == '大于等于前值':
+            #     nilai = 1
+            # else:
+            #     nilai = 0
+            # for language in language_list:
+            #     data[language][section]['sub'][index_sub][8] = nilai
 
             index_df += 1
     return data
