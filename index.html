@@ -416,7 +416,7 @@
      input_total_score = function(section_score){
       var total = 0
       for(var key in section_score){
-        td_key = $('thead#'+key).find('tr:first').children('td:nth-child(3)')
+        td_key = $('thead#'+key).find('tr:first').children('td:nth-child(4)')
         td_key.text(section_score[key])
         total = total + section_score[key]
       }
