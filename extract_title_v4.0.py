@@ -37,9 +37,9 @@ def create_title_data(df):
         for section in section_list:
             data[language][section] = {'title': '', 'PIC': '','sekre': '', 'sub': []}
     # 
-    data['china']['title']['subtitle'] = ["序号","分项","负责人","前值","预测值","实际值","分数"]
-    data['indonesia']['title']['subtitle'] = ["No","Deskripsi","PIC","Prev.","Est.","Act.","Nilai"]
-    data['double']['title']['subtitle'] = ["No 序号","Deskripsi 分项","PIC 负责人","Prev. 前值","Est. 预测值","Act. 实际值","Nilai 分数"]
+    data['china']['title']['subtitle'] = ["序号","分项","负责人","单位","前值","预测值","实际值","分数"]
+    data['indonesia']['title']['subtitle'] = ["No","Deskripsi","PIC","Satuan","Prev.","Est.","Act.","Nilai"]
+    data['double']['title']['subtitle'] = ["No 序号","Deskripsi 分项","PIC 负责人","Satuan单位","Prev. 前值","Est. 预测值","Act. 实际值","Nilai 分数"]
 
     data['china']['title']['title'] = '聚龙健康100指数'
     data['indonesia']['title']['title'] = '100 Indikator sehat Julong'
@@ -72,7 +72,7 @@ def create_title_data(df):
             data['indonesia'][section]['PIC'] = PIC_section[0]
             data['double'][section]['PIC'] = str(df.iloc[index_df, 3])
             # 设置秘书
-            sekre_section = str(df.iloc[index_df, 5]).split('\n')
+            sekre_section = str(df.iloc[index_df, 11]).split('\n')
             data['china'][section]['sekre'] = sekre_section[1]
             data['indonesia'][section]['sekre'] = sekre_section[0]
             data['double'][section]['sekre'] = str(df.iloc[index_df, 5])
@@ -88,7 +88,7 @@ def create_title_data(df):
             
             for language in language_list:
                 # 扩充sub列表
-                data[language][section]['sub'].append(['','','','','','',0,''])
+                data[language][section]['sub'].append(['','','','','','','','',0,''])
                 # 写入sub行号， index_sub+1
                 data[language][section]['sub'][index_sub][0] = index_sub + 1
             
@@ -110,7 +110,29 @@ def create_title_data(df):
                 data['double'][section]['sub'][index_sub][2] = str(df.iloc[index_df, 3])
             elif len(PIC_section) == 1:
                 for language in language_list:
-                    data[language][section]['sub'][index_sub][2] = PIC_section[0]         
+                    data[language][section]['sub'][index_sub][2] = PIC_section[0]    
+
+            # 写入每项单位
+            satuan_section = str(df.iloc[index_df, 4])
+            if satuan_section == '0':
+                for language in language_list:
+                    data[language][section]['sub'][index_sub][3] = '-'
+            else :
+                satuan_section = satuan_section.split('\n')
+                if len(satuan_section) == 2:
+                    data['china'][section]['sub'][index_sub][3] = satuan_section[1]
+                    data['indonesia'][section]['sub'][index_sub][3] = satuan_section[0]
+                    data['double'][section]['sub'][index_sub][3] = str(df.iloc[index_df, 4])
+
+            # 写入每项算分方法
+            cara_nilai = str(df.iloc[index_df, 8])
+            if cara_nilai == '0':
+                for language in language_list:
+                    data[language][section]['sub'][index_sub][7] = '-'
+            else :
+                for language in language_list:
+                    data[language][section]['sub'][index_sub][7] = cara_nilai
+                    
             index_df += 1
     return data
 
@@ -118,8 +140,8 @@ def data_to_json(data, output_file):
     # 将数据写入输出文件
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(data, f)
-
-excel_url = 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1901615913#gid=1901615913'
+# excel_url = 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1901615913#gid=1901615913'
+excel_url = 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1606022133#gid=1606022133'
 output_json_file = 'title_result.json'
 df = extract_google_sheet(excel_url)
 # print(df)

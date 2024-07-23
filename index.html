@@ -64,8 +64,8 @@
     <br>
     <label>Period:</label>
     <select id="periodSelect">
-      <option value="week1">week1</option>
-      <option value="week2">week2</option>
+      <!-- <option value="week1">week1</option>
+      <option value="week2">week2</option> -->
       <option value="week3" selected>week3</option>
       <!-- <option value="week4">week4</option>
       <option value="month">month</option> -->
@@ -92,8 +92,9 @@
     <tbody id='human_resource' class="inactive" style="display: none;">
       <tr>
         <th colspan="1">序号</th>
-        <th colspan="3">分项</th>
+        <th colspan="2">分项</th>
         <th colspan="1">负责人</th>
+        <th colspan="1">单位</th>
         <th colspan="1">前值</th>
         <th colspan="1">预测值</th>
         <th colspan="1">实际值</th>
@@ -111,8 +112,9 @@
     <tbody id='finance' class="inactive" style="display: none;">
       <tr>
         <th colspan="1">序号</th>
-        <th colspan="3">分项</th>
+        <th colspan="2">分项</th>
         <th colspan="1">负责人</th>
+        <th colspan="1">单位</th>
         <th colspan="1">前值</th>
         <th colspan="1">预测值</th>
         <th colspan="1">实际值</th>
@@ -130,8 +132,9 @@
     <tbody id='material' class="inactive" style="display: none;">
       <tr>
         <th colspan="1">序号</th>
-        <th colspan="3">分项</th>
+        <th colspan="2">分项</th>
         <th colspan="1">负责人</th>
+        <th colspan="1">单位</th>
         <th colspan="1">前值</th>
         <th colspan="1">预测值</th>
         <th colspan="1">实际值</th>
@@ -149,8 +152,9 @@
     <tbody id='agriculture' class="inactive" style="display: none;">
       <tr>
         <th colspan="1">序号</th>
-        <th colspan="3">分项</th>
+        <th colspan="2">分项</th>
         <th colspan="1">负责人</th>
+        <th colspan="1">单位</th>
         <th colspan="1">前值</th>
         <th colspan="1">预测值</th>
         <th colspan="1">实际值</th>
@@ -168,8 +172,9 @@
     <tbody id='industry' class="inactive" style="display: none;">
       <tr>
         <th colspan="1">序号</th>
-        <th colspan="3">分项</th>
+        <th colspan="2">分项</th>
         <th colspan="1">负责人</th>
+        <th colspan="1">单位</th>
         <th colspan="1">前值</th>
         <th colspan="1">预测值</th>
         <th colspan="1">实际值</th>
@@ -187,8 +192,9 @@
     <tbody id='commerce' class="inactive" style="display: none;">
       <tr>
         <th colspan="1">序号</th>
-        <th colspan="3">分项</th>
+        <th colspan="2">分项</th>
         <th colspan="1">负责人</th>
+        <th colspan="1">单位</th>
         <th colspan="1">前值</th>
         <th colspan="1">预测值</th>
         <th colspan="1">实际值</th>
@@ -206,8 +212,9 @@
     <tbody id='big_data' class="inactive" style="display: none;">
       <tr>
         <th colspan="1">序号</th>
-        <th colspan="3">分项</th>
+        <th colspan="2">分项</th>
         <th colspan="1">负责人</th>
+        <th colspan="1">单位</th>
         <th colspan="1">前值</th>
         <th colspan="1">预测值</th>
         <th colspan="1">实际值</th>
@@ -225,8 +232,9 @@
     <tbody id='internet' class="inactive" style="display: none;">
       <tr>
         <th colspan="1">序号</th>
-        <th colspan="3">分项</th>
+        <th colspan="2">分项</th>
         <th colspan="1">负责人</th>
+        <th colspan="1">单位</th>
         <th colspan="1">前值</th>
         <th colspan="1">预测值</th>
         <th colspan="1">实际值</th>
@@ -244,8 +252,9 @@
     <tbody id='ai' class="inactive" style="display: none;">
       <tr>
         <th colspan="1">序号</th>
-        <th colspan="3">分项</th>
+        <th colspan="2">分项</th>
         <th colspan="1">负责人</th>
+        <th colspan="1">单位</th>
         <th colspan="1">前值</th>
         <th colspan="1">预测值</th>
         <th colspan="1">实际值</th>
@@ -263,8 +272,9 @@
     <tbody id='legal' class="inactive" style="display: none;">
       <tr>
         <th colspan="1">序号</th>
-        <th colspan="3">分项</th>
+        <th colspan="2">分项</th>
         <th colspan="1">负责人</th>
+        <th colspan="1">单位</th>
         <th colspan="1">前值</th>
         <th colspan="1">预测值</th>
         <th colspan="1">实际值</th>
@@ -347,20 +357,21 @@
         var data = data_list[index]
         var add_tr = 
         `<tr id="data_${index}_${section}">
-          <td data-label="序号">${data[0]}</td>
-          <td data-label="分项" colspan="3">${data[1]}</td>
-          <td data-label="负责人">${data[2]}</td>
-          <td data-label="前值">${data[3]}</td>
-          <td data-label="预测值">${data[4]}</td>
-          <td data-label="实际值">${data[5]}</td>
-          <td data-label="分数">${data[6]}</td>
+          <td data-label="序号" colspan="1">${data[0]}</td>
+          <td data-label="分项" colspan="2">${data[1]}</td>
+          <td data-label="负责人" colspan="1">${data[2]}</td>
+          <td data-label="单位" colspan="1">${data[3]}</td>
+          <td data-label="前值" colspan="1">${data[4]}</td>
+          <td data-label="预测值" colspan="1">${data[5]}</td>
+          <td data-label="实际值" colspan="1">${data[6]}</td>
+          <td data-label="分数" colspan="1">${data[8]}</td>
         </tr>
         <tr id="commen_${index}_${section}" class="inactive" style="display: none;">
-          <td colspan="10">分析:\n ${data[7]}</td>
+          <td colspan="10">分析:\n ${data[9]}</td>
         </tr>
         `
         tbody.append(add_tr)
-        section_score = section_score + data[6]
+        section_score = section_score + data[8]
       }
       return section_score
     }
@@ -371,14 +382,19 @@
         data = data_list[index]
         tr_data = $(`tr#data_${index}_${section}`)
         tr_commen = $(`tr#commen_${index}_${section}`)
-        for(var i=1; i<=7; i++){
+        for(var i=1; i<=9; i++){
           tr_child = tr_data.children(`td:nth-child(${i})`)
-          tr_child.text(data[i-1])
+          if( i == 8 || i == 9){
+            tr_chile.text(data[i])
+          }else{
+            tr_child.text(data[i-1])
+          }
+          
         }
         if(language == 'china'){
-          tr_commen.children('td:nth-child(1)').text("分析:\n" + data[7])
+          tr_commen.children('td:nth-child(1)').text("分析:\n" + data[8])
         }else{
-          tr_commen.children('td:nth-child(1)').text("Analisa:\n" + data[7])
+          tr_commen.children('td:nth-child(1)').text("Analisa:\n" + data[8])
         }
         
         section_score = section_score + data[6]
@@ -420,8 +436,13 @@
           
           sub_title = data["title"]['subtitle']
           tbody_tr = $('tbody').find('tr:first')
-          for(var i=1; i<=7; i++){
-            tbody_tr.children(`th:nth-child(${i})`).text(sub_title[i-1])
+          for(var i=1; i<=9; i++){
+            if( i ==8 || i == 9){
+              tbody_tr.children(`th:nth-child(${i})`).text(sub_title[i])
+            }else{
+              tbody_tr.children(`th:nth-child(${i})`).text(sub_title[i-1])
+            }
+            
           }
       }
     }
