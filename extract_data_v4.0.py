@@ -70,7 +70,7 @@ def set_data_title(template, df):
                 data_temp = df.iloc[index_df,index_data+1]
                 if pd.isnull(data_temp):
                     continue
-                
+                # 根据'\n\n'和'\r\n\r\n'分离中文和印尼语
                 if len(str(data_temp).split('\n\n')) == 2:
                     data_temp = str(data_temp).split('\n\n')
                     data['china'][section]['sub'][index_sub][index_data] = data_temp[1]
@@ -83,7 +83,7 @@ def set_data_title(template, df):
                     data['double'][section]['sub'][index_sub][index_data] = data_temp[0] + '\n' + data_temp[1]
                 else:
                     for language in language_list:
-                        data[language][section]['sub'][index_sub][index_data] = data_temp[0]
+                        data[language][section]['sub'][index_sub][index_data] = str(data_temp)
 
             # 因为分数一栏不用分离中文和印尼语 单独设置分数一栏
             data_temp = df.iloc[index_df, 9]
