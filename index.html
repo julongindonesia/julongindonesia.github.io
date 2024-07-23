@@ -73,14 +73,8 @@
   </p>
 
   <br>
-  
+  <h3 id="total_score" style="text-align: center">总分：100</h3>
   <table id="standard">
-    <thead id="total">
-        <tr class="section-header">
-          <td colspan="4"><h3>聚龙健康100指数</h3></td>
-          <td colspan="5">总分数：100</td>
-        </tr>
-    </thead>
     <!-- human -->
     <thead id = "human_resource">
       <tr class="section-header">
@@ -413,15 +407,22 @@
     }
      
     // 将总得分写入指定位置
-     input_total_score = function(section_score){
+     input_total_score = function(section_score,language){
       var total = 0
       for(var key in section_score){
         td_key = $('thead#'+key).find('tr:first').children('td:nth-child(4)')
         td_key.text(section_score[key])
         total = total + section_score[key]
       }
-      total_score = 'Total:' + total
-      $('thead#total').children('tr:nth-child(1)').children('td:nth-child(2)').text(total_score)
+      if (language == 'china'){
+        score_description = '总分数: '
+      }else if (language == 'indonesia'){
+        score_description = 'Total Score: '
+      }else{
+        score_description = 'Total Score: '
+      }
+      total_score = score_description + total
+      $('h3#total_score').text(total_score)
     }
 
     // 渲染标题
@@ -476,7 +477,7 @@
           section_score[section] = input_data(section,data[section]['sub'])
         }
         // 渲染总分数
-        input_total_score(section_score)
+        input_total_score(section_score,language)
       }
     }
 
@@ -496,7 +497,7 @@
           section_score[section] = update_data(section,data[section]['sub'],language)
         }
         // 渲染总分数
-        input_total_score(section_score)
+        input_total_score(section_score,language)
       }
     }
 

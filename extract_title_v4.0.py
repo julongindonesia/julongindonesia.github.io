@@ -75,7 +75,7 @@ def create_title_data(df):
             sekre_section = str(df.iloc[index_df, 11]).split('\n')
             data['china'][section]['sekre'] = sekre_section[1]
             data['indonesia'][section]['sekre'] = sekre_section[0]
-            data['double'][section]['sekre'] = str(df.iloc[index_df, 5])
+            data['double'][section]['sekre'] = str(df.iloc[index_df, 11])
             # 跳过一行
             index_df += 1
         # 如果是sub小标题
