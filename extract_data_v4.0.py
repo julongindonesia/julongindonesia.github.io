@@ -81,7 +81,7 @@ def set_data_title(template, df):
                     data['china'][section]['sub'][index_sub][index_data] = data_temp[1]
                     data['indonesia'][section]['sub'][index_sub][index_data] = data_temp[0]
                     data['double'][section]['sub'][index_sub][index_data] = data_temp[0] + '\n' + data_temp[1]
-                elif len(data_temp) == 1:
+                else:
                     for language in language_list:
                         data[language][section]['sub'][index_sub][index_data] = data_temp[0]
 
