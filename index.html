@@ -64,8 +64,8 @@
     <br>
     <label>Period:</label>
     <select id="periodSelect">
-      <!-- <option value="week1">week1</option>
-      <option value="week2">week2</option> -->
+      <option value="week1">week1</option>
+      <option value="week2">week2</option>
       <option value="week3" selected>week3</option>
       <!-- <option value="week4">week4</option>
       <option value="month">month</option> -->
@@ -385,19 +385,19 @@
         for(var i=1; i<=9; i++){
           tr_child = tr_data.children(`td:nth-child(${i})`)
           if( i == 8 || i == 9){
-            tr_chile.text(data[i])
+            tr_child.text(data[i])
           }else{
             tr_child.text(data[i-1])
           }
           
         }
         if(language == 'china'){
-          tr_commen.children('td:nth-child(1)').text("分析:\n" + data[8])
+          tr_commen.children('td:nth-child(1)').text("分析:\n" + data[9])
         }else{
-          tr_commen.children('td:nth-child(1)').text("Analisa:\n" + data[8])
+          tr_commen.children('td:nth-child(1)').text("Analisa:\n" + data[9])
         }
         
-        section_score = section_score + data[6]
+        section_score = section_score + data[8]
       }
       return section_score
     }
