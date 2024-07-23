@@ -70,8 +70,14 @@ def set_data_title(template, df):
                 data_temp = df.iloc[index_df,index_data+1]
                 if pd.isnull(data_temp):
                     continue
-                data_temp = str(data_temp).split('\n\n')
-                if len(data_temp) == 2:
+                
+                if len(str(data_temp).split('\n\n')) == 2:
+                    data_temp = str(data_temp).split('\n\n')
+                    data['china'][section]['sub'][index_sub][index_data] = data_temp[1]
+                    data['indonesia'][section]['sub'][index_sub][index_data] = data_temp[0]
+                    data['double'][section]['sub'][index_sub][index_data] = data_temp[0] + '\n' + data_temp[1]
+                elif len(str(data_temp).split('\r\n\r\n')) == 2:
+                    data_temp = str(data_temp).split('\r\n\r\n')
                     data['china'][section]['sub'][index_sub][index_data] = data_temp[1]
                     data['indonesia'][section]['sub'][index_sub][index_data] = data_temp[0]
                     data['double'][section]['sub'][index_sub][index_data] = data_temp[0] + '\n' + data_temp[1]
