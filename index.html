@@ -16,6 +16,9 @@
             border-collapse: collapse;
             white-space: pre-line;  
         }
+        .center {
+          text-align: center;
+        }
         th, td {
             border: 1px solid black;
             padding: 8px;
@@ -38,7 +41,7 @@
             color: #333;
             border: 1px solid #ccc;
         }
-
+        
 
         /* 添加响应式设计 */
       @media screen and (max-width: 600px) {
@@ -74,11 +77,11 @@
   <h3 id="total_score" style="text-align: center">总分：100</h3>
   <table id="standard">
     <thead>
-      <tr id='tema' class="section-header" >
+      <tr id="tema" class="section-header" >
         <td colspan="4" style=" border: 0.6mm solid rgba(5, 5, 5);">标题</td>
         <td colspan="2" style=" border: 0.6mm solid rgba(5, 5, 5);">负责人</td>
         <td colspan="2" style=" border: 0.6mm solid rgba(5, 5, 5);">秘书</td>
-        <td colspan="1" style=" border: 0.6mm solid rgba(5, 5, 5);">分数</td>
+        <td class="center" colspan="1" style="border: 0.6mm solid rgba(5, 5, 5); ">分数</td>
       </tr>
     </thead>
     <!-- human -->
@@ -87,19 +90,19 @@
         <td colspan="4">一 人</td>
         <td colspan="2">杨义</td>
         <td colspan="2"></td>
-        <td colspan="1">3</td>
+        <td class="center" colspan="1">3</td>
       </tr>
     </thead>
     <tbody id='human_resource' class="inactive" style="display: none;">
       <tr>
-        <th colspan="1">序号</th>
+        <th class="center"  colspan="1">序号</th>
         <th colspan="2">分项</th>
         <th colspan="1">负责人</th>
-        <th colspan="1">单位</th>
-        <th colspan="1">前值</th>
-        <th colspan="1">预测值</th>
-        <th colspan="1">实际值</th>
-        <th colspan="1">分数</th>
+        <th class="center" colspan="1">单位</th>
+        <th class="center" colspan="1">前值</th>
+        <th class="center" colspan="1">预测值</th>
+        <th class="center" colspan="1">实际值</th>
+        <th class="center" colspan="1">分数</th>
       </tr>
     </tbody>
     <!-- finance -->
@@ -108,19 +111,19 @@
         <td colspan="4">二 财</td>
         <td colspan="2">侯光珍</td>
         <td colspan="2"></td>
-        <td colspan="1">3</td>
+        <td class="center" colspan="1">3</td>
       </tr>
     </thead>
     <tbody id='finance' class="inactive" style="display: none;">
       <tr>
-        <th colspan="1">序号</th>
+        <th class="center"  colspan="1">序号</th>
         <th colspan="2">分项</th>
         <th colspan="1">负责人</th>
-        <th colspan="1">单位</th>
-        <th colspan="1">前值</th>
-        <th colspan="1">预测值</th>
-        <th colspan="1">实际值</th>
-        <th colspan="1">分数</th>
+        <th class="center" colspan="1">单位</th>
+        <th class="center" colspan="1">前值</th>
+        <th class="center" colspan="1">预测值</th>
+        <th class="center" colspan="1">实际值</th>
+        <th class="center" colspan="1">分数</th>
       </tr>
     </tbody>
     <!-- material -->
@@ -129,19 +132,19 @@
         <td colspan="4">三 物</td>
         <td colspan="2">孙忠宝</td>
         <td colspan="2"></td>
-        <td colspan="1">3</td>
+        <td class="center" colspan="1">3</td>
       </tr>
     </thead>
     <tbody id='material' class="inactive" style="display: none;">
       <tr>
-        <th colspan="1">序号</th>
+        <th class="center"  colspan="1">序号</th>
         <th colspan="2">分项</th>
         <th colspan="1">负责人</th>
-        <th colspan="1">单位</th>
-        <th colspan="1">前值</th>
-        <th colspan="1">预测值</th>
-        <th colspan="1">实际值</th>
-        <th colspan="1">分数</th>
+        <th class="center" colspan="1">单位</th>
+        <th class="center" colspan="1">前值</th>
+        <th class="center" colspan="1">预测值</th>
+        <th class="center" colspan="1">实际值</th>
+        <th class="center" colspan="1">分数</th>
       </tr>
     </tbody>
     <!-- agriculture -->
@@ -150,19 +153,19 @@
         <td colspan="4">四 农</td>
         <td colspan="2">皮金鹏</td>
         <td colspan="2"></td>
-        <td colspan="1">3</td>
+        <td class="center" colspan="1">3</td>
       </tr>
     </thead>
     <tbody id='agriculture' class="inactive" style="display: none;">
       <tr>
-        <th colspan="1">序号</th>
+        <th class="center"  colspan="1">序号</th>
         <th colspan="2">分项</th>
         <th colspan="1">负责人</th>
-        <th colspan="1">单位</th>
-        <th colspan="1">前值</th>
-        <th colspan="1">预测值</th>
-        <th colspan="1">实际值</th>
-        <th colspan="1">分数</th>
+        <th class="center" colspan="1">单位</th>
+        <th class="center" colspan="1">前值</th>
+        <th class="center" colspan="1">预测值</th>
+        <th class="center" colspan="1">实际值</th>
+        <th class="center" colspan="1">分数</th>
       </tr>
     </tbody>
     <!-- industry -->
@@ -171,19 +174,19 @@
         <td colspan="4">五 工</td>
         <td colspan="2">王涛</td>
         <td colspan="2"></td>
-        <td colspan="1">3</td>
+        <td class="center" colspan="1">3</td>
       </tr>
     </thead>
     <tbody id='industry' class="inactive" style="display: none;">
       <tr>
-        <th colspan="1">序号</th>
+        <th class="center"  colspan="1">序号</th>
         <th colspan="2">分项</th>
         <th colspan="1">负责人</th>
-        <th colspan="1">单位</th>
-        <th colspan="1">前值</th>
-        <th colspan="1">预测值</th>
-        <th colspan="1">实际值</th>
-        <th colspan="1">分数</th>
+        <th class="center" colspan="1">单位</th>
+        <th class="center" colspan="1">前值</th>
+        <th class="center" colspan="1">预测值</th>
+        <th class="center" colspan="1">实际值</th>
+        <th class="center" colspan="1">分数</th>
       </tr>
     </tbody>
     <!-- commerce -->
@@ -192,19 +195,19 @@
         <td colspan="4">六 商</td>
         <td colspan="2">徐传贵</td>
         <td colspan="2"></td>
-        <td colspan="1">3</td>
+        <td class="center" colspan="1">3</td>
       </tr>
     </thead>
     <tbody id='commerce' class="inactive" style="display: none;">
       <tr>
-        <th colspan="1">序号</th>
+        <th class="center"  colspan="1">序号</th>
         <th colspan="2">分项</th>
         <th colspan="1">负责人</th>
-        <th colspan="1">单位</th>
-        <th colspan="1">前值</th>
-        <th colspan="1">预测值</th>
-        <th colspan="1">实际值</th>
-        <th colspan="1">分数</th>
+        <th class="center" colspan="1">单位</th>
+        <th class="center" colspan="1">前值</th>
+        <th class="center" colspan="1">预测值</th>
+        <th class="center" colspan="1">实际值</th>
+        <th class="center" colspan="1">分数</th>
       </tr>
     </tbody>
     <!-- big data -->
@@ -213,19 +216,19 @@
         <td colspan="4">七 4G大数据</td>
         <td colspan="2">杨江树</td>
         <td colspan="2"></td>
-        <td colspan="1">3</td>
+        <td class="center" colspan="1">3</td>
       </tr>
     </thead>
     <tbody id='big_data' class="inactive" style="display: none;">
       <tr>
-        <th colspan="1">序号</th>
+        <th class="center"  colspan="1">序号</th>
         <th colspan="2">分项</th>
         <th colspan="1">负责人</th>
-        <th colspan="1">单位</th>
-        <th colspan="1">前值</th>
-        <th colspan="1">预测值</th>
-        <th colspan="1">实际值</th>
-        <th colspan="1">分数</th>
+        <th class="center" colspan="1">单位</th>
+        <th class="center" colspan="1">前值</th>
+        <th class="center" colspan="1">预测值</th>
+        <th class="center" colspan="1">实际值</th>
+        <th class="center" colspan="1">分数</th>
       </tr>
     </tbody>
     <!-- internet -->
@@ -234,19 +237,19 @@
         <td colspan="4">八 5G互联网</td>
         <td colspan="2">胡军</td>
         <td colspan="2"></td>
-        <td colspan="1">3</td>
+        <td class="center" colspan="1">3</td>
       </tr>
     </thead>
     <tbody id='internet' class="inactive" style="display: none;">
       <tr>
-        <th colspan="1">序号</th>
+        <th class="center"  colspan="1">序号</th>
         <th colspan="2">分项</th>
         <th colspan="1">负责人</th>
-        <th colspan="1">单位</th>
-        <th colspan="1">前值</th>
-        <th colspan="1">预测值</th>
-        <th colspan="1">实际值</th>
-        <th colspan="1">分数</th>
+        <th class="center" colspan="1">单位</th>
+        <th class="center" colspan="1">前值</th>
+        <th class="center" colspan="1">预测值</th>
+        <th class="center" colspan="1">实际值</th>
+        <th class="center" colspan="1">分数</th>
       </tr>
     </tbody>
     <!-- ai -->
@@ -255,19 +258,19 @@
         <td colspan="4">九 人工智能</td>
         <td colspan="2">雷文忠</td>
         <td colspan="2"></td>
-        <td colspan="1">3</td>
+        <td class="center" colspan="1">3</td>
       </tr>
     </thead>
     <tbody id='ai' class="inactive" style="display: none;">
       <tr>
-        <th colspan="1">序号</th>
+        <th class="center"  colspan="1">序号</th>
         <th colspan="2">分项</th>
         <th colspan="1">负责人</th>
-        <th colspan="1">单位</th>
-        <th colspan="1">前值</th>
-        <th colspan="1">预测值</th>
-        <th colspan="1">实际值</th>
-        <th colspan="1">分数</th>
+        <th class="center" colspan="1">单位</th>
+        <th class="center" colspan="1">前值</th>
+        <th class="center" colspan="1">预测值</th>
+        <th class="center" colspan="1">实际值</th>
+        <th class="center" colspan="1">分数</th>
       </tr>
     </tbody>
     <!-- legal -->
@@ -276,19 +279,19 @@
         <td colspan="4">十 法律</td>
         <td colspan="2">杨斌</td>
         <td colspan="2"></td>
-        <td colspan="1">3</td>
+        <td class="center" colspan="1">3</td>
       </tr>
     </thead>
     <tbody id='legal' class="inactive" style="display: none;">
       <tr>
-        <th colspan="1">序号</th>
+        <th class="center"  colspan="1">序号</th>
         <th colspan="2">分项</th>
         <th colspan="1">负责人</th>
-        <th colspan="1">单位</th>
-        <th colspan="1">前值</th>
-        <th colspan="1">预测值</th>
-        <th colspan="1">实际值</th>
-        <th colspan="1">分数</th>
+        <th class="center" colspan="1">单位</th>
+        <th class="center" colspan="1">前值</th>
+        <th class="center" colspan="1">预测值</th>
+        <th class="center" colspan="1">实际值</th>
+        <th class="center" colspan="1">分数</th>
       </tr>
     </tbody>
 
@@ -367,14 +370,14 @@
         var data = data_list[index]
         var add_tr = 
         `<tr id="data_${index}_${section}">
-          <td data-label="序号" colspan="1">${data[0]}</td>
+          <td class="center" data-label="序号" colspan="1">${data[0]}</td>
           <td data-label="分项" colspan="2">${data[1]}</td>
           <td data-label="负责人" colspan="1">${data[2]}</td>
-          <td data-label="单位" colspan="1">${data[3]}</td>
-          <td data-label="前值" colspan="1">${data[4]}</td>
-          <td data-label="预测值" colspan="1">${data[5]}</td>
-          <td data-label="实际值" colspan="1">${data[6]}</td>
-          <td data-label="分数" colspan="1">${data[8]}</td>
+          <td class="center" data-label="单位" colspan="1">${data[3]}</td>
+          <td class="center" data-label="前值" colspan="1">${data[4]}</td>
+          <td class="center" data-label="预测值" colspan="1">${data[5]}</td>
+          <td class="center" data-label="实际值" colspan="1">${data[6]}</td>
+          <td class="center" data-label="分数" colspan="1">${data[8]}</td>
         </tr>
         <tr id="commen_${index}_${section}" class="inactive" style="display: none;">
           <td colspan="10">分析:\n ${data[9]}</td>
