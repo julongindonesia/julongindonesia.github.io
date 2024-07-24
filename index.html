@@ -73,13 +73,13 @@
   </p>
   <h3 id="total_score" style="text-align: center">总分：100</h3>
   <table id="standard">
-    <!-- <thead>
-      <tr class="section-header" style="font-size: large;">
+    <thead>
+      <tr id='tema' class="section-header" >
         <td colspan="4" style=" border: 0.6mm solid rgba(5, 5, 5);">标题</td>
         <td colspan="2" style=" border: 0.6mm solid rgba(5, 5, 5);">负责人</td>
         <td colspan="2" style=" border: 0.6mm solid rgba(5, 5, 5);">秘书</td>
         <td colspan="1" style=" border: 0.6mm solid rgba(5, 5, 5);">分数</td>
-      </tr> -->
+      </tr>
     </thead>
     <!-- human -->
     <thead id = "human_resource">
@@ -507,6 +507,20 @@
       }
     }
 
+    // 更新Tema部分标题的语言
+    function update_tema(language){
+      tema_language = {
+        'china': ['主题', '负责人', '追踪秘书', '分数'],
+        'indonesia': ['Tema', 'PIC', 'PIC Follow-Up', 'Nilai'],
+        'double': ['Tema\n主题', 'PIC\n负责人', 'PIC Follow-Up\n追踪秘书', 'Nilai\n分数']
+      }
+
+      tr_tema = $('tr#tema')
+      for(var i=1; i<=4; i++){
+        tr_tema.children(`td:nth-child(${i})`).text(tema_language[language][i-1])
+      }
+    }
+
     // 网页开始时，要处理的事情
     input_period_data(file_path,period,language)
     get_title_data(title_path, language, section_list)
@@ -535,6 +549,7 @@
       // 按照选择的语言更新数据，只重新渲染数据
       update_period_data(file_path,period,language)
       get_title_data(title_path, language, section_list)
+      update_tema(language)
     })
 
   </script>
