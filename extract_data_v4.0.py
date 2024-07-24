@@ -4,6 +4,7 @@ import copy
 import numpy as np
 import os
 import re
+import math
 
 def extract_google_sheet(url):
     # 设置df显示所有的行和列
@@ -86,29 +87,84 @@ def set_data_title(template, df):
                         data[language][section]['sub'][index_sub][index_data] = str(data_temp)
 
             # 因为分数一栏不用分离中文和印尼语 单独设置分数一栏
-            data_temp = df.iloc[index_df, 9]
-            if (~np.isnan(data_temp)) and len(str(data_temp).strip())>0:
-                for language in language_list:
-                    data[language][section]['sub'][index_sub][8] = int(data_temp)
+            # data_temp = df.iloc[index_df, 9]
+            # if (~np.isnan(data_temp)) and len(str(data_temp).strip())>0:
+            #     for language in language_list:
+            #         data[language][section]['sub'][index_sub][8] = int(data_temp)
             
-            # # 根据分数算法 得到分数 
-            # cara_nilai = data['china'][section]['sub'][index_sub][7]
-            # if cara_nilai == '和预测值进行对比\n（差距10%以内）':
-            #     nilai = 1
-            # elif cara_nilai == '小于等于前值':
-            #     nilai = 1
-            # elif cara_nilai == '大于等于前值':
-            #     nilai = 1
-            # else:
-            #     nilai = 0
-            # for language in language_list:
-            #     data[language][section]['sub'][index_sub][8] = nilai
+            # 根据分数算法 得到分数 
+            cara_nilai = data['china'][section]['sub'][index_sub][7]
+            prev = data['china'][section]['sub'][index_sub][4]
+            est = data['china'][section]['sub'][index_sub][5]
+            act = data['china'][section]['sub'][index_sub][6]
 
+            nilai = calculate_score(cara_nilai, prev, est, act)
+
+            for language in language_list:
+                data[language][section]['sub'][index_sub][8] = nilai
+
+            # 
             index_df += 1
+    
     return data
+# 根据分数算法 得到分数
+def calculate_score(cara_nilai, prev, est, act ):
+    if cara_nilai == '和预测值进行对比\n（差距10%以内）':    
+        if est != '_' and act != '_':
+            est = digit_string_convert(est)
+            act = digit_string_convert(act)
+            if est != None and act != None:
+                if ~isinstance(est, list) and ~isinstance(act, list):
+                    if (math.isclose(act,est*1.1) or act < est*1.1) and (math.isclose(act,est*0.9) or act > est*0.9):
+                        nilai = 1
+                        return nilai
+    elif cara_nilai == '小于等于前值':
+        if prev != '_' and act != '_':
+            prev = digit_string_convert(prev)
+            act = digit_string_convert(act)
+            if prev != None and act != None:
+                if ~isinstance(prev, list) and ~isinstance(act, list):
+                    if act <= prev:
+                        nilai = 1
+                        return nilai
+    elif cara_nilai == '大于等于前值':
+        if prev != '_' and act != '_':
+            prev = digit_string_convert(prev)
+            act = digit_string_convert(act)
+            if prev != None and act != None:
+                if ~isinstance(prev, list) and ~isinstance(act, list):
+                    if act >= prev:
+                        nilai = 1
+                        return nilai
+    nilai = 0
+    return nilai
 
-def get_digit(value):
-    return int(value)
+# 将数值字符串转换为数值
+def digit_string_convert(string):
+
+    singal = re.search('V',string, re.I)
+    if singal!= None:
+        values = string.split('V')
+        for i in range(0,2):
+            value = re.search('[-0-9.]+', values[i]).group()
+            values[i] = float(value)/100
+        return values
+    singal = re.search('%', string)
+    if singal != None:
+        value = re.search('[-0-9.]+', string).group()
+        return float(value)/100
+    
+    singal = re.search(',',string)
+    if singal != None:
+        value = re.sub(',', '', string)
+        return float(value)
+    
+    if re.match('^-?\d+.\d+$', string):
+        return float(string)
+    elif re.match('^-?\d+$', string):
+        return int(string)
+    else:
+        return None
 
 def data_to_json(data, output_file):
     # 将数据写入输出文件
