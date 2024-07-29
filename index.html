@@ -52,7 +52,7 @@
           margin: auto;
           border:1px solid black;
         }
-        p.line_chart_button{
+        button.line_chart_button{
           border: 1px solid black;
           position: relative;
           left: 0;
@@ -60,8 +60,8 @@
           margin: auto;            
           left:0;
           right:0;
-          width:10%;
-          text-align:center
+          width:12%;
+          text-align:center;
         }
 
 
@@ -95,7 +95,9 @@
       <!-- <option value="week4">week4</option>
       <option value="month">month</option> -->
     </select>
-    <p class='line_chart_button'style="">折线图</p>
+    <br>
+    <br/>
+    <button class='line_chart_button'style="">历史总分数</button>
   </p>
   <h3 id="total_score" style="text-align: center">总分：100</h3>
   <table id="standard">
@@ -337,7 +339,11 @@
       'indonesia': '100 Grafik Garis Indeks',
       'double': '100 Grafik Garis Indeks\n100指数折线图'
     }
-
+    text_button_line_chart = {
+      'china': '历史总分数',
+      'indonesia': 'skor total sejarah',
+      'double': 'skor total sejarah\n历史总分数'
+    }
     language = 'china' // 语言
     // 大指标的关键字
     section_list = ['human_resource','finance','material','agriculture','industry',
@@ -585,10 +591,11 @@
       get_title_data(title_path, language, section_list)
       update_tema(language)
       setLineChart(title_line_chart[language])
+      $('button.line_chart_button').text(text_button_line_chart[language])
     })
     // 通过点击按钮，显示\隐藏图表
     singal_display_line_chart = false
-    $('p.line_chart_button').click(function(){
+    $('button.line_chart_button').click(function(){
       if (singal_display_line_chart){
         $('div#line_chart').attr('style', 'display: none')
         $('table#standard').attr('style', '')
