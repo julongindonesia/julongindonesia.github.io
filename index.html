@@ -6,6 +6,7 @@
     <title>聚龙健康100指数</title>
     <link rel="icon" type="image/x-icon" href="image/julong logo.jpg" />
     <script src="https://cdn.staticfile.net/jquery/1.10.2/jquery.min.js"></script>
+    <script src="echarts.js"></script>
     <style>
         body {
             
@@ -41,7 +42,28 @@
             color: #333;
             border: 1px solid #ccc;
         }
-        
+        div#line_chart{
+          align-items: center ;
+          width: 600px; 
+          height:400px; 
+          position: relative;
+          left: 0;
+          right:0;
+          margin: auto;
+          border:1px solid black;
+        }
+        p.line_chart_button{
+          border: 1px solid black;
+          position: relative;
+          left: 0;
+          right:0;
+          margin: auto;            
+          left:0;
+          right:0;
+          width:10%;
+          text-align:center
+        }
+
 
         /* 添加响应式设计 */
       @media screen and (max-width: 600px) {
@@ -73,6 +95,7 @@
       <!-- <option value="week4">week4</option>
       <option value="month">month</option> -->
     </select>
+    <p class='line_chart_button'style="">折线图</p>
   </p>
   <h3 id="total_score" style="text-align: center">总分：100</h3>
   <table id="standard">
@@ -297,6 +320,8 @@
 
   </table>
 
+  <div id="line_chart" style="display:none;"></div>
+
   <script>
     // 默认值
     file_path = 'total_data.json' // 主要数据的存储文件
@@ -307,6 +332,12 @@
       'period': 'week3'
     } // 时间段
    
+    title_line_chart = {
+      'china': '100指数折线图',
+      'indonesia': '100 Grafik Garis Indeks',
+      'double': '100 Grafik Garis Indeks\n100指数折线图'
+    }
+
     language = 'china' // 语言
     // 大指标的关键字
     section_list = ['human_resource','finance','material','agriculture','industry',
@@ -553,8 +584,59 @@
       update_period_data(file_path,period,language)
       get_title_data(title_path, language, section_list)
       update_tema(language)
+      setLineChart(title_line_chart[language])
+    })
+    // 通过点击按钮，显示\隐藏图表
+    singal_display_line_chart = false
+    $('p.line_chart_button').click(function(){
+      if (singal_display_line_chart){
+        $('div#line_chart').attr('style', 'display: none')
+        $('table#standard').attr('style', '')
+        $('h3#total_score').attr('style', 'text-align: center')
+        singal_display_line_chart = false
+      }else if (!singal_display_line_chart){
+        $('div#line_chart').attr('style', '')
+        $('table#standard').attr('style', 'display: none')
+        $('h3#total_score').attr('style', 'display:none')
+        singal_display_line_chart = true
+      }
     })
 
+    // 创建Echarts图表
+    var lineChart = echarts.init(document.getElementById('line_chart'))
+    
+    // 设置图表
+    function setLineChart(title_text){
+      $.get('echart_data.js').done(function(data){
+      lineChart.setOption({
+        title: {
+        text: title_text,
+        x:'center',
+        y: 'top'
+      },
+      xAxis: {
+        type: 'category',
+        data: ['2024.7.week1','2024.7.week2','2024.7.week3']
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: [
+        {
+          data: [55, 65, 62],
+          type: 'line',
+          label:{
+            show: true,
+            position: 'bottom',
+            fontSize: 15
+          }
+        }
+      ]
+      })
+    })
+    }
+    
+    setLineChart(title_line_chart[language])
   </script>
 </body>
 </html>
