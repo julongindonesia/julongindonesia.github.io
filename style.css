@@ -1,0 +1,79 @@
+body {       
+    font-family: Arial, sans-serif;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: pre-line;  
+}
+section#controls{
+    text-align: center;
+}
+#periodSelect, #languageSelect {
+    width: 200px;
+    height: 30px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+
+button.line_chart_button{
+    /* border: 1px solid black; */
+    /* position: relative; */
+    /* left: 0; */
+    /* right:0; */
+    /* margin: auto;             */
+    /* left:0; */
+    /* right:0; */
+    width:120px;
+    /* text-align:center; */
+}
+/* 表格中需要居中的元素 */
+.center {
+    text-align: center;
+}
+
+/* 不健康数据标红 */
+.unhealthy_data{
+    color: red;
+}
+
+/* 为表格加上边框，并设置默认左对齐 */
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+/* 设置背景为白色 */
+th {
+    background-color: #f2f2f2;
+}
+/* 标题部分 */
+.section-header {
+    background-color: #e6e6e6;
+    font-weight: bold;
+}
+
+div#line_chart{
+    align-items: center ;
+    width: 700px; 
+    height:400px; 
+    position: relative;
+    left: 0;
+    right:0;
+    margin: auto;
+    border:1px solid black;
+}
+
+/* 添加响应式设计 */
+@media screen and (max-width: 600px) {
+    /* 调整字体大小 */
+    body {
+        font-size: 10px;
+    }
+    div#line_chart{
+        width: 300px; 
+        height:200px; 
+    }
+}

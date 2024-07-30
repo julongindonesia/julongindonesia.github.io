@@ -7,327 +7,262 @@
     <link rel="icon" type="image/x-icon" href="image/julong logo.jpg" />
     <script src="https://cdn.staticfile.net/jquery/1.10.2/jquery.min.js"></script>
     <script src="echarts.js"></script>
-    <style>
-        body {
-            
-            font-family: Arial, sans-serif;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            white-space: pre-line;  
-        }
-        .center {
-          text-align: center;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .section-header {
-            background-color: #e6e6e6;
-            font-weight: bold;
-        }
-        .total-row {
-            font-weight: bold;
-        }
-        #periodSelect, #languageSelect {
-            width: 200px;
-            height: 30px;
-            font-family: Arial, sans-serif;
-            color: #333;
-            border: 1px solid #ccc;
-        }
-        div#line_chart{
-          align-items: center ;
-          width: 700px; 
-          height:400px; 
-          position: relative;
-          left: 0;
-          right:0;
-          margin: auto;
-          border:1px solid black;
-        }
-        button.line_chart_button{
-          border: 1px solid black;
-          position: relative;
-          left: 0;
-          right:0;
-          margin: auto;            
-          left:0;
-          right:0;
-          width:120px;
-          text-align:center;
-        }
-
-
-        /* 添加响应式设计 */
-      @media screen and (max-width: 600px) {
-          /* 调整字体大小 */
-          body {
-              font-size: 10px;
-          }
-          div#line_chart{
-          width: 300px; 
-          height:200px; 
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2 style="text-align: center;">聚龙健康100指数</h2>
-  <h3 style="text-align: center;">100 Indikator sehat Julong </h3>
-  <p id="tanggal" style="text-align: center;">草稿5（更新日期：2024.07.08）</p> 
+  <header>
+    <h2 style="text-align: center;">聚龙健康100指数</h2>
+    <h3 style="text-align: center;">100 Indikator sehat Julong </h3>
+    <p id="tanggal" style="text-align: center;">草稿5（更新日期：2024.07.08）</p> 
+  </header>
+  <main>
+    <section id="controls">
+      <label for="languageSelect">Language:</label>
+      <select id="languageSelect">
+        <option value="china">中文</option>
+        <option value="indonesia">Indonesia</option>
+        <option value="double">双语</option>
+      </select>
+      <br/>
+      <label for="periodSelect">Period:</label>
+      <select id="periodSelect">
+        <option value="week1">week1</option>
+        <option value="week2">week2</option>
+        <option value="week3" selected>week3</option>
+        <!-- <option value="week4">week4</option>
+        <option value="month">month</option> -->
+      </select>
+      <br/>
+      <button class='line_chart_button' >历史总分数</button>
+    </section>
 
-  <p style="text-align: center;">
-    <label>Language:</label>
-    <select id="languageSelect">
-      <option value="china">中文</option>
-      <option value="indonesia">Indonesia</option>
-      <option value="double">双语</option>
-    </select>
-    <br>
-    <label>Period:</label>
-    <select id="periodSelect">
-      <option value="week1">week1</option>
-      <option value="week2">week2</option>
-      <option value="week3" selected>week3</option>
-      <!-- <option value="week4">week4</option>
-      <option value="month">month</option> -->
-    </select>
-    <br>
-    <br/>
-    <button class='line_chart_button'style="">历史总分数</button>
-  </p>
-  <h3 id="total_score" style="text-align: center">总分：100</h3>
-  <table id="standard">
-    <thead>
-      <tr id="tema" class="section-header" >
-        <td colspan="4" style=" border: 0.6mm solid rgba(5, 5, 5);">标题</td>
-        <td colspan="2" style=" border: 0.6mm solid rgba(5, 5, 5);">负责人</td>
-        <td colspan="2" style=" border: 0.6mm solid rgba(5, 5, 5);">秘书</td>
-        <td class="center" colspan="1" style="border: 0.6mm solid rgba(5, 5, 5); ">分数</td>
-      </tr>
-    </thead>
-    <!-- human -->
-    <thead id = "human_resource">
-      <tr class="section-header">
-        <td colspan="4">一 人</td>
-        <td colspan="2">杨义</td>
-        <td colspan="2"></td>
-        <td class="center" colspan="1">3</td>
-      </tr>
-    </thead>
-    <tbody id='human_resource' class="inactive" style="display: none;">
-      <tr>
-        <th class="center"  colspan="1">序号</th>
-        <th colspan="2">分项</th>
-        <th class="center" colspan="1">负责人</th>
-        <th class="center" colspan="1">单位</th>
-        <th class="center" colspan="1">前值</th>
-        <th class="center" colspan="1">预测值</th>
-        <th class="center" colspan="1">实际值</th>
-        <th class="center" colspan="1">分数</th>
-      </tr>
-    </tbody>
-    <!-- finance -->
-    <thead id = "finance">
-      <tr class="section-header">
-        <td colspan="4">二 财</td>
-        <td colspan="2">侯光珍</td>
-        <td colspan="2"></td>
-        <td class="center" colspan="1">3</td>
-      </tr>
-    </thead>
-    <tbody id='finance' class="inactive" style="display: none;">
-      <tr>
-        <th class="center"  colspan="1">序号</th>
-        <th colspan="2">分项</th>
-        <th class="center" colspan="1">负责人</th>
-        <th class="center" colspan="1">单位</th>
-        <th class="center" colspan="1">前值</th>
-        <th class="center" colspan="1">预测值</th>
-        <th class="center" colspan="1">实际值</th>
-        <th class="center" colspan="1">分数</th>
-      </tr>
-    </tbody>
-    <!-- material -->
-    <thead id = "material">
-      <tr class="section-header">
-        <td colspan="4">三 物</td>
-        <td colspan="2">孙忠宝</td>
-        <td colspan="2"></td>
-        <td class="center" colspan="1">3</td>
-      </tr>
-    </thead>
-    <tbody id='material' class="inactive" style="display: none;">
-      <tr>
-        <th class="center"  colspan="1">序号</th>
-        <th colspan="2">分项</th>
-        <th class="center" colspan="1">负责人</th>
-        <th class="center" colspan="1">单位</th>
-        <th class="center" colspan="1">前值</th>
-        <th class="center" colspan="1">预测值</th>
-        <th class="center" colspan="1">实际值</th>
-        <th class="center" colspan="1">分数</th>
-      </tr>
-    </tbody>
-    <!-- agriculture -->
-    <thead id = "agriculture">
-      <tr class="section-header">
-        <td colspan="4">四 农</td>
-        <td colspan="2">皮金鹏</td>
-        <td colspan="2"></td>
-        <td class="center" colspan="1">3</td>
-      </tr>
-    </thead>
-    <tbody id='agriculture' class="inactive" style="display: none;">
-      <tr>
-        <th class="center"  colspan="1">序号</th>
-        <th colspan="2">分项</th>
-        <th class="center" colspan="1">负责人</th>
-        <th class="center" colspan="1">单位</th>
-        <th class="center" colspan="1">前值</th>
-        <th class="center" colspan="1">预测值</th>
-        <th class="center" colspan="1">实际值</th>
-        <th class="center" colspan="1">分数</th>
-      </tr>
-    </tbody>
-    <!-- industry -->
-    <thead id = "industry">
-      <tr class="section-header">
-        <td colspan="4">五 工</td>
-        <td colspan="2">王涛</td>
-        <td colspan="2"></td>
-        <td class="center" colspan="1">3</td>
-      </tr>
-    </thead>
-    <tbody id='industry' class="inactive" style="display: none;">
-      <tr>
-        <th class="center"  colspan="1">序号</th>
-        <th colspan="2">分项</th>
-        <th class="center" colspan="1">负责人</th>
-        <th class="center" colspan="1">单位</th>
-        <th class="center" colspan="1">前值</th>
-        <th class="center" colspan="1">预测值</th>
-        <th class="center" colspan="1">实际值</th>
-        <th class="center" colspan="1">分数</th>
-      </tr>
-    </tbody>
-    <!-- commerce -->
-    <thead id = "commerce">
-      <tr class="section-header">
-        <td colspan="4">六 商</td>
-        <td colspan="2">徐传贵</td>
-        <td colspan="2"></td>
-        <td class="center" colspan="1">3</td>
-      </tr>
-    </thead>
-    <tbody id='commerce' class="inactive" style="display: none;">
-      <tr>
-        <th class="center"  colspan="1">序号</th>
-        <th colspan="2">分项</th>
-        <th class="center" colspan="1">负责人</th>
-        <th class="center" colspan="1">单位</th>
-        <th class="center" colspan="1">前值</th>
-        <th class="center" colspan="1">预测值</th>
-        <th class="center" colspan="1">实际值</th>
-        <th class="center" colspan="1">分数</th>
-      </tr>
-    </tbody>
-    <!-- big data -->
-    <thead id = "big_data">
-      <tr class="section-header">
-        <td colspan="4">七 4G大数据</td>
-        <td colspan="2">杨江树</td>
-        <td colspan="2"></td>
-        <td class="center" colspan="1">3</td>
-      </tr>
-    </thead>
-    <tbody id='big_data' class="inactive" style="display: none;">
-      <tr>
-        <th class="center"  colspan="1">序号</th>
-        <th colspan="2">分项</th>
-        <th class="center" colspan="1">负责人</th>
-        <th class="center" colspan="1">单位</th>
-        <th class="center" colspan="1">前值</th>
-        <th class="center" colspan="1">预测值</th>
-        <th class="center" colspan="1">实际值</th>
-        <th class="center" colspan="1">分数</th>
-      </tr>
-    </tbody>
-    <!-- internet -->
-    <thead id = "internet">
-      <tr class="section-header">
-        <td colspan="4">八 5G互联网</td>
-        <td colspan="2">胡军</td>
-        <td colspan="2"></td>
-        <td class="center" colspan="1">3</td>
-      </tr>
-    </thead>
-    <tbody id='internet' class="inactive" style="display: none;">
-      <tr>
-        <th class="center"  colspan="1">序号</th>
-        <th colspan="2">分项</th>
-        <th class="center" colspan="1">负责人</th>
-        <th class="center" colspan="1">单位</th>
-        <th class="center" colspan="1">前值</th>
-        <th class="center" colspan="1">预测值</th>
-        <th class="center" colspan="1">实际值</th>
-        <th class="center" colspan="1">分数</th>
-      </tr>
-    </tbody>
-    <!-- ai -->
-    <thead id = "ai">
-      <tr class="section-header">
-        <td colspan="4">九 人工智能</td>
-        <td colspan="2">雷文忠</td>
-        <td colspan="2"></td>
-        <td class="center" colspan="1">3</td>
-      </tr>
-    </thead>
-    <tbody id='ai' class="inactive" style="display: none;">
-      <tr>
-        <th class="center"  colspan="1">序号</th>
-        <th colspan="2">分项</th>
-        <th class="center" colspan="1">负责人</th>
-        <th class="center" colspan="1">单位</th>
-        <th class="center" colspan="1">前值</th>
-        <th class="center" colspan="1">预测值</th>
-        <th class="center" colspan="1">实际值</th>
-        <th class="center" colspan="1">分数</th>
-      </tr>
-    </tbody>
-    <!-- legal -->
-    <thead id = "legal">
-      <tr class="section-header">
-        <td colspan="4">十 法律</td>
-        <td colspan="2">杨斌</td>
-        <td colspan="2"></td>
-        <td class="center" colspan="1">3</td>
-      </tr>
-    </thead>
-    <tbody id='legal' class="inactive" style="display: none;">
-      <tr>
-        <th class="center"  colspan="1">序号</th>
-        <th colspan="2">分项</th>
-        <th class="center" colspan="1">负责人</th>
-        <th class="center" colspan="1">单位</th>
-        <th class="center" colspan="1">前值</th>
-        <th class="center" colspan="1">预测值</th>
-        <th class="center" colspan="1">实际值</th>
-        <th class="center" colspan="1">分数</th>
-      </tr>
-    </tbody>
+    <h3 id="total_score" style="text-align: center">总分：100</h3>
 
-  </table>
+    <table id="standard">
+      <thead>
+        <tr id="tema" class="section-header" >
+          <td colspan="4" style=" border: 0.6mm solid rgba(5, 5, 5);">标题</td>
+          <td colspan="2" style=" border: 0.6mm solid rgba(5, 5, 5);">负责人</td>
+          <td colspan="2" style=" border: 0.6mm solid rgba(5, 5, 5);">秘书</td>
+          <td class="center" colspan="1" style="border: 0.6mm solid rgba(5, 5, 5); ">分数</td>
+        </tr>
+      </thead>
+      <!-- human -->
+      <thead id = "human_resource">
+        <tr class="section-header">
+          <td colspan="4">一 人</td>
+          <td colspan="2">杨义</td>
+          <td colspan="2"></td>
+          <td class="center" colspan="1">3</td>
+        </tr>
+      </thead>
+      <tbody id='human_resource' class="inactive" style="display: none;">
+        <tr>
+          <th class="center"  colspan="1">序号</th>
+          <th colspan="2">分项</th>
+          <th class="center" colspan="1">负责人</th>
+          <th class="center" colspan="1">单位</th>
+          <th class="center" colspan="1">前值</th>
+          <th class="center" colspan="1">预测值</th>
+          <th class="center" colspan="1">实际值</th>
+          <th class="center" colspan="1">分数</th>
+        </tr>
+      </tbody>
+      <!-- finance -->
+      <thead id = "finance">
+        <tr class="section-header">
+          <td colspan="4">二 财</td>
+          <td colspan="2">侯光珍</td>
+          <td colspan="2"></td>
+          <td class="center" colspan="1">3</td>
+        </tr>
+      </thead>
+      <tbody id='finance' class="inactive" style="display: none;">
+        <tr>
+          <th class="center"  colspan="1">序号</th>
+          <th colspan="2">分项</th>
+          <th class="center" colspan="1">负责人</th>
+          <th class="center" colspan="1">单位</th>
+          <th class="center" colspan="1">前值</th>
+          <th class="center" colspan="1">预测值</th>
+          <th class="center" colspan="1">实际值</th>
+          <th class="center" colspan="1">分数</th>
+        </tr>
+      </tbody>
+      <!-- material -->
+      <thead id = "material">
+        <tr class="section-header">
+          <td colspan="4">三 物</td>
+          <td colspan="2">孙忠宝</td>
+          <td colspan="2"></td>
+          <td class="center" colspan="1">3</td>
+        </tr>
+      </thead>
+      <tbody id='material' class="inactive" style="display: none;">
+        <tr>
+          <th class="center"  colspan="1">序号</th>
+          <th colspan="2">分项</th>
+          <th class="center" colspan="1">负责人</th>
+          <th class="center" colspan="1">单位</th>
+          <th class="center" colspan="1">前值</th>
+          <th class="center" colspan="1">预测值</th>
+          <th class="center" colspan="1">实际值</th>
+          <th class="center" colspan="1">分数</th>
+        </tr>
+      </tbody>
+      <!-- agriculture -->
+      <thead id = "agriculture">
+        <tr class="section-header">
+          <td colspan="4">四 农</td>
+          <td colspan="2">皮金鹏</td>
+          <td colspan="2"></td>
+          <td class="center" colspan="1">3</td>
+        </tr>
+      </thead>
+      <tbody id='agriculture' class="inactive" style="display: none;">
+        <tr>
+          <th class="center"  colspan="1">序号</th>
+          <th colspan="2">分项</th>
+          <th class="center" colspan="1">负责人</th>
+          <th class="center" colspan="1">单位</th>
+          <th class="center" colspan="1">前值</th>
+          <th class="center" colspan="1">预测值</th>
+          <th class="center" colspan="1">实际值</th>
+          <th class="center" colspan="1">分数</th>
+        </tr>
+      </tbody>
+      <!-- industry -->
+      <thead id = "industry">
+        <tr class="section-header">
+          <td colspan="4">五 工</td>
+          <td colspan="2">王涛</td>
+          <td colspan="2"></td>
+          <td class="center" colspan="1">3</td>
+        </tr>
+      </thead>
+      <tbody id='industry' class="inactive" style="display: none;">
+        <tr>
+          <th class="center"  colspan="1">序号</th>
+          <th colspan="2">分项</th>
+          <th class="center" colspan="1">负责人</th>
+          <th class="center" colspan="1">单位</th>
+          <th class="center" colspan="1">前值</th>
+          <th class="center" colspan="1">预测值</th>
+          <th class="center" colspan="1">实际值</th>
+          <th class="center" colspan="1">分数</th>
+        </tr>
+      </tbody>
+      <!-- commerce -->
+      <thead id = "commerce">
+        <tr class="section-header">
+          <td colspan="4">六 商</td>
+          <td colspan="2">徐传贵</td>
+          <td colspan="2"></td>
+          <td class="center" colspan="1">3</td>
+        </tr>
+      </thead>
+      <tbody id='commerce' class="inactive" style="display: none;">
+        <tr>
+          <th class="center"  colspan="1">序号</th>
+          <th colspan="2">分项</th>
+          <th class="center" colspan="1">负责人</th>
+          <th class="center" colspan="1">单位</th>
+          <th class="center" colspan="1">前值</th>
+          <th class="center" colspan="1">预测值</th>
+          <th class="center" colspan="1">实际值</th>
+          <th class="center" colspan="1">分数</th>
+        </tr>
+      </tbody>
+      <!-- big data -->
+      <thead id = "big_data">
+        <tr class="section-header">
+          <td colspan="4">七 4G大数据</td>
+          <td colspan="2">杨江树</td>
+          <td colspan="2"></td>
+          <td class="center" colspan="1">3</td>
+        </tr>
+      </thead>
+      <tbody id='big_data' class="inactive" style="display: none;">
+        <tr>
+          <th class="center"  colspan="1">序号</th>
+          <th colspan="2">分项</th>
+          <th class="center" colspan="1">负责人</th>
+          <th class="center" colspan="1">单位</th>
+          <th class="center" colspan="1">前值</th>
+          <th class="center" colspan="1">预测值</th>
+          <th class="center" colspan="1">实际值</th>
+          <th class="center" colspan="1">分数</th>
+        </tr>
+      </tbody>
+      <!-- internet -->
+      <thead id = "internet">
+        <tr class="section-header">
+          <td colspan="4">八 5G互联网</td>
+          <td colspan="2">胡军</td>
+          <td colspan="2"></td>
+          <td class="center" colspan="1">3</td>
+        </tr>
+      </thead>
+      <tbody id='internet' class="inactive" style="display: none;">
+        <tr>
+          <th class="center"  colspan="1">序号</th>
+          <th colspan="2">分项</th>
+          <th class="center" colspan="1">负责人</th>
+          <th class="center" colspan="1">单位</th>
+          <th class="center" colspan="1">前值</th>
+          <th class="center" colspan="1">预测值</th>
+          <th class="center" colspan="1">实际值</th>
+          <th class="center" colspan="1">分数</th>
+        </tr>
+      </tbody>
+      <!-- ai -->
+      <thead id = "ai">
+        <tr class="section-header">
+          <td colspan="4">九 人工智能</td>
+          <td colspan="2">雷文忠</td>
+          <td colspan="2"></td>
+          <td class="center" colspan="1">3</td>
+        </tr>
+      </thead>
+      <tbody id='ai' class="inactive" style="display: none;">
+        <tr>
+          <th class="center"  colspan="1">序号</th>
+          <th colspan="2">分项</th>
+          <th class="center" colspan="1">负责人</th>
+          <th class="center" colspan="1">单位</th>
+          <th class="center" colspan="1">前值</th>
+          <th class="center" colspan="1">预测值</th>
+          <th class="center" colspan="1">实际值</th>
+          <th class="center" colspan="1">分数</th>
+        </tr>
+      </tbody>
+      <!-- legal -->
+      <thead id = "legal">
+        <tr class="section-header">
+          <td colspan="4">十 法律</td>
+          <td colspan="2">杨斌</td>
+          <td colspan="2"></td>
+          <td class="center" colspan="1">3</td>
+        </tr>
+      </thead>
+      <tbody id='legal' class="inactive" style="display: none;">
+        <tr>
+          <th class="center"  colspan="1">序号</th>
+          <th colspan="2">分项</th>
+          <th class="center" colspan="1">负责人</th>
+          <th class="center" colspan="1">单位</th>
+          <th class="center" colspan="1">前值</th>
+          <th class="center" colspan="1">预测值</th>
+          <th class="center" colspan="1">实际值</th>
+          <th class="center" colspan="1">分数</th>
+        </tr>
+      </tbody>
+  
+    </table>
 
-  <div id="line_chart" style="display:none;"></div>
-
+    <div id="line_chart" style="display:none;"></div>
+  </main>
+    
   <script>
     // 默认值
     file_path = 'total_data.json' // 主要数据的存储文件
@@ -339,9 +274,18 @@
     } // 时间段
    
     title_line_chart = {
-      'china': '100指数折线图',
-      'indonesia': '100 Grafik Garis Indeks',
-      'double': '100 Grafik Garis Indeks\n100指数折线图'
+      'china': {
+        'title':'100指数折线图',
+        'xAxis': ['第一周\n(06.29-07.05)','第二周\n(07.06-07.12)','第三周\n(07.13-07.19)']
+       },
+      'indonesia': {
+        'title': '100 Grafik Garis Indeks',
+        'xAxis': ['week1\n(06.29-07.05)','week2\n(07.06-07.12)','week3\n(07.13-07.19)']
+      },
+      'double': {
+        'title': '100 Grafik Garis Indeks\n100指数折线图',
+        'xAxis': ['week1\n(06.29-07.05)','week2\n(07.06-07.12)','week3\n(07.13-07.19)']
+      },
     }
     text_button_line_chart = {
       'china': '历史总分数',
@@ -386,6 +330,16 @@
         }else{
           tbody.attr('style','')
           tbody.attr('class','active')
+          tbody_list = $('tbody')
+          // 展开一项大标题时，收缩其他大标题的二级标题
+          for(var i = 0; i < tbody_list.length; i++){
+            if(tbody_list[i].id != section){
+              tbody_list[i].style.display = 'none'
+              tbody_list[i].classList.remove('active')
+              tbody_list[i].classList.add('inactive')
+            }
+          }
+          // console.log(tbody_list)
         }
       })
       // 注释缩放功能
@@ -399,6 +353,13 @@
         }else{
           tr_commen.attr('style','')
           tr_commen.attr('class','active')
+          for (var i = 0; i < 10; i++){
+            if( i != index){
+              dom_other = $(`tr#commen_${i}_${section}`)
+              dom_other.attr('style','display:none;')
+              dom_other.attr('class','inactive')
+            }
+          }
         }
       })
     }
@@ -409,8 +370,11 @@
       var tbody = $('tbody#'+section)
       for(var index in data_list){
         var data = data_list[index]
-        var add_tr = 
-        `<tr id="data_${index}_${section}">
+
+        var add_tr  
+        if(data[8] != 0){
+          add_tr = 
+          `<tr id="data_${index}_${section}">
           <td class="center" data-label="序号" colspan="1">${data[0]}</td>
           <td data-label="分项" colspan="2">${data[1]}</td>
           <td class="center" data-label="负责人" colspan="1">${data[2]}</td>
@@ -424,6 +388,25 @@
           <td colspan="10">分析:\n ${data[9]}</td>
         </tr>
         `
+        }else if(data[8] == 0){
+          add_tr = 
+          `<tr id="data_${index}_${section}" class='unhealthy_data'>
+            <td class="center" data-label="序号" colspan="1">${data[0]}</td>
+            <td data-label="分项" colspan="2">${data[1]}</td>
+            <td class="center" data-label="负责人" colspan="1">${data[2]}</td>
+            <td class="center" data-label="单位" colspan="1">${data[3]}</td>
+            <td class="center" data-label="前值" colspan="1">${data[4]}</td>
+            <td class="center" data-label="预测值" colspan="1">${data[5]}</td>
+            <td class="center" data-label="实际值" colspan="1">${data[6]}</td>
+            <td class="center" data-label="分数" colspan="1">${data[8]}</td>
+          </tr>
+          <tr id="commen_${index}_${section}" class="inactive" style="display: none;">
+            <td colspan="10">分析:\n ${data[9]}</td>
+          </tr>
+        `
+        }
+        
+        
         tbody.append(add_tr)
         section_score = section_score + data[8]
       }
@@ -436,14 +419,18 @@
         data = data_list[index]
         tr_data = $(`tr#data_${index}_${section}`)
         tr_commen = $(`tr#commen_${index}_${section}`)
-        for(var i=1; i<=9; i++){
+        for(var i=1; i<9; i++){
           tr_child = tr_data.children(`td:nth-child(${i})`)
-          if( i == 8 || i == 9){
+          if( i == 8){
             tr_child.text(data[i])
+            if(data[i] == 0){
+              tr_data.attr('style','color:red')
+            }else if(data[i] != 0){
+              tr_data.attr('style', 'color:black')
+            }
           }else{
             tr_child.text(data[i-1])
           }
-          
         }
         if(language == 'china'){
           tr_commen.children('td:nth-child(1)').text("分析:\n" + data[9])
@@ -621,13 +608,13 @@
       $.get('echart_data.js').done(function(data){
       lineChart.setOption({
         title: {
-        text: title_text,
+        text: title_text['title'],
         x:'center',
         y: 'top'
       },
       xAxis: {
         type: 'category',
-        data: ['2024.7.week1','2024.7.week2','2024.7.week3']
+        data: title_text['xAxis']
       },
       yAxis: {
         type: 'value'
