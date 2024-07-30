@@ -1,6 +1,6 @@
 import pandas as pd
 import json
-import time
+
 def extract_google_sheet(url):
     # 设置df显示所有的行和列
     pd.set_option('display.max_rows', None)
@@ -144,7 +144,9 @@ def data_to_json(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(data, f)
 # excel_url = 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1901615913#gid=1901615913'
-excel_url = 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1606022133#gid=1606022133'
+
+
+excel_url = 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=99779159#gid=99779159'
 output_json_file = 'title_result.json'
 df = extract_google_sheet(excel_url)
 # print(df)
