@@ -100,7 +100,7 @@ def create_title_data(df):
                 data['double'][section]['sub'][index_sub][1] = str(df.iloc[index_df, 2])
             elif len(subtitle_section) == 1:
                 for language in language_list:
-                    data[language][section]['sun'][index_sub][1] = subtitle_section[0]
+                    data[language][section]['sub'][index_sub][1] = subtitle_section[0]
 
             # 写入每项负责人PIC
             PIC_section = str(df.iloc[index_df, 3]).split('\n')
