@@ -24,6 +24,11 @@
         <option value="double">双语</option>
       </select>
       <br/>
+      
+      <label for="monthSelect">Month:</label>
+      <select id="monthSelect">
+        <option value="7" selected>7</option>  
+      </select>
       <label for="periodSelect">Period:</label>
       <select id="periodSelect">
         <option value="week1">week1</option>
@@ -568,7 +573,18 @@
     $("#periodSelect").change(function(){
       // 根据下拉列表，获取当前时间段
       period['period'] = $("#periodSelect").val()
-      language = $('#languageSelect').val()
+      // language = $('#languageSelect').val()
+      // 按照时间段更新数据，只重新渲染数据
+      update_period_data(file_path, period, language)
+      // 显示出所选时间段的具体时间
+      $("p#tanggal").text(tanggal[period['period']])
+      get_title_data(title_path, language, section_list)
+    })
+
+    $("#monthSelect").change(function(){
+      // 根据下拉列表，获取当前时间段
+      period['month'] = $("#monthSelect").val()
+      // language = $('#languageSelect').val()
       // 按照时间段更新数据，只重新渲染数据
       update_period_data(file_path, period, language)
       // 显示出所选时间段的具体时间

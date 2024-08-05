@@ -10,7 +10,7 @@ section#controls{
     text-align: center;
 }
 #periodSelect, #languageSelect {
-    width: 200px;
+    width: 100px;
     height: 30px;
     font-family: Arial, sans-serif;
     color: #333;
