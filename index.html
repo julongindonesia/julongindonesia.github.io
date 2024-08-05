@@ -281,17 +281,17 @@
     title_line_chart = {
       'china': {
         'title':'100指数折线图',
-        'xAxis': ['第一周\n(06.29-07.05)','第二周\n(07.06-07.12)','第三周\n(07.13-07.19)','第四周\n(07.20-07.26)'],
+        'xAxis': ['7月\n第一周\n(06.29-07.05)','7月\n第二周\n(07.06-07.12)','7月\n第三周\n(07.13-07.19)','7月\n第四周\n(07.20-07.26)'],
         'data': [55, 65, 62, 68]
        },
       'indonesia': {
         'title': '100 Grafik Garis Indeks',
-        'xAxis': ['week1\n(06.29-07.05)','week2\n(07.06-07.12)','week3\n(07.13-07.19)','week4\n(07.20-07.26)'],
+        'xAxis': ['Juli\nweek1\n(06.29-07.05)','Juli\nweek2\n(07.06-07.12)','Juli\nweek3\n(07.13-07.19)','Juli\nweek4\n(07.20-07.26)'],
         'data': [55, 65, 62, 68]
       },
       'double': {
         'title': '100 Grafik Garis Indeks\n100指数折线图',
-        'xAxis': ['week1\n(06.29-07.05)','week2\n(07.06-07.12)','week3\n(07.13-07.19)','week4\n(07.20-07.26)'],
+        'xAxis': ['Juli\nweek1\n(06.29-07.05)','Juli\nweek2\n(07.06-07.12)','Juli\nweek3\n(07.13-07.19)','Juli\nweek4\n(07.20-07.26)'],
         'data': [55, 65, 62, 68]
       },
     }
@@ -631,10 +631,12 @@
         x:'center',
         y: 'top'
       },
-      xAxis: {
-        type: 'category',
-        data: title_text['xAxis']
-      },
+      xAxis: [
+        {
+          type: 'category',
+          data: title_text['xAxis']
+        }
+      ],
       yAxis: {
         type: 'value'
       },
