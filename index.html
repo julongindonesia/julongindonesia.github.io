@@ -31,10 +31,10 @@
       </select>
       <label for="periodSelect">Period:</label>
       <select id="periodSelect">
-        <option value="week1">week1</option>
+        <!-- <option value="week1">week1</option>
         <option value="week2">week2</option>
         <option value="week3">week3</option>
-        <option value="week4" selected>week4</option>
+        <option value="week4" selected>week4</option> -->
         <!-- <option value="month">month</option> -->
       </select>
       <br/>
@@ -320,11 +320,15 @@
     }
     // 每个时间段对应的日期
     tanggal = {
-      "week1" : "2024.06.29 - 2024.07.05",
-      "week2" : "2024.07.06 - 2024.07.12",
-      "week3" : "2024.07.13 - 2024.07.19",
-      "week4" : "2024.07.20 - 2024.07.26",
-      "month" : "2024.07.01 - 2024.07.30"
+      '2024':{
+        '7':{
+          "week1" : "2024.06.29 - 2024.07.05",
+          "week2" : "2024.07.06 - 2024.07.12",
+          "week3" : "2024.07.13 - 2024.07.19",
+          "week4" : "2024.07.20 - 2024.07.26",
+          "month" : "2024.07.01 - 2024.07.30"
+        }
+      }
     }
 
     // 函数：大标题缩放功能
@@ -560,10 +564,21 @@
       }
     }
 
+    // 根据月份返回period数据到select列表
+    function periodListByMonth(period,tanggal){
+      var periodDict = tanggal[period['year']][period['month']]
+      periodSelect = $('#periodSelect')
+      for(var key in periodDict){
+        option_period = `<option value="${key}">${key+" "+periodDict[key]}</optoin>`
+        periodSelect.append(option_period)
+      }
+    }
+
     // 网页开始时，要处理的事情
     input_period_data(file_path,period,language)
     get_title_data(title_path, language, section_list)
-    $("p#tanggal").text(tanggal[period['period']])
+    $("p#tanggal").text(tanggal[period['year']][period['month']][period['period']])
+    periodListByMonth(period,tanggal)
 
     // 缩放
     for(index in section_list){
@@ -577,7 +592,7 @@
       // 按照时间段更新数据，只重新渲染数据
       update_period_data(file_path, period, language)
       // 显示出所选时间段的具体时间
-      $("p#tanggal").text(tanggal[period['period']])
+      $("p#tanggal").text(tanggal[period['year']][period['month']][period['period']])
       get_title_data(title_path, language, section_list)
     })
 
@@ -588,8 +603,9 @@
       // 按照时间段更新数据，只重新渲染数据
       update_period_data(file_path, period, language)
       // 显示出所选时间段的具体时间
-      $("p#tanggal").text(tanggal[period['period']])
+      $("p#tanggal").text(tanggal[period['year']][period['month']][period['period']])
       get_title_data(title_path, language, section_list)
+      periodListByMonth(period,tanggal)
     })
 
     $("#languageSelect").change(function(){
