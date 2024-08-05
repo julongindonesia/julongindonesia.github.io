@@ -569,7 +569,11 @@
       var periodDict = tanggal[period['year']][period['month']]
       periodSelect = $('#periodSelect')
       for(var key in periodDict){
-        option_period = `<option value="${key}">${key+" "+periodDict[key]}</optoin>`
+        if(key == 'week4'){
+          option_period = `<option value="${key}" selected>${key}</optoin>`
+        }else{
+          option_period = `<option value="${key}">${key}</optoin>`
+        }
         periodSelect.append(option_period)
       }
     }
