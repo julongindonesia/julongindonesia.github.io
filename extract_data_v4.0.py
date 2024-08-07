@@ -13,6 +13,7 @@ def extract_google_sheet(url):
     url = url.replace('/edit?gid=', '/export?format=csv&gid=')
     # 根据链接，从google sheet读取数据
     df = pd.read_csv(url, header=3)
+    df = df.loc[0:109]
     # 处理数据
     df = df.dropna(axis=1, how='all')
     df = df.dropna(axis=0, how='all')
