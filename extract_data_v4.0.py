@@ -153,6 +153,18 @@ def calculate_score(cara_nilai, prev, est, act ):
                     if act >= prev:
                         nilai = 1
                         return nilai
+    elif cara_nilai == '不为零且大于等于前值':
+        if prev != '_' and act != '_':
+            prev = digit_string_convert(prev)
+            act = digit_string_convert(act)
+            if prev != None and act != None:
+                if act == 0:
+                    nilai = 0
+                    return nilai
+                elif ~isinstance(prev, list) and ~isinstance(act, list):
+                    if act >= prev:
+                        nilai = 1
+                        return nilai
     nilai = 0
     return nilai
 
