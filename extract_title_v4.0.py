@@ -146,7 +146,7 @@ def data_to_json(data, output_file):
 # excel_url = 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1901615913#gid=1901615913'
 
 
-excel_url = 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=99779159#gid=99779159'
+excel_url = 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1863606923#gid=1863606923'
 output_json_file = 'title_result.json'
 df = extract_google_sheet(excel_url)
 # print(df)
