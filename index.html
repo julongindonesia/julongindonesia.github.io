@@ -573,6 +573,7 @@
     function periodListByMonth(period,tanggal,period_now){
       var periodDict = tanggal[period['year']][period['month']]
       periodSelect = $('#periodSelect')
+      periodSelect.empty()
       for(var key in periodDict){
         if(key == period_now){
           option_period = `<option value="${key}" selected>${key}</optoin>`
