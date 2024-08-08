@@ -336,6 +336,44 @@
       }
     }
 
+    tanggal_transfer = {
+      '2024':{
+        '7':{
+          'week1' : 'week1',
+          'week2' : 'week2',
+          'week3' : 'week3',
+          'week4' : 'week4'
+        },
+        '8':{
+          'week1' : 'week5'
+        }
+      }   
+    }
+
+    tanggal_continue = {
+      'china':{
+        'week1' : '第一周(2024.06.29 - 2024.07.05)',
+        "week2" : "第二周(2024.07.06 - 2024.07.12)",
+        "week3" : "第三周(2024.07.13 - 2024.07.19)",
+        "week4" : "第四周(2024.07.20 - 2024.07.26)",
+        "week5" : "第五周(2024.07.27 - 2024.08.02)"
+      },
+      'indonesia':{
+        'week1' : 'week1(2024.06.29 - 2024.07.05)',
+        "week2" : "week2(2024.07.06 - 2024.07.12)",
+        "week3" : "week3(2024.07.13 - 2024.07.19)",
+        "week4" : "week4(2024.07.20 - 2024.07.26)",
+        "week5" : "week5(2024.07.27 - 2024.08.02)"
+      },
+      'double' : {
+        'week1' : 'week1(2024.06.29 - 2024.07.05)',
+        "week2" : "week2(2024.07.06 - 2024.07.12)",
+        "week3" : "week3(2024.07.13 - 2024.07.19)",
+        "week4" : "week4(2024.07.20 - 2024.07.26)",
+        "week5" : "week5(2024.07.27 - 2024.08.02)"
+      }
+    }
+
     // 函数：大标题缩放功能
     cs = function(section){
       $('thead#'+section).click(function(){
@@ -587,7 +625,7 @@
     // 网页开始时，要处理的事情
     input_period_data(file_path,period,language)
     get_title_data(title_path, language, section_list)
-    $("p#tanggal").text(tanggal[period['year']][period['month']][period['period']])
+    $("p#tanggal").text(tanggal_continue[tanggal_transfer[period['year']][period['month']][period['period']]])
     periodListByMonth(period,tanggal,period_now)
 
     // 缩放
@@ -602,7 +640,7 @@
       // 按照时间段更新数据，只重新渲染数据
       update_period_data(file_path, period, language)
       // 显示出所选时间段的具体时间
-      $("p#tanggal").text(tanggal[period['year']][period['month']][period['period']])
+      $("p#tanggal").text(tanggal_continue[tanggal_transfer[period['year']][period['month']][period['period']]])
       get_title_data(title_path, language, section_list)
     })
 
@@ -614,7 +652,7 @@
       // 按照时间段更新数据，只重新渲染数据
       update_period_data(file_path, period, language)
       // 显示出所选时间段的具体时间
-      $("p#tanggal").text(tanggal[period['year']][period['month']][period['period']])
+      $("p#tanggal").text(tanggal_continue[tanggal_transfer[period['year']][period['month']][period['period']]])
       get_title_data(title_path, language, section_list)
       periodListByMonth(period,tanggal,period_now)
     })
