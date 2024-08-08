@@ -205,13 +205,18 @@ title_path = 'title_result.json'
 
 # ！！！！！ 阶段性修改周期变量
 url_data_sheet = {
-    'week3':'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1606022133#gid=1606022133',
-    'week4':'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=99779159#gid=99779159',
-    'week5': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1863606923#gid=1863606923'}
+    '7':{
+        'week3':'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1606022133#gid=1606022133',
+        'week4':'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=99779159#gid=99779159'
+    },
+    '8':{
+        'week1': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1863606923#gid=1863606923'
+    }
+}
 output_file = 'data_result.json'
 
 # ！！！！！ 阶段性修改周期变量
-df = extract_google_sheet(url_data_sheet['week3'])
+df = extract_google_sheet(url_data_sheet['8']['week1'])
 # print(df)
 template = get_title_json(title_path)
 data = set_data_title(template, df)
