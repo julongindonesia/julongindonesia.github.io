@@ -36,5 +36,5 @@ if __name__ == '__main__':
     total_data = get_total_data(total_data_path)
     data = get_data(data_path)
 
-    total_data['2024']['7']['week4'] = data
+    total_data['2024']['7']['week3'] = data
     write_total_data(total_data_path,total_data)
