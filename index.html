@@ -609,6 +609,7 @@
     $("#monthSelect").change(function(){
       // 根据下拉列表，获取当前时间段
       period['month'] = $("#monthSelect").val()
+      period['period'] = 'week1'
       // language = $('#languageSelect').val()
       // 按照时间段更新数据，只重新渲染数据
       update_period_data(file_path, period, language)
