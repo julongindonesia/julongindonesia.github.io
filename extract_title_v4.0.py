@@ -153,11 +153,12 @@ excel_url = {
         'week4':'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=99779159#gid=99779159'
     },
     '8':{
-        'week1': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1863606923#gid=1863606923'
+        'week1': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1863606923#gid=1863606923',
+        'week2': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1522977825#gid=1522977825'
     }
 }
 output_json_file = 'title_result.json'
-df = extract_google_sheet(excel_url['8']['week1'])
+df = extract_google_sheet(excel_url['8']['week2'])
 # print(df)
 # print(len(df))
 data = create_title_data(df)
