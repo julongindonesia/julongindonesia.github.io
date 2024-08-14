@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聚龙健康100指数</title>
+    <link rel="icon" type="image/x-icon" href="image/julong logo.jpg" />
+    <script src="https://cdn.staticfile.net/jquery/1.10.2/jquery.min.js"></script>
+    <script src="echarts.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h2 style="text-align: center;">聚龙健康100指数</h2>
+    <h3 style="text-align: center;">100 Indikator sehat Julong </h3>
+    
+  </header>
+  <main>
+    <section id="controls">
+      <label for="languageSelect">Language:</label>
+      <select id="languageSelect">
+        <option value="china">中文</option>
+        <option value="indonesia">Indonesia</option>
+        <option value="double">双语</option>
+      </select>
+      <br/>
+      
+      <label for="monthSelect">Month:</label>
+      <select id="monthSelect">
+        <option value="7" selected>7</option>
+        <option value="8" selected>8</option>    
+      </select>
+      <label for="periodSelect">Period:</label>
+      <select id="periodSelect">
+        <!-- <option value="week1">week1</option>
+        <option value="week2">week2</option>
+        <option value="week3">week3</option>
+        <option value="week4" selected>week4</option> -->
+        <!-- <option value="month">month</option> -->
+      </select>
+      <p id="tanggal" style="text-align: center;">草稿5（更新日期：2024.07.08）</p> 
+      <button class='line_chart_button' >历史总分数</button>
+    </section>
+
+    <h3 id="total_score" style="text-align: center">总分：100</h3>
+
+    <table id="standard">
+      <thead>
+        <tr id="tema" class="section-header" >
+          <td colspan="4" style=" border: 0.6mm solid rgba(5, 5, 5);">主题</td>
+          <td colspan="2" style=" border: 0.6mm solid rgba(5, 5, 5);">负责人</td>
+          <td colspan="2" style=" border: 0.6mm solid rgba(5, 5, 5);">追踪秘书</td>
+          <td class="center" colspan="1" style="border: 0.6mm solid rgba(5, 5, 5); ">分数</td>
+        </tr>
+      </thead>
+      <!-- human -->
+      <thead id = "human_resource">
+        <tr class="section-header">
+          <td colspan="4">一 人</td>
+          <td colspan="2">杨义</td>
+          <td colspan="2"></td>
+          <td class="center" colspan="1">3</td>
+        </tr>
+      </thead>
+      <tbody id='human_resource' class="inactive" style="display: none;">
+        <tr>
+          <th class="center"  colspan="1">序号</th>
+          <th colspan="2">分项</th>
+          <th class="center" colspan="1">负责人</th>
+          <th class="center" colspan="1">单位</th>
+          <th class="center" colspan="1">前值</th>
+          <th class="center" colspan="1">预测值</th>
+          <th class="center" colspan="1">实际值</th>
+          <th class="center" colspan="1">分数</th>
+        </tr>
+      </tbody>
+      <!-- finance -->
+      <thead id = "finance">
+        <tr class="section-header">
+          <td colspan="4">二 财</td>
+          <td colspan="2">侯光珍</td>
+          <td colspan="2"></td>
+          <td class="center" colspan="1">3</td>
+        </tr>
+      </thead>
+      <tbody id='finance' class="inactive" style="display: none;">
+        <tr>
+          <th class="center"  colspan="1">序号</th>
+          <th colspan="2">分项</th>
+          <th class="center" colspan="1">负责人</th>
+          <th class="center" colspan="1">单位</th>
+          <th class="center" colspan="1">前值</th>
+          <th class="center" colspan="1">预测值</th>
+          <th class="center" colspan="1">实际值</th>
+          <th class="center" colspan="1">分数</th>
+        </tr>
+      </tbody>
+      <!-- material -->
+      <thead id = "material">
+        <tr class="section-header">
+          <td colspan="4">三 物</td>
+          <td colspan="2">孙忠宝</td>
+          <td colspan="2"></td>
+          <td class="center" colspan="1">3</td>
+        </tr>
+      </thead>
+      <tbody id='material' class="inactive" style="display: none;">
+        <tr>
+          <th class="center"  colspan="1">序号</th>
+          <th colspan="2">分项</th>
+          <th class="center" colspan="1">负责人</th>
+          <th class="center" colspan="1">单位</th>
+          <th class="center" colspan="1">前值</th>
+          <th class="center" colspan="1">预测值</th>
+          <th class="center" colspan="1">实际值</th>
+          <th class="center" colspan="1">分数</th>
+        </tr>
+      </tbody>
+      <!-- agriculture -->
+      <thead id = "agriculture">
+        <tr class="section-header">
+          <td colspan="4">四 农</td>
+          <td colspan="2">皮金鹏</td>
+          <td colspan="2"></td>
+          <td class="center" colspan="1">3</td>
+        </tr>
+      </thead>
+      <tbody id='agriculture' class="inactive" style="display: none;">
+        <tr>
+          <th class="center"  colspan="1">序号</th>
+          <th colspan="2">分项</th>
+          <th class="center" colspan="1">负责人</th>
+          <th class="center" colspan="1">单位</th>
+          <th class="center" colspan="1">前值</th>
+          <th class="center" colspan="1">预测值</th>
+          <th class="center" colspan="1">实际值</th>
+          <th class="center" colspan="1">分数</th>
+        </tr>
+      </tbody>
+      <!-- industry -->
+      <thead id = "industry">
+        <tr class="section-header">
+          <td colspan="4">五 工</td>
+          <td colspan="2">王涛</td>
+          <td colspan="2"></td>
+          <td class="center" colspan="1">3</td>
+        </tr>
+      </thead>
+      <tbody id='industry' class="inactive" style="display: none;">
+        <tr>
+          <th class="center"  colspan="1">序号</th>
+          <th colspan="2">分项</th>
+          <th class="center" colspan="1">负责人</th>
+          <th class="center" colspan="1">单位</th>
+          <th class="center" colspan="1">前值</th>
+          <th class="center" colspan="1">预测值</th>
+          <th class="center" colspan="1">实际值</th>
+          <th class="center" colspan="1">分数</th>
+        </tr>
+      </tbody>
+      <!-- commerce -->
+      <thead id = "commerce">
+        <tr class="section-header">
+          <td colspan="4">六 商</td>
+          <td colspan="2">徐传贵</td>
+          <td colspan="2"></td>
+          <td class="center" colspan="1">3</td>
+        </tr>
+      </thead>
+      <tbody id='commerce' class="inactive" style="display: none;">
+        <tr>
+          <th class="center"  colspan="1">序号</th>
+          <th colspan="2">分项</th>
+          <th class="center" colspan="1">负责人</th>
+          <th class="center" colspan="1">单位</th>
+          <th class="center" colspan="1">前值</th>
+          <th class="center" colspan="1">预测值</th>
+          <th class="center" colspan="1">实际值</th>
+          <th class="center" colspan="1">分数</th>
+        </tr>
+      </tbody>
+      <!-- big data -->
+      <thead id = "big_data">
+        <tr class="section-header">
+          <td colspan="4">七 4G大数据</td>
+          <td colspan="2">杨江树</td>
+          <td colspan="2"></td>
+          <td class="center" colspan="1">3</td>
+        </tr>
+      </thead>
+      <tbody id='big_data' class="inactive" style="display: none;">
+        <tr>
+          <th class="center"  colspan="1">序号</th>
+          <th colspan="2">分项</th>
+          <th class="center" colspan="1">负责人</th>
+          <th class="center" colspan="1">单位</th>
+          <th class="center" colspan="1">前值</th>
+          <th class="center" colspan="1">预测值</th>
+          <th class="center" colspan="1">实际值</th>
+          <th class="center" colspan="1">分数</th>
+        </tr>
+      </tbody>
+      <!-- internet -->
+      <thead id = "internet">
+        <tr class="section-header">
+          <td colspan="4">八 5G互联网</td>
+          <td colspan="2">胡军</td>
+          <td colspan="2"></td>
+          <td class="center" colspan="1">3</td>
+        </tr>
+      </thead>
+      <tbody id='internet' class="inactive" style="display: none;">
+        <tr>
+          <th class="center"  colspan="1">序号</th>
+          <th colspan="2">分项</th>
+          <th class="center" colspan="1">负责人</th>
+          <th class="center" colspan="1">单位</th>
+          <th class="center" colspan="1">前值</th>
+          <th class="center" colspan="1">预测值</th>
+          <th class="center" colspan="1">实际值</th>
+          <th class="center" colspan="1">分数</th>
+        </tr>
+      </tbody>
+      <!-- ai -->
+      <thead id = "ai">
+        <tr class="section-header">
+          <td colspan="4">九 人工智能</td>
+          <td colspan="2">雷文忠</td>
+          <td colspan="2"></td>
+          <td class="center" colspan="1">3</td>
+        </tr>
+      </thead>
+      <tbody id='ai' class="inactive" style="display: none;">
+        <tr>
+          <th class="center"  colspan="1">序号</th>
+          <th colspan="2">分项</th>
+          <th class="center" colspan="1">负责人</th>
+          <th class="center" colspan="1">单位</th>
+          <th class="center" colspan="1">前值</th>
+          <th class="center" colspan="1">预测值</th>
+          <th class="center" colspan="1">实际值</th>
+          <th class="center" colspan="1">分数</th>
+        </tr>
+      </tbody>
+      <!-- legal -->
+      <thead id = "legal">
+        <tr class="section-header">
+          <td colspan="4">十 法律</td>
+          <td colspan="2">杨斌</td>
+          <td colspan="2"></td>
+          <td class="center" colspan="1">3</td>
+        </tr>
+      </thead>
+      <tbody id='legal' class="inactive" style="display: none;">
+        <tr>
+          <th class="center"  colspan="1">序号</th>
+          <th colspan="2">分项</th>
+          <th class="center" colspan="1">负责人</th>
+          <th class="center" colspan="1">单位</th>
+          <th class="center" colspan="1">前值</th>
+          <th class="center" colspan="1">预测值</th>
+          <th class="center" colspan="1">实际值</th>
+          <th class="center" colspan="1">分数</th>
+        </tr>
+      </tbody>
+  
+    </table>
+
+    <div id="line_chart" style="display:none;"></div>
+  </main>
+    
+  <script>
+    // 默认值
+    file_path = 'total_data.json' // 主要数据的存储文件
+    title_path = 'total_data.json' // 标题国际化的存储文件
+    period = {
+      'year': '2024',
+      'month': '8',
+      'period': 'week2'
+    } // 时间段
+    
+    period_now = 'week2'
+
+    title_line_chart = {
+      'china': {
+        'title':'100指数折线图',
+        'xAxis': ['7月\n第一周\n(06.29-07.05)','7月\n第二周\n(07.06-07.12)','7月\n第三周\n(07.13-07.19)','7月\n第四周\n(07.20-07.26)', '8月\n第一周\n(07.27-08.02)', '8月\n第二周\n(08.03-08.09)'],
+        'data': [55, 63, 60, 64, 67, 75]
+       },
+      'indonesia': {
+        'title': '100 Grafik Garis Indeks',
+        'xAxis': ['Juli\nweek1\n(06.29-07.05)','Juli\nweek2\n(07.06-07.12)','Juli\nweek3\n(07.13-07.19)','Juli\nweek4\n(07.20-07.26)', 'Agustus\nweek1\n(07.27-08.02)', 'Agustus\nweek2\n(08.03-08.09)'],
+        'data': [55, 63, 60, 64, 67, 75]
+      },
+      'double': {
+        'title': '100 Grafik Garis Indeks\n100指数折线图',
+        'xAxis': ['Juli\nweek1\n(06.29-07.05)','Juli\nweek2\n(07.06-07.12)','Juli\nweek3\n(07.13-07.19)','Juli\nweek4\n(07.20-07.26)', 'Agustus\nweek1\n(07.27-08.02)', 'Agustus\nweek2\n(08.03-08.09)'],
+        'data': [55, 63, 60, 64, 67, 75]
+      },
+    }
+    text_button_line_chart = {
+      'china': '历史总分数',
+      'indonesia': 'skor total sejarah',
+      'double': 'skor total sejarah\n历史总分数'
+    }
+    language = 'china' // 语言
+    // 大指标的关键字
+    section_list = ['human_resource','finance','material','agriculture','industry',
+      'commerce', 'big_data','internet','ai','legal'
+    ]
+    // 计算得分的数据结构
+    section_score= {
+      'human_resource':0,
+      'finance':0,
+      'material':0,
+      'agriculture':0,
+      'industry':0,
+      'commerce':0, 
+      'big_data':0,
+      'internet':0,
+      'ai':0,
+      'legal':0
+    }
+    // 每个时间段对应的日期
+    tanggal = {
+      '2024':{
+        '7':{
+          "week1" : "2024.06.29 - 2024.07.05",
+          "week2" : "2024.07.06 - 2024.07.12",
+          "week3" : "2024.07.13 - 2024.07.19",
+          "week4" : "2024.07.20 - 2024.07.26"
+        },
+        "8":{
+          'week1' : "2024.07.27 - 2024.08.02",
+          'week2' : "2024.08.03 - 2024.08.09"
+        }
+      }
+    }
+
+    tanggal_transfer = {
+      '2024':{
+        '7':{
+          'week1' : 'week1',
+          'week2' : 'week2',
+          'week3' : 'week3',
+          'week4' : 'week4'
+        },
+        '8':{
+          'week1' : 'week5',
+          'week2' : 'week6'
+        }
+      }   
+    }
+
+    tanggal_continue = {
+      'china':{
+        'week1' : '第一周(2024.06.29 - 2024.07.05)',
+        "week2" : "第二周(2024.07.06 - 2024.07.12)",
+        "week3" : "第三周(2024.07.13 - 2024.07.19)",
+        "week4" : "第四周(2024.07.20 - 2024.07.26)",
+        "week5" : "第五周(2024.07.27 - 2024.08.02)",
+        "week6" : "第六周(2024.08.03 - 2024.08.09)"
+      },
+      'indonesia':{
+        'week1' : 'week1(2024.06.29 - 2024.07.05)',
+        "week2" : "week2(2024.07.06 - 2024.07.12)",
+        "week3" : "week3(2024.07.13 - 2024.07.19)",
+        "week4" : "week4(2024.07.20 - 2024.07.26)",
+        "week5" : "week5(2024.07.27 - 2024.08.02)",
+        "week6" : "week6(2024.08.03 - 2024.08.09)"
+      },
+      'double' : {
+        'week1' : 'week1(2024.06.29 - 2024.07.05)',
+        "week2" : "week2(2024.07.06 - 2024.07.12)",
+        "week3" : "week3(2024.07.13 - 2024.07.19)",
+        "week4" : "week4(2024.07.20 - 2024.07.26)",
+        "week5" : "week5(2024.07.27 - 2024.08.02)",
+        "week6" : "week6(2024.08.03 - 2024.08.09)"
+      }
+    }
+
+    // 函数：大标题缩放功能
+    cs = function(section){
+      $('thead#'+section).click(function(){
+        var tbody = $('tbody#'+section)
+        var singal = tbody.attr('class')
+        if(singal == 'active'){
+          tbody.attr('style','display:none')
+          tbody.attr('class','inactive')
+        }else{
+          tbody.attr('style','')
+          tbody.attr('class','active')
+          tbody_list = $('tbody')
+          // 展开一项大标题时，收缩其他大标题的二级标题
+          for(var i = 0; i < tbody_list.length; i++){
+            if(tbody_list[i].id != section){
+              tbody_list[i].style.display = 'none'
+              tbody_list[i].classList.remove('active')
+              tbody_list[i].classList.add('inactive')
+            }
+          }
+          // console.log(tbody_list)
+        }
+      })
+      // 注释缩放功能
+      $('tbody#'+section).on('click', '[id^="data_"]', function(){
+        var index = this.id.split('_')[1];
+        tr_commen = $(`tr#commen_${index}_${section}`)
+        var singal = tr_commen.attr('class')
+        if(singal == 'active'){
+          tr_commen.attr('style','display:none;')
+          tr_commen.attr('class','inactive')
+        }else{
+          tr_commen.attr('style','')
+          tr_commen.attr('class','active')
+          for (var i = 0; i < 10; i++){
+            if( i != index){
+              dom_other = $(`tr#commen_${i}_${section}`)
+              dom_other.attr('style','display:none;')
+              dom_other.attr('class','inactive')
+            }
+          }
+        }
+      })
+    }
+
+    // 函数：具体指标数据的填写
+    input_data = function(section, data_list){
+      var section_score = 0
+      var tbody = $('tbody#'+section)
+      for(var index in data_list){
+        var data = data_list[index]
+
+        var add_tr  
+        if(data[8] != 0){
+          add_tr = 
+          `<tr id="data_${index}_${section}">
+          <td class="center" data-label="序号" colspan="1">${data[0]}</td>
+          <td data-label="分项" colspan="2">${data[1]}</td>
+          <td class="center" data-label="负责人" colspan="1">${data[2]}</td>
+          <td class="center" data-label="单位" colspan="1">${data[3]}</td>
+          <td class="center" data-label="前值" colspan="1">${data[4]}</td>
+          <td class="center" data-label="预测值" colspan="1">${data[5]}</td>
+          <td class="center" data-label="实际值" colspan="1">${data[6]}</td>
+          <td class="center" data-label="分数" colspan="1">${data[8]}</td>
+        </tr>
+        <tr id="commen_${index}_${section}" class="inactive" style="display: none;">
+          <td colspan="10">分析:\n ${data[9]}</td>
+        </tr>
+        `
+        }else if(data[8] == 0){
+          add_tr = 
+          `<tr id="data_${index}_${section}" class='unhealthy_data'>
+            <td class="center" data-label="序号" colspan="1">${data[0]}</td>
+            <td data-label="分项" colspan="2">${data[1]}</td>
+            <td class="center" data-label="负责人" colspan="1">${data[2]}</td>
+            <td class="center" data-label="单位" colspan="1">${data[3]}</td>
+            <td class="center" data-label="前值" colspan="1">${data[4]}</td>
+            <td class="center" data-label="预测值" colspan="1">${data[5]}</td>
+            <td class="center" data-label="实际值" colspan="1">${data[6]}</td>
+            <td class="center" data-label="分数" colspan="1">${data[8]}</td>
+          </tr>
+          <tr id="commen_${index}_${section}" class="inactive" style="display: none;">
+            <td colspan="10">分析:\n ${data[9]}</td>
+          </tr>
+        `
+        }
+        
+        
+        tbody.append(add_tr)
+        section_score = section_score + data[8]
+      }
+      return section_score
+    }
+
+    update_data = function(section, data_list, language){
+      var section_score = 0
+      for(var index in data_list){
+        data = data_list[index]
+        tr_data = $(`tr#data_${index}_${section}`)
+        tr_commen = $(`tr#commen_${index}_${section}`)
+        for(var i=1; i<9; i++){
+          tr_child = tr_data.children(`td:nth-child(${i})`)
+          if( i == 8){
+            tr_child.text(data[i])
+            if(data[i] == 0){
+              tr_data.attr('style','color:red')
+            }else if(data[i] != 0){
+              tr_data.attr('style', 'color:black')
+            }
+          }else{
+            tr_child.text(data[i-1])
+          }
+        }
+        if(language == 'china'){
+          tr_commen.children('td:nth-child(1)').text("分析:\n" + data[9])
+        }else{
+          tr_commen.children('td:nth-child(1)').text("Analisa:\n" + data[9])
+        }
+        
+        section_score = section_score + data[8]
+      }
+      return section_score
+    }
+     
+    // 将总得分写入指定位置
+     input_total_score = function(section_score,language){
+      var total = 0
+      for(var key in section_score){
+        td_key = $('thead#'+key).find('tr:first').children('td:nth-child(4)')
+        td_key.text(section_score[key])
+        total = total + section_score[key]
+      }
+      if (language == 'china'){
+        score_description = '总分数: '
+      }else if (language == 'indonesia'){
+        score_description = 'Total Score: '
+      }else{
+        score_description = 'Total Score: '
+      }
+      total_score = score_description + total
+      $('h3#total_score').text(total_score)
+    }
+
+    // 渲染标题
+    function get_title_data(title_path,language,section_list){
+      // 获取数据
+      var request = new XMLHttpRequest();
+        request.open('get', title_path)
+        request.send(null)
+        request.onload = function(){
+          var data = JSON.parse(request.responseText)
+          data = data[period['year']][period['month']][period['period']][language]
+          $('thead#total').children('tr:nth-child(1)').children('td:nth-child(1)').find('h3:first').text(data['title']['title'])
+
+          section_title = data
+          for(index in section_list){
+            section = section_list[index]
+            title = section_title[section]
+            tr = $('thead#'+section).find("tr:first")
+            tr.children("td:nth-child(1)").text(title["title"])
+            tr.children("td:nth-child(2)").text(title["PIC"])
+            tr.children("td:nth-child(3)").text(title["sekre"])
+          }
+          
+          sub_title = data["title"]['subtitle']
+          tbody_tr = $('tbody').find('tr:first')
+          for(var i=1; i<=9; i++){
+            if( i ==8 || i == 9){
+              tbody_tr.children(`th:nth-child(${i})`).text(sub_title[i])
+            }else{
+              tbody_tr.children(`th:nth-child(${i})`).text(sub_title[i-1])
+            }
+            
+          }
+      }
+    }
+
+    // 函数：渲染数据
+    function input_period_data(path,period,language) {
+        // 获取数据
+      var score = 0
+      var request = new XMLHttpRequest()
+      request.open('get', path)
+      request.send(null)
+      request.onload = function(){
+        var data = JSON.parse(request.responseText)
+        data = data[period['year']][period['month']][period['period']][language]
+        
+        // 渲染数据
+        for(index in section_list){
+          section = section_list[index]
+          section_score[section] = 0  //将分数置为零，防止累加之前计算的得分
+          section_score[section] = input_data(section,data[section]['sub'])
+        }
+        // 渲染总分数
+        input_total_score(section_score,language)
+      }
+    }
+
+    // 只更新数据部分的数据
+    function update_period_data(path, period, language) {
+        // 获取数据
+      var request = new XMLHttpRequest();
+      request.open('get', path)
+      request.send(null)
+      request.onload = function(){
+        var data = JSON.parse(request.responseText)
+        data = data[period['year']][period['month']][period['period']][language]
+        // 渲染数据
+        for(index in section_list){
+          section = section_list[index]
+          section_score[section] = 0  //将分数置为零，防止累加之前计算的得分
+          section_score[section] = update_data(section,data[section]['sub'],language)
+        }
+        // 渲染总分数
+        input_total_score(section_score,language)
+      }
+    }
+
+    // 更新Tema部分标题的语言
+    function update_tema(language){
+      tema_language = {
+        'china': ['主题', '负责人', '追踪秘书', '分数'],
+        'indonesia': ['Tema', 'PIC', 'PIC Follow-Up', 'Nilai'],
+        'double': ['Tema\n主题', 'PIC\n负责人', 'PIC Follow-Up\n追踪秘书', 'Nilai\n分数']
+      }
+
+      tr_tema = $('tr#tema')
+      for(var i=1; i<=4; i++){
+        tr_tema.children(`td:nth-child(${i})`).text(tema_language[language][i-1])
+      }
+    }
+
+    // 根据月份返回period数据到select列表
+    function periodListByMonth(period,tanggal,period_now){
+      var periodDict = tanggal[period['year']][period['month']]
+      periodSelect = $('#periodSelect')
+      periodSelect.empty()
+      for(var key in periodDict){
+        if(key == period_now){
+          option_period = `<option value="${key}" selected>${key}</optoin>`
+        }else{
+          option_period = `<option value="${key}">${key}</optoin>`
+        }
+        periodSelect.append(option_period)
+      }
+    }
+
+    // 网页开始时，要处理的事情
+    input_period_data(file_path,period,language)
+    get_title_data(title_path, language, section_list)
+    $("p#tanggal").text(tanggal_continue[language][tanggal_transfer[period['year']][period['month']][period['period']]])
+    periodListByMonth(period,tanggal,period_now)
+
+    // 缩放
+    for(index in section_list){
+      cs(section_list[index])
+    }
+
+    $("#periodSelect").change(function(){
+      // 根据下拉列表，获取当前时间段
+      period['period'] = $("#periodSelect").val()
+      // language = $('#languageSelect').val()
+      // 按照时间段更新数据，只重新渲染数据
+      update_period_data(file_path, period, language)
+      // 显示出所选时间段的具体时间
+      $("p#tanggal").text(tanggal_continue[language][tanggal_transfer[period['year']][period['month']][period['period']]])
+      get_title_data(title_path, language, section_list)
+    })
+
+    $("#monthSelect").change(function(){
+      // 根据下拉列表，获取当前时间段
+      period['month'] = $("#monthSelect").val()
+      period['period'] = 'week1'
+      // language = $('#languageSelect').val()
+      // 按照时间段更新数据，只重新渲染数据
+      update_period_data(file_path, period, language)
+      // 显示出所选时间段的具体时间
+      $("p#tanggal").text(tanggal_continue[language][tanggal_transfer[period['year']][period['month']][period['period']]])
+      get_title_data(title_path, language, section_list)
+      periodListByMonth(period,tanggal,period_now)
+    })
+
+    $("#languageSelect").change(function(){
+      // 根据下拉列表，获取当前时间段
+      language = $('#languageSelect').val()
+      period['period'] = $("#periodSelect").val()
+      // 按照选择的语言更新数据，只重新渲染数据
+      update_period_data(file_path,period,language)
+      get_title_data(title_path, language, section_list)
+      update_tema(language)
+      setLineChart(title_line_chart[language])
+      $('button.line_chart_button').text(text_button_line_chart[language])
+    })
+    // 通过点击按钮，显示\隐藏图表
+    singal_display_line_chart = false
+    $('button.line_chart_button').click(function(){
+      if (singal_display_line_chart){
+        $('div#line_chart').attr('style', 'display: none')
+        $('table#standard').attr('style', '')
+        $('h3#total_score').attr('style', 'text-align: center')
+        singal_display_line_chart = false
+      }else if (!singal_display_line_chart){
+        $('div#line_chart').attr('style', '')
+        $('table#standard').attr('style', 'display: none')
+        $('h3#total_score').attr('style', 'display:none')
+        singal_display_line_chart = true
+      }
+    })
+
+    // 创建Echarts图表
+    var lineChart = echarts.init(document.getElementById('line_chart'))
+    
+    // 设置图表
+    function setLineChart(title_text){
+      $.get('echart_data.js').done(function(data){
+      lineChart.setOption({
+        title: {
+        text: title_text['title'],
+        x:'center',
+        y: 'top'
+      },
+      xAxis: [
+        {
+          type: 'category',
+          data: title_text['xAxis']
+        }
+      ],
+      yAxis: {
+        type: 'value'
+      },
+      series: [
+        {
+          data: title_text['data'],
+          type: 'line',
+          label:{
+            show: true,
+            position: 'bottom',
+            fontSize: 15
+          }
+        }
+      ]
+      })
+    })
+    }
+    
+    setLineChart(title_line_chart[language])
+  </script>
+</body>
+</html>
