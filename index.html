@@ -276,26 +276,26 @@
     period = {
       'year': '2024',
       'month': '8',
-      'period': 'week2'
+      'period': 'week3'
     } // 时间段
     
-    period_now = 'week2'
+    period_now = 'week3'
 
     title_line_chart = {
       'china': {
         'title':'100指数折线图',
-        'xAxis': ['7月\n第一周','7月\n第二周','7月\n第三周','7月\n第四周', '8月\n第一周', '8月\n第二周'],
-        'data': [55, 63, 60, 64, 67, 75]
+        'xAxis': ['7月\n第一周','7月\n第二周','7月\n第三周','7月\n第四周', '8月\n第一周', '8月\n第二周', '8月\n第三周'],
+        'data': [55, 63, 60, 64, 67, 75, 68]
        },
       'indonesia': {
         'title': '100 Grafik Garis Indeks',
-        'xAxis': ['Juli\nweek1','Juli\nweek2','Juli\nweek3','Juli\nweek4', 'Agustus\nweek1', 'Agustus\nweek2'],
-        'data': [55, 63, 60, 64, 67, 75]
+        'xAxis': ['Juli\nweek1','Juli\nweek2','Juli\nweek3','Juli\nweek4', 'Agustus\nweek1', 'Agustus\nweek2', 'Agustus\nweek3'],
+        'data': [55, 63, 60, 64, 67, 75, 68]
       },
       'double': {
         'title': '100 Grafik Garis Indeks\n100指数折线图',
-        'xAxis': ['Juli\nweek1','Juli\nweek2','Juli\nweek3','Juli\nweek4', 'Agustus\nweek1', 'Agustus\nweek2'],
-        'data': [55, 63, 60, 64, 67, 75]
+        'xAxis': ['Juli\nweek1','Juli\nweek2','Juli\nweek3','Juli\nweek4', 'Agustus\nweek1', 'Agustus\nweek2', 'Agustus\nweek3'],
+        'data': [55, 63, 60, 64, 67, 75, 68]
       },
     }
     text_button_line_chart = {
@@ -332,7 +332,8 @@
         },
         "8":{
           'week1' : "2024.07.27 - 2024.08.02",
-          'week2' : "2024.08.03 - 2024.08.09"
+          'week2' : "2024.08.03 - 2024.08.09",
+          'week3' : "2024.08.10 - 2024.08.16"
         }
       }
     }
@@ -347,7 +348,8 @@
         },
         '8':{
           'week1' : 'week5',
-          'week2' : 'week6'
+          'week2' : 'week6',
+          'week3' : 'week7'
         }
       }   
     }
@@ -359,7 +361,8 @@
         "week3" : "第三周(2024.07.13 - 2024.07.19)",
         "week4" : "第四周(2024.07.20 - 2024.07.26)",
         "week5" : "第五周(2024.07.27 - 2024.08.02)",
-        "week6" : "第六周(2024.08.03 - 2024.08.09)"
+        "week6" : "第六周(2024.08.03 - 2024.08.09)",
+        "week7" : "第七周(2024.08.10 - 2024.08.16)"
       },
       'indonesia':{
         'week1' : 'week1(2024.06.29 - 2024.07.05)',
@@ -367,7 +370,8 @@
         "week3" : "week3(2024.07.13 - 2024.07.19)",
         "week4" : "week4(2024.07.20 - 2024.07.26)",
         "week5" : "week5(2024.07.27 - 2024.08.02)",
-        "week6" : "week6(2024.08.03 - 2024.08.09)"
+        "week6" : "week6(2024.08.03 - 2024.08.09)",
+        "week7" : "week7(2024.08.10 - 2024.08.16)"
       },
       'double' : {
         'week1' : 'week1(2024.06.29 - 2024.07.05)',
@@ -375,7 +379,8 @@
         "week3" : "week3(2024.07.13 - 2024.07.19)",
         "week4" : "week4(2024.07.20 - 2024.07.26)",
         "week5" : "week5(2024.07.27 - 2024.08.02)",
-        "week6" : "week6(2024.08.03 - 2024.08.09)"
+        "week6" : "week6(2024.08.03 - 2024.08.09)",
+        "week7" : "week7(2024.08.10 - 2024.08.16)"
       }
     }
 
@@ -653,8 +658,10 @@
       // 根据下拉列表，获取当前时间段
       period['month'] = $("#monthSelect").val()
       period['period'] = 'week1'
+      period_now = 'week1'
       // language = $('#languageSelect').val()
       // 按照时间段更新数据，只重新渲染数据
+      console.log(period)
       update_period_data(file_path, period, language)
       // 显示出所选时间段的具体时间
       $("p#tanggal").text(tanggal_continue[language][tanggal_transfer[period['year']][period['month']][period['period']]])
@@ -665,7 +672,7 @@
     $("#languageSelect").change(function(){
       // 根据下拉列表，获取当前时间段
       language = $('#languageSelect').val()
-      period['period'] = $("#periodSelect").val()
+      // period['period'] = $("#periodSelect").val()
       // 按照选择的语言更新数据，只重新渲染数据
       update_period_data(file_path,period,language)
       get_title_data(title_path, language, section_list)
