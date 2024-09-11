@@ -1,5 +1,6 @@
 import pandas as pd
 import json
+import os
 
 '''
     将构造好的data数据存入总json文件
@@ -31,10 +32,10 @@ def write_total_data(total_data_path,total_data):
         json.dump(total_data, f)
 
 if __name__ == '__main__':
-    total_data_path = 'total_data.json'
-    data_path = 'data_result.json'
+    total_data_path =  os.path.join(os.path.dirname(__file__),'total_data.json')
+    data_path =  os.path.join(os.path.dirname(__file__),'data_result.json')
     total_data = get_total_data(total_data_path)
     data = get_data(data_path)
 
-    total_data['2024']['8']['week5'] = data
+    total_data['2024']['9']['week1'] = data
     write_total_data(total_data_path,total_data)

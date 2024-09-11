@@ -3,6 +3,7 @@ import json
 import copy
 import re
 import math
+import os
 
 def extract_google_sheet(url):
     # 设置df显示所有的行和列
@@ -201,27 +202,34 @@ def data_to_json(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(data, f)
 
-title_path = 'title_result.json'
+if __name__ == '__main__':
 
-# ！！！！！ 阶段性修改周期变量
-url_data_sheet = {
-    '7':{
-        'week3':'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1606022133#gid=1606022133',
-        'week4':'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=99779159#gid=99779159'
-    },
-    '8':{
-        'week1': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1863606923#gid=1863606923',
-        'week2': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1522977825#gid=1522977825',
-        'week3': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=410993782#gid=410993782',
-        'week4': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1003136681#gid=1003136681',
-        'week5': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1947397763#gid=1947397763'
+    title_path = os.path.join(os.path.dirname(__file__),'title_result.json')
+
+    # ！！！！！ 阶段性修改周期变量
+    url_data_sheet = {
+        '7':{
+            'week3':'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1606022133#gid=1606022133',
+            'week4':'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=99779159#gid=99779159'
+        },
+        '8':{
+            'week1': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1863606923#gid=1863606923',
+            'week2': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1522977825#gid=1522977825',
+            'week3': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=410993782#gid=410993782',
+            'week4': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1003136681#gid=1003136681',
+            'week5': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1947397763#gid=1947397763'
+        },
+        '9':{
+            'week1': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=572236973#gid=572236973'
+        }
     }
-}
-output_file = 'data_result.json'
 
-# ！！！！！ 阶段性修改周期变量
-df = extract_google_sheet(url_data_sheet['8']['week5'])
-# print(df)
-template = get_title_json(title_path)
-data = set_data_title(template, df)
-data_to_json(data, output_file)
+
+    output_file = os.path.join(os.path.dirname(__file__),'data_result.json')
+
+    # ！！！！！ 阶段性修改周期变量
+    df = extract_google_sheet(url_data_sheet['9']['week1'])
+    # print(df)
+    template = get_title_json(title_path)
+    data = set_data_title(template, df)
+    data_to_json(data, output_file)

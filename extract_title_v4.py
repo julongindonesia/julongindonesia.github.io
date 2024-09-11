@@ -1,5 +1,6 @@
 import pandas as pd
 import json
+import os
 
 def extract_google_sheet(url):
     # 设置df显示所有的行和列
@@ -147,23 +148,28 @@ def data_to_json(data, output_file):
 # excel_url = 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1901615913#gid=1901615913'
 
 
-excel_url = {
-    '7':{
-        'week3':'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1606022133#gid=1606022133',
-        'week4':'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=99779159#gid=99779159'
-    },
-    '8':{
-        'week1': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1863606923#gid=1863606923',
-        'week2': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1522977825#gid=1522977825',
-        'week3': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=410993782#gid=410993782',
-        'week4': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1003136681#gid=1003136681',
-        'week5': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1947397763#gid=1947397763'
+if __name__ == '__main__':
+
+    excel_url = {
+        '7':{
+            'week3':'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1606022133#gid=1606022133',
+            'week4':'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=99779159#gid=99779159'
+        },
+        '8':{
+            'week1': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1863606923#gid=1863606923',
+            'week2': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1522977825#gid=1522977825',
+            'week3': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=410993782#gid=410993782',
+            'week4': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1003136681#gid=1003136681',
+            'week5': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1947397763#gid=1947397763'
+        },
+        '9':{
+            'week1': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=572236973#gid=572236973'
+        }
     }
-}
-output_json_file = 'title_result.json'
-df = extract_google_sheet(excel_url['8']['week5'])
-# print(df)
-# print(len(df))
-data = create_title_data(df)
-# print(data)
-data_to_json(data, output_json_file)
+    output_json_file = os.path.join(os.path.dirname(__file__),'title_result.json')
+    df = extract_google_sheet(excel_url['9']['week1'])
+    # print(df)
+    # print(len(df))
+    data = create_title_data(df)
+    # print(data)
+    data_to_json(data, output_json_file)
