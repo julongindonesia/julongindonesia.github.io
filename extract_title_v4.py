@@ -163,11 +163,13 @@ if __name__ == '__main__':
             'week5': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1947397763#gid=1947397763'
         },
         '9':{
-            'week1': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=572236973#gid=572236973'
+            'week1': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=572236973#gid=572236973',
+            'week2': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=319709617#gid=319709617',
+            'week3': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=81003741#gid=81003741'
         }
     }
     output_json_file = os.path.join(os.path.dirname(__file__),'title_result.json')
-    df = extract_google_sheet(excel_url['9']['week1'])
+    df = extract_google_sheet(excel_url['9']['week3'])
     # print(df)
     # print(len(df))
     data = create_title_data(df)
