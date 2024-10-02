@@ -720,6 +720,7 @@
       update_tema(language)
       setLineChart(title_line_chart[language])
       $('button.line_chart_button').text(text_button_line_chart[language])
+      $("p#tanggal").text(tanggal_continue[language][tanggal_transfer[period['year']][period['month']][period['period']]])
     })
     // 通过点击按钮，显示\隐藏图表
     singal_display_line_chart = false
