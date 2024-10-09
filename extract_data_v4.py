@@ -224,6 +224,9 @@ if __name__ == '__main__':
             'week2': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=319709617#gid=319709617',
             'week3': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=81003741#gid=81003741',
             'week4': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=562058111#gid=562058111'
+        },
+        '10':{
+            'week1': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1552482227#gid=1552482227'
         }
     }
 
@@ -231,7 +234,7 @@ if __name__ == '__main__':
     output_file = os.path.join(os.path.dirname(__file__),'data_result.json')
 
     # ！！！！！ 阶段性修改周期变量
-    df = extract_google_sheet(url_data_sheet['9']['week4'])
+    df = extract_google_sheet(url_data_sheet['10']['week1'])
     # print(df)
     template = get_title_json(title_path)
     data = set_data_title(template, df)
