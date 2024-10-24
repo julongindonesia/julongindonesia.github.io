@@ -127,6 +127,15 @@ def calculate_score(cara_nilai, prev, est, act ):
                     if math.isclose(act,est) or act < est:
                         nilai = 1
                         return nilai
+    elif cara_nilai == '小于预测值':
+        if est != '_' and act != '_':
+            est = digit_string_convert(est)
+            act = digit_string_convert(act)
+            if est != None and act != None:
+                if ~isinstance(est, list) and ~isinstance(act, list):
+                    if act < est:
+                        nilai = 1
+                        return nilai
     elif cara_nilai == '大于等于预测值':
         if est != '_' and act != '_':
             est = digit_string_convert(est)
@@ -134,6 +143,15 @@ def calculate_score(cara_nilai, prev, est, act ):
             if est != None and act != None:
                 if ~isinstance(est, list) and ~isinstance(act, list):
                     if math.isclose(act,est) or act > est:
+                        nilai = 1
+                        return nilai
+    elif cara_nilai == '大于等于预测值\n的90%以上':
+        if est != '_' and act != '_':
+            est = digit_string_convert(est)
+            act = digit_string_convert(act)
+            if est != None and act != None:
+                if ~isinstance(est, list) and ~isinstance(act, list):
+                    if math.isclose(act,est*0.9) or act > est*0.9:
                         nilai = 1
                         return nilai
     elif cara_nilai == '高于预测值':
