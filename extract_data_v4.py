@@ -136,7 +136,15 @@ def calculate_score(cara_nilai, prev, est, act ):
                     if math.isclose(act,est) or act > est:
                         nilai = 1
                         return nilai
-
+    elif cara_nilai == '高于预测值':
+        if est != '_' and act != '_':
+            est = digit_string_convert(est)
+            act = digit_string_convert(act)
+            if est != None and act != None:
+                if ~isinstance(est, list) and ~isinstance(act, list):
+                    if act > est:
+                        nilai = 1
+                        return nilai
     elif cara_nilai == '小于等于前值':
         if prev != '_' and act != '_':
             prev = digit_string_convert(prev)
@@ -155,6 +163,15 @@ def calculate_score(cara_nilai, prev, est, act ):
                     if act >= prev:
                         nilai = 1
                         return nilai
+    elif cara_nilai == '大于等于前值\n(可以接受-10%的差异)':
+        if prev!= '_' and act!= '_':
+            prev = digit_string_convert(prev)
+            act = digit_string_convert(act)
+            if prev!= None and act!= None:
+                if ~isinstance(prev, list) and ~isinstance(act, list):
+                    if (math.isclose(act,prev*1.1) or act < prev*1.1) and (math.isclose(act,prev*0.9) or act > prev*0.9):
+                        nilai = 1
+                        return nilai
     elif cara_nilai == '不为零且大于等于前值':
         if prev != '_' and act != '_':
             prev = digit_string_convert(prev)
@@ -167,6 +184,47 @@ def calculate_score(cara_nilai, prev, est, act ):
                     if act >= prev:
                         nilai = 1
                         return nilai
+    elif cara_nilai == '大于等于85%':
+        if act != '_':
+            act = digit_string_convert(act)
+            if act != None:
+                if ~isinstance(act, list):
+                    if act >= 85:
+                        nilai = 1
+                        return nilai
+    elif cara_nilai == '大于等于70%':
+        if act != '_':
+            act = digit_string_convert(act)
+            if act != None:
+                if ~isinstance(act, list):
+                    if act >= 70:
+                        nilai = 1
+                        return nilai
+    elif cara_nilai == '小于等于3%':
+        if act != '_':
+            act = digit_string_convert(act)
+            if act != None:
+                if ~isinstance(act, list):
+                    if act <= 3:
+                        nilai = 1
+                        return nilai   
+    elif cara_nilai == '等于0':
+        if act != '_':
+            act = digit_string_convert(act)
+            if act != None:
+                if ~isinstance(act, list):
+                    if act == 0:
+                        nilai = 1
+                        return nilai   
+    elif cara_nilai == '大于等于1M':
+        if act != '_':
+            act = digit_string_convert(act)
+            if act != None:
+                if ~isinstance(act, list):
+                    if act >= 1000000:
+                        nilai = 1
+                        return nilai   
+    
     nilai = 0
     return nilai
 
@@ -227,7 +285,8 @@ if __name__ == '__main__':
         },
         '10':{
             'week1': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1552482227#gid=1552482227',
-            'week2': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1629294089#gid=1629294089'
+            'week2': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1629294089#gid=1629294089',
+            'week3': 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=520130035#gid=520130035'
         }
     }
 
@@ -235,7 +294,7 @@ if __name__ == '__main__':
     output_file = os.path.join(os.path.dirname(__file__),'data_result.json')
 
     # ！！！！！ 阶段性修改周期变量
-    df = extract_google_sheet(url_data_sheet['10']['week2'])
+    df = extract_google_sheet(url_data_sheet['10']['week3'])
     # print(df)
     template = get_title_json(title_path)
     data = set_data_title(template, df)
