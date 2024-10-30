@@ -145,7 +145,7 @@ def data_to_json(data, output_file):
     # 将数据写入输出文件
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(data, f)
-# excel_url = 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1901615913#gid=1901615913'
+# excel_url= 'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1901615913#gid=1901615913'
 
 
 if __name__ == '__main__':
