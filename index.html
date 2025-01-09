@@ -24,15 +24,14 @@
         <option value="double">双语</option>
       </select>
       <br/>
-      
       <label for="monthSelect">Month:</label>
       <select id="monthSelect">
-        <option value="7" selected>7</option>
-        <option value="8" selected>8</option>    
-        <option value="9" selected>9</option> 
-        <option value="10" selected>10</option>
-        <option value="11" selected>11</option>
-        <option value="12" selected>12</option>    
+        <option value="7" selected>2024-7</option>
+        <option value="8" selected>2024-8</option>    
+        <option value="9" selected>2024-9</option> 
+        <option value="10" selected>2024-10</option>
+        <option value="11" selected>2024-11</option>
+        <option value="12" selected>2024-12</option> 
       </select>
       <label for="periodSelect">Period:</label>
       <select id="periodSelect">
@@ -280,10 +279,10 @@
     period = {
       'year': '2024',
       'month': '12',
-      'period': 'week4'
+      'period': 'week5'
     } // 时间段
     
-    period_now = 'week4'
+    period_now = 'week5'
 
     title_line_chart = {
       'china': {
@@ -293,8 +292,8 @@
                 '9月\n第一周', '9月\n第二周', '9月\n第三周', '9月\n第四周', 
                 '10月\n第一周', '10月\n第二周', '10月\n第三周', '10月\n第四周', '10月\n第四周',
                 '11月\n第一周', '11月\n第二周', '11月\n第三周', '11月\n第四周',
-                '12月\n第一周', '12月\n第二周', '12月\n第三周', '12月\n第四周'],
-        'data': [55, 63, 60, 64, 67, 75, 69, 70, 90, 70, 73, 83, 83, 75, 71, 84, 82, 82, 78, 80, 79, 76, 77, 73, 73, 76]
+                '12月\n第一周', '12月\n第二周', '12月\n第三周', '12月\n第四周', '12月\n第五周'],
+        'data': [55, 63, 60, 64, 67, 75, 69, 70, 90, 70, 73, 83, 83, 75, 71, 84, 82, 82, 78, 80, 79, 76, 77, 73, 73, 76, 71]
        },
       'indonesia': {
         'title': '100 Grafik Garis Indeks',
@@ -303,9 +302,9 @@
                 'Sept\nweek1', 'Sept\nweek2', 'Sept\nweek3', 'Sept\nweek4', 
                 'Okt\nweek1', 'Okt\nweek2', 'Okt\nweek3', 'Okt\nweek4', 'Okt\nweek5',
                 'Nov\nweek1', 'Nov\nweek2', 'Nov\nweek3', 'Nov\nweek4',
-                'Dec\nweek1', 'Dec\nweek2', 'Dec\nweek3', 'Dec\nweek4'], 
+                'Dec\nweek1', 'Dec\nweek2', 'Dec\nweek3', 'Dec\nweek4','Dec\nweek5'], 
 
-        'data': [55, 63, 60, 64, 67, 75, 69, 70, 90, 70, 73, 83, 83, 75, 71, 84, 82, 82, 78, 80, 79, 76, 77, 73, 73, 76]
+        'data': [55, 63, 60, 64, 67, 75, 69, 70, 90, 70, 73, 83, 83, 75, 71, 84, 82, 82, 78, 80, 79, 76, 77, 73, 73, 76, 71]
       },
       'double': {
         'title': '100 Grafik Garis Indeks\n100指数折线图',
@@ -314,8 +313,8 @@
                 'Sept\nweek1', 'Sept\nweek2', 'Sept\nweek3', 'Sept\nweek4', 
                 'Okt\nweek1', 'Okt\nweek2', 'Okt\nweek3', 'Okt\nweek4', 'Okt\nweek5',
                 'Nov\nweek1', 'Nov\nweek2', 'Nov\nweek3', 'Nov\nweek4',
-                'Dec\nweek1', 'Dec\nweek2', 'Dec\nweek3', 'Dec\nweek4'],
-        'data': [55, 63, 60, 64, 67, 75, 69, 70, 90, 70, 73, 83, 83, 75, 71, 84, 82, 82, 78, 80, 79, 76, 77, 73, 73, 76]
+                'Dec\nweek1', 'Dec\nweek2', 'Dec\nweek3', 'Dec\nweek4','Dec\nweek5'],
+        'data': [55, 63, 60, 64, 67, 75, 69, 70, 90, 70, 73, 83, 83, 75, 71, 84, 82, 82, 78, 80, 79, 76, 77, 73, 73, 76, 71]
       },
     }
     text_button_line_chart = {
@@ -380,7 +379,8 @@
           'week1' : "2024.11.30-2024.12.06",
           'week2' : "2024.12.07-2024.12.13",
           'week3' : "2024.12.14-2024.12.20",
-          'week4' : "2024.12.21-2024.12.27"
+          'week4' : "2024.12.21-2024.12.27",
+          'week5' : "2024.12.28-2024.01.03"
         }
       }
     }
@@ -423,7 +423,8 @@
           'week1' : 'week23',
           'week2' : 'week24',
           'week3' : 'week25',
-          'week4' : 'week26'
+          'week4' : 'week26',
+          'week5' : 'week27'
         }
       }   
     }
@@ -455,7 +456,8 @@
         'week23' : "第二十三周(2024.11.30 - 2024.12.06)",
         'week24' : "第二十四周(2024.12.07 - 2024.12.13)",
         'week25' : "第二十五周(2024.12.14 - 2024.12.20)",
-        'week26' : "第二十六周(2024.12.21 - 2024.12.27)"
+        'week26' : "第二十六周(2024.12.21 - 2024.12.27)",
+        'week27' : "第二十七周(2024.12.28 - 2024.01.03)",
       },
       'indonesia':{
         'week1' : 'week1(2024.06.29 - 2024.07.05)',
@@ -483,7 +485,8 @@
         'week23' : "week23(2024.11.24 - 2024.11.30)",
         'week24' : "week24(2024.12.01 - 2024.12.13)",
         'week25' : "week25(2024.12.14 - 2024.12.20)",
-        'week26' : "week26(2024.12.21 - 2024.12.27)"
+        'week26' : "week26(2024.12.21 - 2024.12.27)",
+        'week27' : "week27(2024.12.28 - 2024.01.03)",
       },
       'double' : {
         'week1' : 'week1(2024.06.29 - 2024.07.05)',
@@ -511,7 +514,8 @@
         'week23' : "week23(2024.11.24 - 2024.11.30)",
         'week24' : "week24(2024.12.01 - 2024.12.13)",
         'week25' : "week25(2024.12.14 - 2024.12.20)",
-        'week26' : "week26(2024.12.21 - 2024.12.27)"
+        'week26' : "week26(2024.12.21 - 2024.12.27)",
+        'week27' : "week27(2024.12.28 - 2024.01.03)",
       }
     }
 
