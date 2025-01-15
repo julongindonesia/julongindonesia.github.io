@@ -192,12 +192,12 @@ if __name__ == '__main__':
         },
         '2025':{
             '1':{
-                'week1':'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=545095870#gid=545095870'
+                'week1':'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1979978409#gid=1979978409'
             }
         }
     }
     output_json_file = os.path.join(os.path.dirname(__file__),'title_result.json')
-    df = extract_google_sheet(excel_url['2024']['12']['week5'])
+    df = extract_google_sheet(excel_url['2025']['1']['week1'])
     # print(df)
     # print(len(df))
     data = create_title_data(df)

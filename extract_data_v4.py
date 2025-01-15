@@ -325,7 +325,7 @@ if __name__ == '__main__':
         },
         '2025':{
             '1':{
-                'week1':'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=545095870#gid=545095870'
+                'week1':'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1979978409#gid=1979978409'
             }
         }
         
@@ -335,7 +335,7 @@ if __name__ == '__main__':
     output_file = os.path.join(os.path.dirname(__file__),'data_result.json')
 
     # ！！！！！ 阶段性修改周期变量
-    df = extract_google_sheet(url_data_sheet['2024']['12']['week5'])
+    df = extract_google_sheet(url_data_sheet['2025']['1']['week1'])
     # print(df)
     template = get_title_json(title_path)
     data = set_data_title(template, df)
