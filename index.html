@@ -826,15 +826,14 @@
 
     $("#monthSelect").change(function(){
       // 根据下拉列表，获取当前时间段
-      year_month = $('monthSelect').val().split('-')
-      console.log(year_month)
+      year_month = $('#monthSelect').val().split('-')
       period['year'] = year_month[0]
       period['month'] = year_month[1]
       period['period'] = 'week1'
       period_now = 'week1'
       // language = $('#languageSelect').val()
       // 按照时间段更新数据，只重新渲染数据
-      console.log(period)
+      // console.log(period)
       update_period_data(file_path, period, language)
       // 显示出所选时间段的具体时间
       $("p#tanggal").text(tanggal_continue[language][tanggal_transfer[period['year']][period['month']][period['period']]])
