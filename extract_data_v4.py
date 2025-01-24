@@ -109,7 +109,7 @@ def set_data_title(template, df):
     return data
 # 根据分数算法 得到分数
 def calculate_score(cara_nilai, prev, est, act ):
-    if cara_nilai == '和预测值进行对比\n（差距10%以内）':    
+    if cara_nilai == '和预测值进行对比\n（差距10%以内）':
         if est != '_' and act != '_':
             est = digit_string_convert(est)
             act = digit_string_convert(act)
@@ -226,6 +226,22 @@ def calculate_score(cara_nilai, prev, est, act ):
                     if act <= 3:
                         nilai = 1
                         return nilai   
+    elif cara_nilai == '小于等于5%':
+        if act != '_':
+            act = digit_string_convert(act)
+            if act != None:
+                if ~isinstance(act, list):
+                    if act <= 5:
+                        nilai = 1
+                        return nilai  
+    elif cara_nilai == '小于等于0.5%':
+        if act != '_':
+            act = digit_string_convert(act)
+            if act != None:
+                if ~isinstance(act, list):
+                    if act < 0.5 or math.isclose(act,0.5):
+                        nilai = 1
+                        return nilai  
     elif cara_nilai == '等于0':
         if act != '_':
             act = digit_string_convert(act)
@@ -325,7 +341,8 @@ if __name__ == '__main__':
         },
         '2025':{
             '1':{
-                'week1':'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1979978409#gid=1979978409'
+                'week1':'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=1979978409#gid=1979978409',
+                'week2':'https://docs.google.com/spreadsheets/d/1LpX1tkuI7rgntZPLhsXONYjqmxRJPiYA/edit?gid=849036922#gid=849036922'
             }
         }
         
@@ -335,7 +352,7 @@ if __name__ == '__main__':
     output_file = os.path.join(os.path.dirname(__file__),'data_result.json')
 
     # ！！！！！ 阶段性修改周期变量
-    df = extract_google_sheet(url_data_sheet['2025']['1']['week1'])
+    df = extract_google_sheet(url_data_sheet['2025']['1']['week2'])
     # print(df)
     template = get_title_json(title_path)
     data = set_data_title(template, df)
